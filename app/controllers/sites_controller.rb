@@ -26,5 +26,14 @@ class SitesController < ApplicationController
     params.require(:site).permit(:name, :town, :address, :postcode, :price, :description)
   end
 
+  def edit
+    @site = Site.find(params[:id])
+  end
+
+  def update
+    @site = Site.find(params[:id])
+    @site.update(site_params)
+    redirect_to '/vendors'
+  end
 
 end
