@@ -1,0 +1,9 @@
+<h1 id='header'>Camping Emporium</h1>
+
+<% if @sites.any? %>
+  <% @sites.each do |site| %>
+    <h2> <%= link_to site.name, site_path(site) %> </h2>
+    <h3> <%= site.town %></h3>
+    <h3> £<%= site.price %></h3>
+  <% end %>
+<% end %>
