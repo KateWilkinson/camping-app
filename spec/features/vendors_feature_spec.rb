@@ -150,5 +150,19 @@ feature 'While logged in a vendor can' do
       expect(current_path).to eq '/vendors'
       expect(page).not_to have_content 'ABC Camping'
     end
+
+    it 'they should also be removed from the listings page' do
+      click_link('List a new site')
+      fill_in 'Name', with: 'ABC Camping'
+      fill_in 'Town', with: 'Canterbury'
+      fill_in 'Address', with: '123 Old Road'
+      fill_in 'Postcode', with: 'NP5 9XY'
+      fill_in 'Price', with: 40
+      fill_in 'Description', with: 'This is a campsite'
+      click_button 'Create Site'
+      click_link 'Delete Site'
+      click_link 'Return to list'
+      expect(page).not_to have_content 'ABC Camping'
+    end
   end
 end
