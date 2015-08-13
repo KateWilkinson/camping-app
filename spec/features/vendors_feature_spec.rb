@@ -28,12 +28,12 @@ feature 'Vendor can sign in and out' do
       fill_in('Email', with: 'test@example.com')
       fill_in('Password', with: 'testtest')
       fill_in('Password confirmation', with: 'testtest')
-      click_button('Sign Up')
+      click_button('Sign up')
     end
 
     it 'should see a log out link' do
       visit('/vendors')
-      expect(page).to have_link 'Log out'
+      expect(page).to have_link 'Log Out'
     end
   end
 end
