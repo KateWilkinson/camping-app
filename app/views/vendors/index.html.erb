@@ -1,6 +1,13 @@
 <% if vendor_signed_in? %>
   <%= link_to "Log Out", destroy_vendor_session_path, method: :delete %>
+  <%= link_to "List a new site", new_site_path %>
 <% else %>
   <%= link_to "Sign Up", new_vendor_registration_path %>
   <%= link_to "Log In", new_vendor_session_path %>
+<% end %>
+
+<% @sites.each do |site| %>
+  <% if site.vendor_id == current_vendor.id %>
+      <h3> <%= site.name %> </h3>
+  <% end %>
 <% end %>

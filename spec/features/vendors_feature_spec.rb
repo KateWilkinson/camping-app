@@ -59,3 +59,29 @@ feature 'Vendor can log in and out' do
     end
   end
 end
+
+feature 'Vendor can add campsites' do
+  context 'when logged in' do
+    before do
+      visit('/vendors')
+      click_link('Sign Up')
+      fill_in('Email', with: 'test@example.com')
+      fill_in('Password', with: 'testtest')
+      fill_in('Password confirmation', with: 'testtest')
+      click_button('Sign up')
+    end
+
+    it 'should be able to add a campsite and see it on the vendor index' do
+      click_link('List a new site')
+      fill_in 'Name', with: 'ABC Camping'
+      fill_in 'Town', with: 'Canterbury'
+      fill_in 'Address', with: '123 Old Road'
+      fill_in 'Postcode', with: 'NP5 9XY'
+      fill_in 'Price', with: 40
+      fill_in 'Description', with: 'This is a campsite'
+      click_button 'Create Site'
+      expect(page).to have_content 'ABC Camping'
+      expect(current_path).to eq '/vendors'
+    end
+  end
+end

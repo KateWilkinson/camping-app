@@ -7,6 +7,24 @@ class SitesController < ApplicationController
   def show
     @site = Site.find(params[:id])
   end
-  
+
+  def new
+    @site = Site.new
+  end
+
+  def create
+    @site = current_vendor.sites.build(site_params)
+    if @site.save
+      redirect_to '/vendors'
+    else
+      render 'new'
+    end
+  end
+
+
+  def site_params
+    params.require(:site).permit(:name, :town, :address, :postcode, :price, :description)
+  end
+
 
 end
