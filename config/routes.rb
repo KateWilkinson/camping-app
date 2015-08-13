@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   end
 
   resources :sites
+
+  get 'vendors' => 'vendors#index'
   root to: 'sites#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
