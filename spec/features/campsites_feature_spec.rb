@@ -24,7 +24,7 @@ feature 'sites' do
       visit '/'
       click_link 'ABC Camping'
       expect(page).to have_content 'ABC Camping'
-      expect(current_url).to eq "/sites/#{abc.id}"
+      expect(current_path).to eq "/sites/#{abc.id}"
     end
   end
 
