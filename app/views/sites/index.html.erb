@@ -1,5 +1,5 @@
 <h1 id='header'>Camping Emporium</h1>
-
+<%= link_to "Vendor", '/vendors' %>
 <% if @sites.any? %>
   <% @sites.each do |site| %>
     <h2> <%= link_to site.name, site_path(site) %> </h2>
