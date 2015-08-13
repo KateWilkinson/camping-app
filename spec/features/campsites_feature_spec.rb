@@ -9,7 +9,7 @@ feature 'sites' do
 
     scenario 'view links list' do
       visit '/'
-      expect(page).to have_links 'ABC Camping'
+      expect(page).to have_link 'ABC Camping'
     end
   end
 end
