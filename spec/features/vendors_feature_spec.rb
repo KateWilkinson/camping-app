@@ -60,18 +60,47 @@ feature 'Vendor can log in and out' do
   end
 end
 
-feature 'Vendor can add campsites' do
-  context 'when logged in' do
-    before do
-      visit('/vendors')
-      click_link('Sign Up')
-      fill_in('Email', with: 'test@example.com')
-      fill_in('Password', with: 'testtest')
-      fill_in('Password confirmation', with: 'testtest')
-      click_button('Sign up')
-    end
+feature 'While logged in a vendor can' do
+  before do
+    visit('/vendors')
+    click_link('Sign Up')
+    fill_in('Email', with: 'test@example.com')
+    fill_in('Password', with: 'testtest')
+    fill_in('Password confirmation', with: 'testtest')
+    click_button('Sign up')
+  end
 
-    it 'should be able to add a campsite and see it on the vendor index' do
+  it 'acccess the list page and return to the vendor home page' do
+    click_link 'Return to list'
+    expect(current_path).to eq '/'
+    click_link 'Vendor'
+    expect(current_path).to eq '/vendors'
+  end
+
+  it 'access the list and will stay logged in' do
+    click_link 'Return to list'
+    expect(current_path).to eq '/'
+    click_link 'Vendor'
+    expect(current_path).to eq '/vendors'
+    expect(page).to have_content 'Log Out'
+  end
+
+  it 'add a site and should see it on the listings page' do
+    click_link('List a new site')
+    fill_in 'Name', with: 'ABC Camping'
+    fill_in 'Town', with: 'Canterbury'
+    fill_in 'Address', with: '123 Old Road'
+    fill_in 'Postcode', with: 'NP5 9XY'
+    fill_in 'Price', with: 40
+    fill_in 'Description', with: 'This is a campsite'
+    click_button 'Create Site'
+    click_link 'Return to list'
+    expect(current_path).to eq '/'
+    expect(page).to have_content 'ABC Camping'
+  end
+
+  context 'add campsites' do
+    it 'and should see it on the vendor index' do
       click_link('List a new site')
       fill_in 'Name', with: 'ABC Camping'
       fill_in 'Town', with: 'Canterbury'
@@ -82,6 +111,44 @@ feature 'Vendor can add campsites' do
       click_button 'Create Site'
       expect(page).to have_content 'ABC Camping'
       expect(current_path).to eq '/vendors'
+    end
+
+    it 'should not see other peoples campsites on the vendor index' do
+      # WRITE THIS TEST LATER
+    end
+  end
+
+  context 'edit campsites' do
+    it 'vendors can edit their campsites' do
+      click_link('List a new site')
+      fill_in 'Name', with: 'ABC Camping'
+      fill_in 'Town', with: 'Canterbury'
+      fill_in 'Address', with: '123 Old Road'
+      fill_in 'Postcode', with: 'NP5 9XY'
+      fill_in 'Price', with: 40
+      fill_in 'Description', with: 'This is a campsite'
+      click_button 'Create Site'
+      click_link 'Edit Site'
+      fill_in 'Name', with: 'CBA Camping'
+      click_button 'Update Site'
+      expect(page).to have_content 'CBA Camping'
+      expect(page).not_to have_content 'ABC Camping'
+    end
+  end
+
+  context 'delete campsites' do
+    it 'vendors can delete their campsites' do
+      click_link('List a new site')
+      fill_in 'Name', with: 'ABC Camping'
+      fill_in 'Town', with: 'Canterbury'
+      fill_in 'Address', with: '123 Old Road'
+      fill_in 'Postcode', with: 'NP5 9XY'
+      fill_in 'Price', with: 40
+      fill_in 'Description', with: 'This is a campsite'
+      click_button 'Create Site'
+      click_link 'Delete Site'
+      expect(current_path).to eq '/vendors'
+      expect(page).not_to have_content 'ABC Camping'
     end
   end
 end
