@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :vendors
+  devise_for :vendors, controllers: { registrations: 'registrations' }
   namespace :api, defaults: {format: 'json'} do
     resources :sites
   end
