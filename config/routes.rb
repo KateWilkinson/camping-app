@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :vendors
   namespace :api, defaults: {format: 'json'} do
     resources :sites
   end
