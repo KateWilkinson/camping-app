@@ -1,8 +1,9 @@
 <h1 id='header'>Camping Emporium</h1>
-<ul>
-  <li><a href='#'>ABC Camping</a></li>
-  <li><a href='#'>XYZ Camping</a></li>
-  <li><a href='#'>Green Camping</a></li>
-  <li><a href='#'>Woodland Campground</a></li>
-  <li><a href='#'>Big Camp</a></li>
-</ul>
+
+<% if @sites.any? %>
+  <% @sites.each do |site| %>
+    <h2> <%= link_to "#{site.name}", site_path(site) %> </h2>
+    <h3> <%= site.town %></h3>
+    <h3> <%= site.price %></h3>
+  <% end %>
+<% end %>
