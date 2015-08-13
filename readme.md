@@ -33,12 +33,6 @@ User stories:
 MVP 1
 
 As a holiday-maker
-I want to see a list of options/a list of campsites (name of campsite)
-So that I can be better informed
-
-OR
-
-As a holiday-maker
 So that I can explore the options available to me
 I would like to see a list of campsites
 
@@ -47,9 +41,8 @@ I want more information on the options I am interested in
 So that I can make an informed choice
 
 As a holiday maker
-I want to see the more details about each campsite (location, price, description (images))
+I want to see more details about each campsite (location, price, description)
 so that I can compare different listings
-
 
 
 MVP 2
@@ -77,13 +70,14 @@ I would like to search campsites by location
 
 
 MVP 4
+
 As a holiday maker
 So that I can get more information
 I would like to see year-round availability, full address and facilities
 
 As a holiday maker
 I so that I can see more information on the listings page
-I would like to see a name, location, a short description and price
+I would like to see a name, location, image, a short description and price
 
 As a holiday maker
 So that I can find a campsite that suits my needs type
@@ -92,6 +86,7 @@ I would like to search campsites by another option, like camp
 
 
 MVP 5
+
 As a holiday maker
 So that I can find the campsite
 I would like to see a map pinpointing where they are
@@ -115,7 +110,7 @@ Technologies Used:
 * Javascript (maybe, possibly?)
 * jQuery (maybe, possibly?)
 * Angular JS (maybe, possibly?)
-* Tested with RSpec, Capybara, Karma and Protractor
+* Tested with RSpec, Capybara, Shoulda, Karma and Protractor
 
 
 
