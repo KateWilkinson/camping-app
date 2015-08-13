@@ -32,8 +32,30 @@ feature 'Vendor can sign in and out' do
     end
 
     it 'should see a log out link' do
-      visit('/vendors')
       expect(page).to have_link 'Log Out'
+    end
+  end
+end
+
+feature 'Vendor can log in and out' do
+  context 'Vendor signed up but not logged in' do
+    before do
+      visit('/vendors')
+      click_link('Sign Up')
+      fill_in('Email', with: 'test@example.com')
+      fill_in('Password', with: 'testtest')
+      fill_in('Password confirmation', with: 'testtest')
+      click_button('Sign up')
+      click_link 'Log Out'
+    end
+
+    it 'should be able to log in and be redirected to vendors index page' do
+      visit '/vendors'
+      click_link 'Log In'
+      fill_in 'Email', with: 'test@example.com'
+      fill_in 'Password', with: 'testtest'
+      click_button 'Log in'
+      expect(current_path).to eq '/vendors'
     end
   end
 end
