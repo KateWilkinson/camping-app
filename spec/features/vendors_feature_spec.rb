@@ -1,4 +1,9 @@
 require 'rails_helper'
+require 'helpers'
+
+RSpec.configure do |c|
+  c.include Helpers
+end
 
 feature 'A vendor can sign up' do
   context 'when not signed in' do
@@ -100,6 +105,13 @@ feature 'While logged in a vendor can' do
       sign_up_2
       expect(page).not_to have_content 'ABC Camping'
     end
+
+    it 'should not be able to add a campsite with a duplicate name' do
+      sign_up
+      create_site
+      create_site
+      expect(page).to have_content 'Name has already been taken'
+    end
   end
 
   context 'edit campsites' do
@@ -132,32 +144,4 @@ feature 'While logged in a vendor can' do
     end
   end
 
-  def create_site
-    click_link('List a new site')
-    fill_in 'Name', with: 'ABC Camping'
-    fill_in 'Town', with: 'Canterbury'
-    fill_in 'Address', with: '123 Old Road'
-    fill_in 'Postcode', with: 'NP5 9XY'
-    fill_in 'Price', with: 40
-    fill_in 'Description', with: 'This is a campsite'
-    click_button 'Create Site'
-  end
-
-  def sign_up
-    visit('/vendors')
-    click_link('Sign Up')
-    fill_in('Email', with: 'test@example.com')
-    fill_in('Password', with: 'testtest')
-    fill_in('Password confirmation', with: 'testtest')
-    click_button('Sign up')
-  end
-
-  def sign_up_2
-    visit('/vendors')
-    click_link('Sign Up')
-    fill_in('Email', with: 'test@mail.com')
-    fill_in('Password', with: 'hellohello')
-    fill_in('Password confirmation', with: 'hellohello')
-    click_button('Sign up')
-  end
 end
