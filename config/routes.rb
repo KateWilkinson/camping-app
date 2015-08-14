@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :sites
+  resources :requests
 
   get 'vendors' => 'vendors#index'
   root to: 'sites#index'
