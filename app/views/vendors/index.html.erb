@@ -5,6 +5,7 @@
   <% @sites.each do |site| %>
     <% if site.vendor_id == current_vendor.id %>
         <h3> <%= site.name %> </h3>
+        <%= image_tag site.image.url(:large) %>
         <%= link_to "Edit Site", edit_site_path(site) %>
         <%= link_to "Delete Site", site_path(site), method: :delete %>
     <% end %>

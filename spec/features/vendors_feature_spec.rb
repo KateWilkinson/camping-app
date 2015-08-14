@@ -112,6 +112,20 @@ feature 'While logged in a vendor can' do
       create_site
       expect(page).to have_content 'Name has already been taken'
     end
+
+    scenario 'should be able to successfully upload an image' do
+      sign_up
+      click_link('List a new site')
+      fill_in 'Name', with: 'ABC Camping'
+      fill_in 'Town', with: 'Canterbury'
+      fill_in 'Address', with: '123 Old Road'
+      fill_in 'Postcode', with: 'NP5 9XY'
+      fill_in 'Price', with: 40
+      fill_in 'Description', with: 'This is a campsite'
+      attach_file 'site_image', 'spec/features/test.jpg'
+      click_button 'Create Site'
+      expect(page).to have_selector("img[src*='test.jpg']")
+    end
   end
 
   context 'edit campsites' do
@@ -143,5 +157,7 @@ feature 'While logged in a vendor can' do
       expect(page).not_to have_content 'ABC Camping'
     end
   end
+
+
 
 end

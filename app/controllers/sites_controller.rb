@@ -23,7 +23,7 @@ class SitesController < ApplicationController
 
 
   def site_params
-    params.require(:site).permit(:name, :town, :address, :postcode, :price, :description)
+    params.require(:site).permit(:name, :town, :address, :postcode, :price, :description, :image)
   end
 
   def edit
