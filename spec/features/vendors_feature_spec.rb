@@ -143,5 +143,15 @@ feature 'While logged in a vendor can' do
       expect(page).not_to have_content 'ABC Camping'
     end
   end
+end
 
+feature 'When on the homepage' do
+  context 'they should see a requests section' do
+    it 'if no requests have been made' do
+      sign_up
+      create_site
+      expect(current_path).to eq '/vendors'
+      expect(page).to have_content 'No current requests'
+    end
+  end
 end

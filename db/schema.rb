@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150813135412) do
+ActiveRecord::Schema.define(version: 20150814141107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "requests", force: :cascade do |t|
+    t.string   "customer_name"
+    t.string   "customer_email"
+    t.string   "customer_phone"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "comments"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "site_id"
+  end
+
+  add_index "requests", ["site_id"], name: "index_requests_on_site_id", using: :btree
 
   create_table "sites", force: :cascade do |t|
     t.string   "name"
@@ -48,5 +62,6 @@ ActiveRecord::Schema.define(version: 20150813135412) do
   add_index "vendors", ["email"], name: "index_vendors_on_email", unique: true, using: :btree
   add_index "vendors", ["reset_password_token"], name: "index_vendors_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "requests", "sites"
   add_foreign_key "sites", "vendors"
 end
