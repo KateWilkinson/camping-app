@@ -1,11 +1,13 @@
 require 'rails_helper'
 
 feature 'requests' do
-  context 'when potential customer' do
+  context 'when a potential customer' do
+    before do
+      sign_up
+      create_site
+    end
 
-    let!(:abc){Site.create(name:'ABC Camping', address: '123 Station Road', town: 'Glastonbury', postcode: 'BA4 6TA', description: 'Not bad', price: 300)}
-
-    scenario 'clicks on Book Now button, they are taken to Contact page' do
+    scenario 'clicks on Book button, they are taken to Contact page' do
       visit '/'
       click_link 'ABC Camping'
       click_button 'Book'
@@ -18,6 +20,15 @@ feature 'requests' do
       click_button 'Book'
       expect(page).to have_content 'Name'
       expect(page).to have_button 'Create Request'
+    end
+
+    scenario 'submits a request they recieve a message sending request sent' do
+      visit '/'
+      click_link 'ABC Camping'
+      click_button 'Book'
+      request_booking
+      expect(current_path).to eq '/'
+      expect(page).to have_content 'Your request has been made'
     end
   end
 end
