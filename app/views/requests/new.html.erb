@@ -1,0 +1,15 @@
+<%= form_for Request.new do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :customer_name %>
+  <%= f.label :email %>
+  <%= f.text_field :customer_email %>
+  <%= f.label "Phone Number" %>
+  <%= f.text_field :customer_phone %>
+  <%= f.label "Start Date" %>
+  <%= f.text_field :start_date %>
+  <%= f.label "End Date" %>
+  <%= f.text_field :end_date %>
+  <%= f.label :comments %>
+  <%= f.text_field :comments %>
+  <%= f.submit %>
+<% end %>

@@ -11,5 +11,13 @@ feature 'requests' do
       click_button 'Book'
       expect(current_path).to eq '/requests/new'
     end
+
+    scenario 'can fill in a form' do
+      visit '/'
+      click_link 'ABC Camping'
+      click_button 'Book'
+      expect(page).to have_content 'Name'
+      expect(page).to have_button 'Create Request'
+    end
   end
 end
