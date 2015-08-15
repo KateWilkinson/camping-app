@@ -55,6 +55,7 @@
         <%= image_tag site.image_2.url(:thumb) %>
         <%= link_to "Edit Site", edit_site_path(site) %>
         <%= link_to "Delete Site", site_path(site), method: :delete %>
+        <p> No current requests </p>
     <% end %>
   <% end %>
 <% else %>
