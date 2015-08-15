@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150815110409) do
+ActiveRecord::Schema.define(version: 20150815154910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20150815110409) do
     t.string   "postcode"
     t.text     "description"
     t.integer  "price"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.integer  "vendor_id"
     t.string   "image_file_name"
     t.string   "image_content_type"
@@ -50,42 +50,42 @@ ActiveRecord::Schema.define(version: 20150815110409) do
     t.string   "county"
     t.string   "available_from"
     t.string   "available_to"
-    t.boolean  "shared_toilets"
-    t.boolean  "private_toilets"
-    t.boolean  "shared_shower"
-    t.boolean  "private_shower"
-    t.boolean  "restaurant"
-    t.boolean  "shop"
-    t.boolean  "kitchen"
-    t.boolean  "electricity"
-    t.boolean  "parking"
-    t.boolean  "handicap_access"
-    t.boolean  "wifi"
-    t.boolean  "pets"
-    t.boolean  "family"
-    t.boolean  "adults"
-    t.boolean  "supermarket"
-    t.boolean  "eco"
-    t.boolean  "campfire"
-    t.boolean  "bbq"
-    t.boolean  "budget"
-    t.boolean  "backpacker"
-    t.boolean  "forest"
-    t.boolean  "lake"
-    t.boolean  "mountain"
-    t.boolean  "peaceful"
-    t.boolean  "remote"
-    t.boolean  "scenic"
-    t.boolean  "walking"
-    t.boolean  "wildlife"
-    t.boolean  "canoeing"
-    t.boolean  "climbing"
-    t.boolean  "cycling"
-    t.boolean  "cycle_hire"
-    t.boolean  "horseriding"
-    t.boolean  "sailing"
-    t.boolean  "watersports"
-    t.boolean  "pub"
+    t.boolean  "shared_toilets",       default: false
+    t.boolean  "private_toilets",      default: false
+    t.boolean  "shared_shower",        default: false
+    t.boolean  "private_shower",       default: false
+    t.boolean  "restaurant",           default: false
+    t.boolean  "shop",                 default: false
+    t.boolean  "kitchen",              default: false
+    t.boolean  "electricity",          default: false
+    t.boolean  "parking",              default: false
+    t.boolean  "handicap_access",      default: false
+    t.boolean  "wifi",                 default: false
+    t.boolean  "pets",                 default: false
+    t.boolean  "family",               default: false
+    t.boolean  "adults",               default: false
+    t.boolean  "supermarket",          default: false
+    t.boolean  "eco",                  default: false
+    t.boolean  "campfire",             default: false
+    t.boolean  "bbq",                  default: false
+    t.boolean  "budget",               default: false
+    t.boolean  "backpacker",           default: false
+    t.boolean  "forest",               default: false
+    t.boolean  "lake",                 default: false
+    t.boolean  "mountain",             default: false
+    t.boolean  "peaceful",             default: false
+    t.boolean  "remote",               default: false
+    t.boolean  "scenic",               default: false
+    t.boolean  "walking",              default: false
+    t.boolean  "wildlife",             default: false
+    t.boolean  "canoeing",             default: false
+    t.boolean  "climbing",             default: false
+    t.boolean  "cycling",              default: false
+    t.boolean  "cycle_hire",           default: false
+    t.boolean  "horseriding",          default: false
+    t.boolean  "sailing",              default: false
+    t.boolean  "watersports",          default: false
+    t.boolean  "pub",                  default: false
     t.string   "image_2_file_name"
     t.string   "image_2_content_type"
     t.integer  "image_2_file_size"

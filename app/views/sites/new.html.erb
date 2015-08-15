@@ -10,19 +10,29 @@
 
 
 <%= form_for Site.new, html: { multipart: true } do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :town %>
-  <%= f.text_field :town %>
-  <%= f.label :postcode %>
-  <%= f.text_field :postcode %>
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+
+  <%= f.text_field :name, autofocus: true, placeholder: "Name"  %>
+  <%= f.text_field :street, autofocus: true, placeholder: "Address line 1" %>
+  <%= f.text_field :town, autofocus: true, placeholder: "Town/City"  %>
+  <%= f.text_field :county, autofocus: true, placeholder: "County"  %>
+  <%= f.text_field :postcode, autofocus: true, placeholder: "Postcode" %>
+  <%= f.text_field :price, autofocus: true, placeholder: "Price per night" %>
+  <%= f.select :accommodation_type, ['Campervan', 'Treehouse', 'Yurt', 'Canal boat', 'Cabin', 'Pod', 'Tent', 'Pitch only', 'Shepherd hut', 'Other' ]%>
+  <%= f.text_field :occupancy, autofocus: true, placeholder: "Occupancy" %>
+  <%= f.text_field :description, autofocus: true, placeholder: "Full description" %>
+  <%= f.text_field :summary, autofocus: true, placeholder: "Short description, max. 50 words" %>
+  <%= f.text_field :available_from, autofocus: true, placeholder: "Available from (Month)" %>
+  <%= f.text_field :available_to, autofocus: true, placeholder: "Available to (Month)" %>
+
   <%= f.label :image %>
   <%= f.file_field :image %>
   <%= f.label :image_2 %>
   <%= f.file_field :image_2 %>
+  <%= f.check_box(:shared_toilets) %>
+  <%= f.label(:shared_toilets, "Shared toilets") %>
+  <%= f.check_box(:electricity) %>
+  <%= f.label(:electricity, "Charging facilities available?") %>
+  <%= f.check_box(:private_shower) %>
+  <%= f.label(:private_shower, "Private shower") %>
   <%= f.submit %>
 <% end %>
