@@ -118,13 +118,28 @@ feature 'While logged in a vendor can' do
       click_link('List a new site')
       fill_in 'Name', with: 'ABC Camping'
       fill_in 'Town', with: 'Canterbury'
-      fill_in 'Address', with: '123 Old Road'
       fill_in 'Postcode', with: 'NP5 9XY'
       fill_in 'Price', with: 40
       fill_in 'Description', with: 'This is a campsite'
       attach_file 'site_image', 'spec/features/test.jpg'
       click_button 'Create Site'
       expect(page).to have_selector("img[src*='test.jpg']")
+    end
+
+    scenario 'should be able to succesfully upload multiple images' do
+      pending
+      sign_up
+      click_link('List a new site')
+      fill_in 'Name', with: 'ABC Camping'
+      fill_in 'Town', with: 'Canterbury'
+      fill_in 'Postcode', with: 'NP5 9XY'
+      fill_in 'Price', with: 40
+      fill_in 'Description', with: 'This is a campsite'
+      attach_file 'site_image', 'spec/features/test.jpg'
+      attach_file 'site_image_2', 'spec/features/test2.jpg'
+      click_button 'Create Site'
+      expect(page).to have_selector("img[src*='test.jpg']")
+      expect(page).to have_selector("img[src*='test2.jpg']")
     end
   end
 
