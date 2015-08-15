@@ -1,11 +1,8 @@
 <h1><%= @site.name %></h1>
 <p>Price:  £<%= @site.price %></p>
-<p>Address:  <%= @site.address %></p>
 <p>Description:  <%= @site.description %></p>
-<%= image_tag @site.image.url(:large) %>
-
-
-
+<%= image_tag @site.image.url(:thumb) %>
+<%= image_tag @site.image_2.url(:thumb) %>
 
 
 <button>Book</button>

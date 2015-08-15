@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'sites' do
   context 'when a user visits the homepage' do
 
-    let!(:abc){Site.create(name:'ABC Camping', address: '123 Station Road', town: 'Glastonbury', postcode: 'BA4 6TA', description: 'Not bad', price: 300)}
+    let!(:abc){Site.create(name:'ABC Camping', town: 'Glastonbury', postcode: 'BA4 6TA', description: 'Not bad', price: 300)}
 
     scenario 'view homepage' do
       visit '/'
@@ -18,7 +18,7 @@ feature 'sites' do
 
   context 'when user wants details on a campsite' do
 
-    let!(:abc){Site.create(name:'ABC Camping', address: '123 Station Road', town: 'Glastonbury', postcode: 'BA4 6TA', description: 'Not bad', price: 300)}
+    let!(:abc){Site.create(name:'ABC Camping', town: 'Glastonbury', postcode: 'BA4 6TA', description: 'Not bad', price: 300)}
 
     scenario 'user clicks on campsite link' do
       visit '/'
