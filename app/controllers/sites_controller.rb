@@ -6,6 +6,7 @@ class SitesController < ApplicationController
 
   def show
     @site = Site.find(params[:id])
+    session[:current_site_id] = @site.id
 
   end
 
@@ -14,7 +15,7 @@ class SitesController < ApplicationController
   end
 
   def create
-    session[:current_site_id] = @site.id
+
     @site = current_vendor.sites.build(site_params)
     if @site.save
       redirect_to '/vendors'
