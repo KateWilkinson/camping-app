@@ -208,7 +208,7 @@ end
 feature 'When on the homepage' do
   context 'they should see a requests section' do
     it 'if no requests have been made' do
-      sign_up
+      sign_up_as_vendor
       create_site
       expect(current_path).to eq '/vendors'
       expect(page).to have_content 'No current requests'

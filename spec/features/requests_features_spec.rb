@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'requests' do
   context 'when a potential customer' do
     before do
-      sign_up
+      sign_up_as_vendor
       create_site
     end
 
