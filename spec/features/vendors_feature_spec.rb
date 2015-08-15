@@ -114,12 +114,46 @@ feature 'While logged in a vendor can' do
       expect(page).to have_content 'Name has already been taken'
     end
 
+    scenario 'should be able to add an address' do
+      sign_up_as_vendor
+      create_full_site
+      expect(page).to have_content('13 Pollo Street Canterbury Bucks HP81BZ')
+    end
+
+    scenario 'should be able to add price per night' do
+      sign_up_as_vendor
+      create_full_site
+      expect(page).to have_content('£40')
+    end
+
+    scenario 'should be able to select accomodation type' do
+      sign_up_as_vendor
+      create_full_site
+      expect(page).to have_content('Campervan')
+    end
+
+    scenario 'should be able to add occupancy' do
+      sign_up_as_vendor
+      create_full_site
+      expect(page).to have_content('2 people')
+    end
+
+    scenario 'complete a short and full description' do
+      sign_up_as_vendor
+      create_full_site
+      expect(page).to have_content('family friendly campsite, near the seaside')
+      expect(page).to have_content('This is a campsite blah blah blah')
+    end
+
+    scenario 'should be able to add occupancy' do
+      sign_up_as_vendor
+      create_full_site
+      expect(page).to have_content('March to October')
+    end
+
     scenario 'should be able to successfully upload an image' do
       sign_up_as_vendor
-      click_link('List a new site')
-      fill_in 'Name', with: 'ABC Camping'
-      attach_file 'site_image', 'spec/features/test.jpg'
-      click_button 'Create Site'
+      create_full_site
       expect(page).to have_selector("img[src*='test.jpg']")
     end
 
@@ -130,24 +164,12 @@ feature 'While logged in a vendor can' do
       expect(page).to have_selector("img[src*='test2.jpg']")
     end
 
-    scenario 'should be able to select or not select different facilities' do
+    scenario 'should be able to check or uncheck different facilities/amenities' do
+      #TODO - all all familities/entertainment/amenties tests? How to test for this as only checking class at moment
       sign_up_as_vendor
       create_full_site
       expect(page).to have_css('.has-facility')
       expect(page).to have_css('.no-facility')
-    end
-
-    scenario 'should be able to select accomodation type' do
-      sign_up_as_vendor
-      create_full_site
-      expect(page).to have_content('Campervan')
-    end
-
-    scenario 'complete a short and long description' do
-      sign_up_as_vendor
-      create_full_site
-      expect(page).to have_content('family friendly campsite, near the seaside')
-      expect(page).to have_content('This is a campsite blah blah blah')
     end
 
   end

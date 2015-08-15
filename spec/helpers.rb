@@ -15,20 +15,17 @@ module Helpers
     fill_in 'site[name]', with: 'ABC Camping'
     fill_in 'site[summary]', with: 'family friendly campsite, near the seaside'
     fill_in 'site[description]', with: 'This is a campsite blah blah blah'
-    # fill_in 'Address Line 1', with: '13 Pollo Street'
-    # fill_in 'Town/City', with: 'Canterbury'
+    fill_in 'site[street]', with: '13 Pollo Street'
+    fill_in 'site[town]', with: 'Canterbury'
+    fill_in 'site[county]', with: 'Bucks'
+    fill_in 'site[postcode]', with: 'HP81BZ'
+    fill_in 'site[price]', with: 40
 
-    # fill_in 'County', with: 'Buckinghamshire'
-    # find("option[value='Buckinghamshire']").click
     select 'Campervan', from: 'site_accommodation_type'
+    fill_in 'site[occupancy]', with: 2
 
-    # fill_in 'Postcode', with: 'NP5 9XY'
-    # fill_in 'Price', with: 40
-    # fill_in 'Available from', with: 'March'
-    # fill_in 'to', with: 'October'
-    # fill_in 'Occupany', with: 2
-
-    # accomodation type
+    fill_in 'site[available_from]', with: 'March'
+    fill_in 'site[available_to]', with: 'October'
 
     check('site[shared_toilets]')
     uncheck('site[private_shower]')

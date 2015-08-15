@@ -5,14 +5,20 @@
   <% @sites.each do |site| %>
     <% if site.vendor_id == current_vendor.id %>
         <%= site.name %>
+
         <%= site.description %>
         <%= site.summary %>
+
         <%= site.street %>
         <%= site.town %>
         <%= site.county %>
         <%= site.postcode %>
-        <%= site.price %>
-        <%= site.accommodation_type %>
+
+        £<%= site.price %>
+        <%= site.occupancy %> people per <%= site.accommodation_type %>
+
+        <%= site.available_from %> to <%= site.available_to %>
+
 
         <% if site.shared_toilets == true %>
           <span class="has-facility">
@@ -44,8 +50,6 @@
           </span>
         <% end %>
 
-        <%= site.occupancy %>
-        <%= site.available_from %> to <%= site.available_to %>
 
         <%= image_tag site.image.url(:thumb) %>
         <%= image_tag site.image_2.url(:thumb) %>
