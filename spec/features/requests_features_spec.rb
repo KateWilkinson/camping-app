@@ -22,13 +22,14 @@ feature 'requests' do
       expect(page).to have_button 'Create Request'
     end
 
-    scenario 'submits a request they recieve a message sending request sent' do
+    scenario 'submits a request they recieve a message stating the request has been sent' do
       visit '/'
       click_link 'ABC Camping'
       click_button 'Book'
       request_booking
+      click_button 'Create Request'
       expect(current_path).to eq '/'
-      expect(page).to have_content 'Your request has been made'
+      expect(page).to have_content 'Thank you. Your request has been made.'
     end
   end
 end

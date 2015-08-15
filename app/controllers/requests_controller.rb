@@ -9,10 +9,11 @@ class RequestsController < ApplicationController
     @site = Site.find_by_id(session[:current_site_id])
     @request = @site.requests.build(request_params)
     if @request.save
-      flash[:notice] = "Your request has been made"
+      flash[:notice] = "Thank you.  Your request has been made."
       redirect_to "/"
     else
-      flash[:notice] = "Sorry. Request not processed"
+      flash[:notice] = "Sorry. Request not processed due to incorrect information."
+      redirect_to "/requests/new"
     end
   end
 
