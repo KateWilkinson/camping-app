@@ -1,15 +1,17 @@
+
+<h1>Booking Requests</h1>
 <%= form_for [@request] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :customer_name %>
-  <%= f.label :email %>
-  <%= f.text_field :customer_email %>
-  <%= f.label "Phone Number" %>
-  <%= f.text_field :customer_phone %>
-  <%= f.label "Start Date" %>
-  <%= f.text_field :start_date %>
-  <%= f.label "End Date" %>
-  <%= f.text_field :end_date %>
-  <%= f.label :comments %>
-  <%= f.text_field :comments %>
-  <%= f.submit %>
+  <p><%= f.label :name %></p>
+  <p><%= f.text_field :customer_name %></p>
+  <p><%= f.label :email %></p>
+  <p><%= f.text_field :customer_email %></p>
+  <p><%= f.label "Phone Number" %></p>
+  <p><%= f.text_field :customer_phone %></p>
+  <p><%= f.label "Start Date" %></p>
+  <p><%= f.text_field :start_date %></p>
+  <p><%= f.label "End Date" %></p>
+  <p><%= f.text_field :end_date %></p>
+  <p><%= f.label :comments %></p>
+  <p><%= f.text_field :comments %></p>
+  <p><%= f.submit %></p>
 <% end %>

@@ -1,7 +1,8 @@
 class RequestsController < ApplicationController
 
   def new
-    @site = Site.find(params[:site_id])
+
+    @site = Site.find_by_id(session[:current_site_id])
     @request = Request.new
   end
 
