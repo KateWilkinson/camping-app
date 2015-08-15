@@ -1,0 +1,47 @@
+class AddDetailsToSites < ActiveRecord::Migration
+  def change
+    add_column :sites, :summary, :string
+    add_column :sites, :accommodation_type, :string
+    add_column :sites, :occupancy, :integer
+    add_column :sites, :street, :string
+    add_column :sites, :county, :string
+    add_column :sites, :available_from, :string
+    add_column :sites, :available_to, :string
+    add_column :sites, :shared_toilets, :boolean
+    add_column :sites, :private_toilets, :boolean
+    add_column :sites, :shared_shower, :boolean
+    add_column :sites, :private_shower, :boolean
+    add_column :sites, :restaurant, :boolean
+    add_column :sites, :shop, :boolean
+    add_column :sites, :kitchen, :boolean
+    add_column :sites, :electricity, :boolean
+    add_column :sites, :parking, :boolean
+    add_column :sites, :handicap_access, :boolean
+    add_column :sites, :wifi, :boolean
+    add_column :sites, :pets, :boolean
+    add_column :sites, :family, :boolean
+    add_column :sites, :adults, :boolean
+    add_column :sites, :supermarket, :boolean
+    add_column :sites, :eco, :boolean
+    add_column :sites, :campfire, :boolean
+    add_column :sites, :bbq, :boolean
+    add_column :sites, :budget, :boolean
+    add_column :sites, :backpacker, :boolean
+    add_column :sites, :forest, :boolean
+    add_column :sites, :lake, :boolean
+    add_column :sites, :mountain, :boolean
+    add_column :sites, :peaceful, :boolean
+    add_column :sites, :remote, :boolean
+    add_column :sites, :scenic, :boolean
+    add_column :sites, :walking, :boolean
+    add_column :sites, :wildlife, :boolean
+    add_column :sites, :canoeing, :boolean
+    add_column :sites, :climbing, :boolean
+    add_column :sites, :cycling, :boolean
+    add_column :sites, :cycle_hire, :boolean
+    add_column :sites, :horseriding, :boolean
+    add_column :sites, :sailing, :boolean
+    add_column :sites, :watersports, :boolean
+    add_column :sites, :pub, :boolean
+  end
+end

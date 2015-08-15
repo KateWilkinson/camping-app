@@ -4,7 +4,6 @@ module Helpers
     click_link('List a new site')
     fill_in 'Name', with: 'ABC Camping'
     fill_in 'Town', with: 'Canterbury'
-    fill_in 'Address', with: '123 Old Road'
     fill_in 'Postcode', with: 'NP5 9XY'
     fill_in 'Price', with: 40
     fill_in 'Description', with: 'This is a campsite'
