@@ -21,9 +21,8 @@ class SitesController < ApplicationController
     end
   end
 
-
   def site_params
-    params.require(:site).permit(:name, :town, :county, :street, :postcode, :price, :description, :image, :image_2, :image_3, :image_4, :image_5, :image_6)
+    params.require(:site).permit(:name, :street, :town, :county, :postcode, :description, :summary, :price, :accommodation_type, :occupancy, :available_from, :available_to, :image, :image_2, :image_3, :image_4, :image_5, :image_6, :shared_toilets, :private_toilets, :shared_shower, :private_shower, :restaurant, :shop, :kitchen, :electricity, :parking,  )
   end
 
   def edit

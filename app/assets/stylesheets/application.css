@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.no-facility {
+  text-decoration: line-through;
+  color: #545454;
+}

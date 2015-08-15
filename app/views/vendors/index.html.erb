@@ -4,8 +4,51 @@
 
   <% @sites.each do |site| %>
     <% if site.vendor_id == current_vendor.id %>
-        <h3> <%= site.name %> </h3>
-        <%= image_tag site.image.url(:large) %>
+        <%= site.name %>
+        <%= site.description %>
+        <%= site.summary %>
+        <%= site.street %>
+        <%= site.town %>
+        <%= site.county %>
+        <%= site.postcode %>
+        <%= site.price %>
+        <%= site.accommodation_type %>
+
+        <% if site.shared_toilets == true %>
+          <span class="has-facility">
+            Shared toilets
+          </span>
+        <% else %>
+          <span class="no-facility">
+            Shared toilets
+          </span>
+        <% end %>
+
+        <% if site.private_shower == true %>
+          <span class="has-facility">
+            Private showers
+          </span>
+        <% else %>
+          <span class="no-facility">
+            Private showers
+          </span>
+        <% end %>
+
+        <% if site.electricity == true %>
+          <span class="has-facility">
+            Charging facilities
+          </span>
+        <% else %>
+          <span class="no-facility">
+            Charging facilities
+          </span>
+        <% end %>
+
+        <%= site.occupancy %>
+        <%= site.available_from %> to <%= site.available_to %>
+
+        <%= image_tag site.image.url(:thumb) %>
+        <%= image_tag site.image_2.url(:thumb) %>
         <%= link_to "Edit Site", edit_site_path(site) %>
         <%= link_to "Delete Site", site_path(site), method: :delete %>
     <% end %>

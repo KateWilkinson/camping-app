@@ -75,7 +75,8 @@ class Site < ActiveRecord::Base
                       },
                     },
                     :default_url => "",
-                    :path => "#{Rails.root}/public/system/:class/image_3s/:id_partition/:style/:basename.:extension",
+                    :url => "/system/sites/images/:id/:style/:filename",
+                    :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
                     :storage => :filesystem
 
   has_attached_file :image_4,
@@ -100,7 +101,8 @@ class Site < ActiveRecord::Base
                       },
                     },
                     :default_url => "",
-                    :path => "#{Rails.root}/public/system/:class/image_4s/:id_partition/:style/:basename.:extension",
+                    :url => "/system/sites/images/:id/:style/:filename",
+                    :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
                     :storage => :filesystem
 
   has_attached_file :image_5,
@@ -125,7 +127,8 @@ class Site < ActiveRecord::Base
                       },
                     },
                     :default_url => "",
-                    :path => "#{Rails.root}/public/system/:class/image_5s/:id_partition/:style/:basename.:extension",
+                    :url => "/system/sites/images/:id/:style/:filename",
+                    :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
                     :storage => :filesystem
 
   has_attached_file :image_6,
@@ -150,7 +153,8 @@ class Site < ActiveRecord::Base
                       },
                     },
                     :default_url => "",
-                    :path => "#{Rails.root}/public/system/:class/image_6s/:id_partition/:style/:basename.:extension",
+                    :url => "/system/sites/images/:id/:style/:filename",
+                    :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
                     :storage => :filesystem
 
   validates_attachment_content_type :image,

@@ -18,6 +18,8 @@ group :test do
     gem 'capybara'
     gem 'shoulda'
     gem 'rspec-collection_matchers'
+    gem 'launchy', '~> 2.4.3'
+    gem 'database_cleaner'
 end
 
 

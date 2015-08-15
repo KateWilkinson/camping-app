@@ -18,11 +18,20 @@
   <%= f.text_field :postcode %>
   <%= f.label :price %>
   <%= f.text_field :price %>
-  <%= f.label :description %>
+  <%= f.label 'Full description' %>
   <%= f.text_field :description %>
+  <%= f.label 'Short description' %>
+  <%= f.text_field :summary %>
+  <%= f.select :accommodation_type, ['Campervan', 'Treehouse', 'Yurt', 'Canal boat', 'Cabin', 'Pod', 'Tent', 'Pitch only', 'Shepherd hut', 'Other' ]%>
   <%= f.label :image %>
   <%= f.file_field :image %>
   <%= f.label :image_2 %>
   <%= f.file_field :image_2 %>
+  <%= f.check_box(:shared_toilets) %>
+  <%= f.label(:shared_toilets, "Shared toilets") %>
+  <%= f.check_box(:electricity) %>
+  <%= f.label(:electricity, "Charging facilities available?") %>
+  <%= f.check_box(:private_shower) %>
+  <%= f.label(:private_shower, "Private shower") %>
   <%= f.submit %>
 <% end %>
