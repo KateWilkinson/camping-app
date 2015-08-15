@@ -28,4 +28,12 @@ module Helpers
     click_button('Sign up')
   end
 
+  def request_booking
+    fill_in 'request_customer_name', with: 'Lucy'
+    fill_in 'request_customer_email', with: 'hello@mail.com'
+    fill_in 'request_customer_phone', with: '071234567'
+    fill_in 'request_start_date', with: '03/05/2015'
+    fill_in 'request_end_date', with: '09/05/2015'
+    fill_in 'request_comments', with: 'Pets allowed?'
+  end
 end

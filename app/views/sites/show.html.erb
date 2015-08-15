@@ -5,4 +5,4 @@
 <%= image_tag @site.image_2.url(:thumb) %>
 
 
-<button>Book</button>
+<%= button_to "Book", new_request_path, :method => "get" %>
