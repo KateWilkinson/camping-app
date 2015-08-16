@@ -115,7 +115,7 @@ Short description:
 Availability:
 Nearby leisure:
 
-Caravan
+Camper Van
 
 Image 1:
 Image 2:
@@ -132,7 +132,6 @@ Number of people:
 Name:
 Facilities:
 Description:
-Short description:
 Availability:
 Nearby leisure:
 
