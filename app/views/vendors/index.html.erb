@@ -106,7 +106,21 @@
 
         <%= link_to "Edit Site", edit_site_path(site) %>
         <%= link_to "Delete Site", site_path(site), method: :delete %>
-        <p> No current requests </p>
+          <h4> Requests for <%= site.name %></h4>
+            <% if site.requests.any? %>
+              <ul>
+                <% site.requests.each do |request| %>
+                  <br>
+                  <p><strong>Customers name: <%= request.customer_name %></strong></p>
+                  <p>Email: <%= request.customer_email %><p>
+                  </p>Phone number: <%= request.customer_phone %></p>
+                  <p>Dates: <%= request.start_date %> till <%= request.end_date %> </p>
+                  <p>Comments: <%= request.comments %></p>
+              <% end %>
+            </ul>
+          <% else %>
+            <p> No Requests made. </p>
+          <% end %>
     <% end %>
   <% end %>
 <% else %>
