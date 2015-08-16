@@ -7,7 +7,6 @@ class SitesController < ApplicationController
   def show
     @site = Site.find(params[:id])
     session[:current_site_id] = @site.id
-
   end
 
   def new
