@@ -4,7 +4,7 @@ feature 'requests' do
   context 'when a potential customer' do
     before do
       sign_up_as_vendor
-      create_site
+      create_full_site
     end
 
     scenario 'clicks on Book button, they are taken to Contact page' do
@@ -27,7 +27,6 @@ feature 'requests' do
       click_link 'ABC Camping'
       click_button 'Book'
       request_booking
-      click_button 'Create Request'
       expect(current_path).to eq '/'
       expect(page).to have_content 'Thank you. Your request has been made.'
     end
