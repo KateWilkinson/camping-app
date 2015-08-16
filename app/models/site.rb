@@ -5,22 +5,19 @@ class Site < ActiveRecord::Base
   has_attached_file :image,
                     :styles => {
                       :large => {
-                        :geometry => '500x500#',
+                        :geometry => '1000x1000#',
                         :format => 'jpg',
                         :quality => 95,
-                        :convert_options => '-colorspace Gray'
                       },
                       :medium => {
-                        :geometry => '250x250#',
+                        :geometry => '400x400#',
                         :format => 'jpg',
                         :quality => 75,
-                        :convert_options => '-colorspace Gray'
                       },
                       :thumb => {
                         :geometry => '100x100#',
                         :format => 'jpg',
                         :quality => 40,
-                        :convert_options => '-colorspace Gray'
                       },
                     },
                     :default_url => "",
@@ -29,130 +26,115 @@ class Site < ActiveRecord::Base
                     :storage => :filesystem
 
   has_attached_file :image_2,
-                    :styles => {
-                      :large => {
-                        :geometry => '500x500#',
-                        :format => 'jpg',
-                        :quality => 95,
-                        :convert_options => '-colorspace Gray'
+                      :styles => {
+                        :large => {
+                          :geometry => '1000x1000#',
+                          :format => 'jpg',
+                          :quality => 95,
+                        },
+                        :medium => {
+                          :geometry => '400x400#',
+                          :format => 'jpg',
+                          :quality => 75,
+                        },
+                        :thumb => {
+                          :geometry => '100x100#',
+                          :format => 'jpg',
+                          :quality => 40,
+                        },
                       },
-                      :medium => {
-                        :geometry => '250x250#',
-                        :format => 'jpg',
-                        :quality => 75,
-                        :convert_options => '-colorspace Gray'
-                      },
-                      :thumb => {
-                        :geometry => '100x100#',
-                        :format => 'jpg',
-                        :quality => 40,
-                        :convert_options => '-colorspace Gray'
-                      },
-                    },
                     :default_url => "",
                     :url => "/system/sites/images/:id/:style/:filename",
                     :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
                     :storage => :filesystem
 
   has_attached_file :image_3,
-                    :styles => {
-                      :large => {
-                        :geometry => '500x500#',
-                        :format => 'jpg',
-                        :quality => 95,
-                        :convert_options => '-colorspace Gray'
+                      :styles => {
+                        :large => {
+                          :geometry => '1000x1000#',
+                          :format => 'jpg',
+                          :quality => 95,
+                        },
+                        :medium => {
+                          :geometry => '400x400#',
+                          :format => 'jpg',
+                          :quality => 75,
+                        },
+                        :thumb => {
+                          :geometry => '100x100#',
+                          :format => 'jpg',
+                          :quality => 40,
+                        },
                       },
-                      :medium => {
-                        :geometry => '250x250#',
-                        :format => 'jpg',
-                        :quality => 75,
-                        :convert_options => '-colorspace Gray'
-                      },
-                      :thumb => {
-                        :geometry => '100x100#',
-                        :format => 'jpg',
-                        :quality => 40,
-                        :convert_options => '-colorspace Gray'
-                      },
-                    },
                     :default_url => "",
                     :url => "/system/sites/images/:id/:style/:filename",
                     :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
                     :storage => :filesystem
 
   has_attached_file :image_4,
-                    :styles => {
-                      :large => {
-                        :geometry => '500x500#',
-                        :format => 'jpg',
-                        :quality => 95,
-                        :convert_options => '-colorspace Gray'
+                      :styles => {
+                        :large => {
+                          :geometry => '1000x1000#',
+                          :format => 'jpg',
+                          :quality => 95,
+                        },
+                        :medium => {
+                          :geometry => '400x400#',
+                          :format => 'jpg',
+                          :quality => 75,
+                        },
+                        :thumb => {
+                          :geometry => '100x100#',
+                          :format => 'jpg',
+                          :quality => 40,
+                        },
                       },
-                      :medium => {
-                        :geometry => '250x250#',
-                        :format => 'jpg',
-                        :quality => 75,
-                        :convert_options => '-colorspace Gray'
-                      },
-                      :thumb => {
-                        :geometry => '100x100#',
-                        :format => 'jpg',
-                        :quality => 40,
-                        :convert_options => '-colorspace Gray'
-                      },
-                    },
                     :default_url => "",
                     :url => "/system/sites/images/:id/:style/:filename",
                     :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
                     :storage => :filesystem
 
   has_attached_file :image_5,
-                    :styles => {
-                      :large => {
-                        :geometry => '500x500#',
-                        :format => 'jpg',
-                        :quality => 95,
-                        :convert_options => '-colorspace Gray'
+                      :styles => {
+                        :large => {
+                          :geometry => '1000x1000#',
+                          :format => 'jpg',
+                          :quality => 95,
+                        },
+                        :medium => {
+                          :geometry => '400x400#',
+                          :format => 'jpg',
+                          :quality => 75,
+                        },
+                        :thumb => {
+                          :geometry => '100x100#',
+                          :format => 'jpg',
+                          :quality => 40,
+                        },
                       },
-                      :medium => {
-                        :geometry => '250x250#',
-                        :format => 'jpg',
-                        :quality => 75,
-                        :convert_options => '-colorspace Gray'
-                      },
-                      :thumb => {
-                        :geometry => '100x100#',
-                        :format => 'jpg',
-                        :quality => 40,
-                        :convert_options => '-colorspace Gray'
-                      },
-                    },
                     :default_url => "",
                     :url => "/system/sites/images/:id/:style/:filename",
                     :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
                     :storage => :filesystem
 
   has_attached_file :image_6,
-                    :styles => {
-                      :large => {
-                        :geometry => '500x500#',
-                        :format => 'jpg',
-                        :quality => 95,
-                        :convert_options => '-colorspace Gray'
+                      :styles => {
+                        :large => {
+                          :geometry => '1000x1000#',
+                          :format => 'jpg',
+                          :quality => 95,
+                        },
+                        :medium => {
+                          :geometry => '400x400#',
+                          :format => 'jpg',
+                          :quality => 75,
+                        },
+                        :thumb => {
+                          :geometry => '100x100#',
+                          :format => 'jpg',
+                          :quality => 40,
+                        },
                       },
-                      :medium => {
-                        :geometry => '250x250#',
-                        :format => 'jpg',
-                        :quality => 75,
-                        :convert_options => '-colorspace Gray'
-                      },
-                      :thumb => {
-                        :geometry => '100x100#',
-                        :format => 'jpg',
-                        :quality => 40,
-                        :convert_options => '-colorspace Gray'
-                      },
-                    },
                     :default_url => "",
                     :url => "/system/sites/images/:id/:style/:filename",
                     :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
