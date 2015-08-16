@@ -5,20 +5,22 @@
   <% @sites.each do |site| %>
     <% if site.vendor_id == current_vendor.id %>
         <%= site.name %>
-
         <%= site.description %>
         <%= site.summary %>
-
         <%= site.street %>
         <%= site.town %>
         <%= site.county %>
         <%= site.postcode %>
-
         £<%= site.price %>
         <%= site.occupancy %> people per <%= site.accommodation_type %>
-
         <%= site.available_from %> to <%= site.available_to %>
 
+        <%= image_tag site.image.url(:thumb) %>
+        <%= image_tag site.image_2.url(:thumb) %>
+        <%= image_tag site.image_3.url(:thumb) %>
+        <%= image_tag site.image_4.url(:thumb) %>
+        <%= image_tag site.image_5.url(:thumb) %>
+        <%= image_tag site.image_6.url(:thumb) %>
 
         <% if site.shared_toilets == true %>
           <span class="has-facility">
@@ -27,6 +29,26 @@
         <% else %>
           <span class="no-facility">
             Shared toilets
+          </span>
+        <% end %>
+
+        <% if site.private_toilets == true %>
+          <span class="has-facility">
+            Private toilets
+          </span>
+        <% else %>
+          <span class="no-facility">
+            Private toilets
+          </span>
+        <% end %>
+
+        <% if site.shared_shower == true %>
+          <span class="has-facility">
+            Shared showers
+          </span>
+        <% else %>
+          <span class="no-facility">
+            Shared showers
           </span>
         <% end %>
 
@@ -40,6 +62,36 @@
           </span>
         <% end %>
 
+        <% if site.restaurant == true %>
+          <span class="has-facility">
+            On-site restaurant
+          </span>
+        <% else %>
+          <span class="no-facility">
+            On-site restaurant
+          </span>
+        <% end %>
+
+        <% if site.shop == true %>
+          <span class="has-facility">
+            On-site shop
+          </span>
+        <% else %>
+          <span class="no-facility">
+            On-site shop
+          </span>
+        <% end %>
+
+        <% if site.kitchen == true %>
+          <span class="has-facility">
+            Kitchen area
+          </span>
+        <% else %>
+          <span class="no-facility">
+            Kitchen area
+          </span>
+        <% end %>
+
         <% if site.electricity == true %>
           <span class="has-facility">
             Charging facilities
@@ -50,9 +102,8 @@
           </span>
         <% end %>
 
+        <!-- TODO list all amenties/facilities as per the above - serious spaghetti code to come - must be a better way to do this? -->
 
-        <%= image_tag site.image.url(:thumb) %>
-        <%= image_tag site.image_2.url(:thumb) %>
         <%= link_to "Edit Site", edit_site_path(site) %>
         <%= link_to "Delete Site", site_path(site), method: :delete %>
         <p> No current requests </p>
