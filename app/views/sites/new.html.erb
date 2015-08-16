@@ -60,15 +60,18 @@
         </div>
 
         <div class="form-group">
-          <%= f.label "Open/Available", class: "custom-label" %>
-          <%= f.text_field :available_from, autofocus: true, class: "custom-input", placeholder: "Available from (Month)" %>
-          <%= f.text_field :available_to, autofocus: true, class: "custom-input", placeholder: "Available to (Month)" %>
+          <%= f.label "Annual open dates:", class: "custom-label" %><br />
+            <%= f.text_field :available_from, autofocus: true, class: "form-control custom-input", placeholder: "Month" %>
+            <%= f.text_field :available_to, autofocus: true, class: "form-control custom-input", placeholder: "Month" %>
         </div>
 
-          <%= f.label :image %>
+        <div class="form-group">
+          <p>Upload images</p>
+          <!-- <%= f.label :image %> -->
           <%= f.file_field :image %>
-          <%= f.label :image_2 %>
+          <!-- <%= f.label :image_2 %> -->
           <%= f.file_field :image_2 %>
+        </div>
 
           <legend>Select the facilities available:</legend>
           <div class="form-group">
@@ -78,12 +81,107 @@
             <%= f.label(:shared_shower, "Private shower") %>
             <%= f.check_box(:private_shower) %>
             <%= f.label(:private_shower, "Private shower") %>
+          </div>
+
+          <div class="form-group">
+            <%= f.check_box(:restaurant) %>
+            <%= f.label(:restaurant, "On-site restaurant") %>
+            <%= f.check_box(:shop) %>
+            <%= f.label(:shop, "On-site shop") %>
+            <%= f.check_box(:kitchen) %>
+            <%= f.label(:kitchen, "Kitchen") %>
+          </div>
+
+          <div class="form-group">
             <%= f.check_box(:electricity) %>
-            <%= f.label(:electricity, "Charging facilities available?") %>
+            <%= f.label(:electricity, "Charging facilities") %>
+            <%= f.check_box(:parking) %>
+            <%= f.label(:parking, "On-site parking") %>
+            <%= f.check_box(:handicap_access) %>
+            <%= f.label(:handicap_access, "Handicap access") %>
+          </div>
+
+          <div class="form-group">
+            <%= f.check_box(:wifi) %>
+            <%= f.label(:wifi, "Wifi") %>
+            <%= f.check_box(:eco) %>
+            <%= f.label(:eco, "Recycling available") %>
+            <%= f.check_box(:cycle_hire) %>
+            <%= f.label(:cycle_hire, "Bike hire available") %>
+          </div>
+
+          <legend>Select the appropriate rules/policies:</legend>
+          <div class="form-group">
+            <%= f.check_box(:pets) %>
+            <%= f.label(:pets, "Pets welcome") %>
+            <%= f.check_box(:family) %>
+            <%= f.label(:family, "Family-friendly") %>
+            <%= f.check_box(:adults) %>
+            <%= f.label(:adults, "Adults only") %>
+          </div>
+
+          <div class="form-group">
+            <%= f.check_box(:campfire) %>
+            <%= f.label(:campfire, "Campfires permitted") %>
+            <%= f.check_box(:bbq) %>
+            <%= f.label(:bbq, "BBQs permitted") %>
+          </div>
+
+          <legend>Select themes:</legend>
+          <div class="form-group">
+            <%= f.check_box(:budget) %>
+            <%= f.label(:budget, "Budget") %>
+            <%= f.check_box(:backpacker) %>
+            <%= f.label(:backpacker, "Backpacker") %>
+            <%= f.check_box(:forest) %>
+            <%= f.label(:forest, "Forest") %>
+          </div>
+
+          <div class="form-group">
+            <%= f.check_box(:lake) %>
+            <%= f.label(:lake, "Lake") %>
+            <%= f.check_box(:mountain) %>
+            <%= f.label(:mountain, "Mountain") %>
+            <%= f.check_box(:peaceful) %>
+            <%= f.label(:peaceful, "Peaceful") %>
+          </div>
+
+          <div class="form-group">
+            <%= f.check_box(:remote) %>
+            <%= f.label(:remote, "Remote") %>
+            <%= f.check_box(:scenic) %>
+            <%= f.label(:scenic, "Scenic") %>
+            <%= f.check_box(:walking) %>
+            <%= f.label(:walking, "Good for walkers") %>
+          </div>
+
+          <div class="form-group">
+            <%= f.check_box(:wildlife) %>
+            <%= f.label(:wildlife, "Wildlife haven") %>
+          </div>
+
+          <legend>Select leisure facilities nearby:</legend>
+          <div class="form-group">
+            <%= f.check_box(:canoeing) %>
+            <%= f.label(:canoeing, "Canoeing nearby") %>
+            <%= f.check_box(:climbing) %>
+            <%= f.label(:climbing, "Climbing nearby") %>
+            <%= f.check_box(:horseriding) %>
+            <%= f.label(:horseriding, "Horseriding nearby") %>
+          </div>
+
+          <div class="form-group">
+            <%= f.check_box(:sailing) %>
+            <%= f.label(:sailing, "Sailing nearby") %>
+            <%= f.check_box(:watersports) %>
+            <%= f.label(:watersports, "Watersports nearby") %>
+            <%= f.check_box(:pub) %>
+            <%= f.label(:pub, "Pub nearby") %>
           </div>
 
 
-          <%= f.submit %>
+            <%= f.submit %>
+
       <% end %>
 
     </div>
