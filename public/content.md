@@ -94,127 +94,102 @@ Short description: Barge holidays in England provide a great opportunity to disc
 Availability: Year round
 Nearby leisure: N/A
 
-Tent
+Caravan
 
-Image 1:
-Image 2:
-Image 3:
-Image 4:
+Image 1: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/devon/swallows-flight/the-airstream-at-swallows-flight/the-airstream-at-swallow-s-flight-gallery/airstream-in-restored-court/7372014-1-eng-GB/airstream-in-restored-court_cs_gallery_preview.jpg
+Image 2: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/devon/swallows-flight/the-airstream-at-swallows-flight/the-airstream-at-swallow-s-flight-gallery/table-in-airstream/7371950-1-eng-GB/table-in-airstream_cs_gallery_preview.jpg
+Image 3: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/devon/swallows-flight/the-airstream-at-swallows-flight/the-airstream-at-swallow-s-flight-gallery/kitchen-in-the-airstream/7371990-1-eng-GB/kitchen-in-the-airstream_cs_gallery_preview.jpg
+Image 4: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/devon/swallows-flight/the-airstream-at-swallows-flight/the-airstream-at-swallow-s-flight-gallery/bunk-bedroom-in-airstream/7371966-1-eng-GB/bunk-bedroom-in-airstream_cs_gallery_preview.jpg
+Image 5: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/devon/swallows-flight/the-airstream-at-swallows-flight/the-airstream-at-swallow-s-flight-gallery/house-airstream-and-granar/7371982-1-eng-GB/house-airstream-and-granar_cs_gallery_preview.jpg
 
-Street:
-Town:
-County:
-Postcode:
+Street: Coleridge Lane
+Town: Chillington
+County: Devon
+Postcode: TQ7 2JG
 
-Price per night:
-Number of people:
-Name:
-Facilities:
-Description:
-Short description:
-Availability:
-Nearby leisure:
+Price per night: £83
+Number of people: 6
+Name: Swallows Flight
+Facilities: Kitchen, private bathroom, private shower, electricity, heating,
+Description: A gleaming carapace with an authentically-restored interior: this Airstream has been from Cornwall to the Cotswolds with Lucia, Dan and their four children, and might just have picked the most beautiful spot in England to finally settle down. Framed by ancient walls, it's set in the sheltered courtyard of a family home, where the graceful gardens are yours to explore: monkey puzzle trees as old as the farmhouse, an outdoor breakfast spot overlooking the fields, and a wooden Victorian conservatory with kiwis and apricots, all restored to perfection by your hosts over years of loving care. Children can run free, there's beach kit to borrow, and a campfire spot down in the woods by the stream for adventurers.
 
-Camper Van
+Inside, everything is characteristically streamlined and practical. Gas hobs, a tiny sink, a cupboard-sized camping loo and a shower head are all done in miniature. The four bunks behind a door at the back might be a squeeze for older children, but the double bed that replaces the table at the other end is big enough for four! Fans of vintage will love the silver bullet look, but your dining room and wet room next door couldn’t be more contemporary; the Granary is shared with the barn upstairs, an open-plan space with Belfast sink and family-size table.
 
-Image 1:
-Image 2:
-Image 3:
-Image 4:
-
-Street:
-Town:
-County:
-Postcode:
-
-Price per night:
-Number of people:
-Name:
-Facilities:
-Description:
-Availability:
-Nearby leisure:
+The honesty freezer of Salcombe Dairy (which Dan runs) is brimming with delicious ice cream. Food of all kinds is important at Old Coleridge Farm, and your hosts can point you towards some of the finest seafood in the South West. Miles of coast to walk, shade-dappled creeks to paddle, and beaches to bring your bucket and spade to - the surrounding countryside is so idyllic you won't want to leave.
+Short description: Play croquet on the lawn or relax in the hot tub set in a Victorian water tower in the courtyard with views to Star Point!
+Availability: Year round
+Nearby leisure: beach
 
 Treehouse
 
-Image 1:
-Image 2:
-Image 3:
-Image 4:
+Image 1: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/devon/deer-park-country-house-hotel/treehouse-at-deer-park/treehouse-at-deer-park-gallery/deerpark_treehouse/79842541-1-eng-GB/deerpark_treehouse_cs_gallery_preview.jpg
+Image 2: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/devon/deer-park-country-house-hotel/treehouse-at-deer-park/treehouse-at-deer-park-gallery/deer_park_bath/79840963-1-eng-GB/deer_park_bath_cs_gallery_preview.jpg
+Image 3: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/devon/deer-park-country-house-hotel/treehouse-at-deer-park/treehouse-at-deer-park-gallery/deerpark_living/79840979-1-eng-GB/deerpark_living_cs_gallery_preview.jpg
+Image 4: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/devon/deer-park-country-house-hotel/treehouse-at-deer-park/treehouse-at-deer-park-gallery/deer_park_balcony/79840983-1-eng-GB/deer_park_balcony_cs_gallery_preview.jpg
+Image 5: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/devon/deer-park-country-house-hotel/treehouse-at-deer-park/treehouse-at-deer-park-gallery/deer_park/79841309-1-eng-GB/deer_park_cs_gallery_preview.jpg
 
-Street:
-Town:
-County:
-Postcode:
+Street: Deer Park Drive
+Town: Weston
+County: Devon
+Postcode: EX14 3PG
 
-Price per night:
-Number of people:
-Name:
-Facilities:
-Description:
-Short description:
-Availability:
-Nearby leisure:
+Price per night: £650
+Number of people: 2
+Name: Deer Park
+Facilities: Private shower, private toilet, restaurant onsite, heating, electricity,
+Description: Climb a spiral staircase, up into the oak trees of a Georgian manor house, and sleep under a canopy of thatched turrets. Inside your love nest, you can lounge on the sofa by the woodburner or cosy up in the huge bed. And then there's the bathroom (oh the bathroom!). Choose between sinking deep into the roll top tub, glass of bubbles in hand, or soaking under the rain shower. Step onto the balcony and look out over the gardens and across the River Otter Valley. There'll be champagne on ice waiting for you, whilst you make up your mind about which activity to do: 4x4 off-roading, fly fishing, archery or a half-hour in-room spa treatment are all on offer, the choice is yours!
 
-Simple Pitch
+Explore the hotel and its Italian renaissance-style gardens, have evening drinks on the swinging bench, play croquet on the lawn or wander around the kitchen garden where you might spot a chef or two plucking herbs and vegetables for the restaurant - which you'll get to tuck into later! After your three course dinner, take a winding midnight stroll back to your treehouse, curl up and watch the logs crackle on the fire.
+Short description: More pamper than glamper, leave time to absorb the view, appreciate the grounds and outdoor chill out space, enjoy the champagne, unwind in the bath and devour a delectable dinner.
+Availability: Year round.
+Nearby leisure: fly fishing, archery, off-roading, spa
 
-Image 1:
-Image 2:
-Image 3:
-Image 4:
+Tent
 
-Street:
-Town:
-County:
-Postcode:
+Image 1: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/devon/leewood/the-nest/the-nest-gallery/the-nest-leewood_kitchen-equipment/4267469-1-eng-GB/the-nest-leewood_kitchen-equipment_cs_gallery_preview.jpg
+Image 2: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/devon/leewood/nest-at-leewood/the-nest-gallery/nest-at-leewood_exterior-and-sheep/5588800-2-eng-GB/nest-at-leewood_exterior-and-sheep_cs_gallery_preview.jpg
+Image 3: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/devon/leewood/nest-at-leewood/the-nest-gallery/nest-at-leewood_full-exterior/4302834-1-eng-GB/nest-at-leewood_full-exterior_cs_gallery_preview.jpg
+Image 4: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/devon/leewood/nest-at-leewood/the-nest-gallery/nest-at-leewood_kingsize-bed/5674120-1-eng-GB/nest-at-leewood_kingsize-bed_cs_gallery_preview.jpg
+Image 5: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/devon/leewood/nest-at-leewood/the-nest-gallery/nest-at-leewood_entrance-in-sunlight/5588796-2-eng-GB/nest-at-leewood_entrance-in-sunlight_cs_gallery_preview.jpg
 
-Price per night:
-Number of people:
-Name:
-Facilities:
-Description:
-Short description:
-Availability:
-Nearby leisure:
+Street: Leewood, Huckworthy Bridge
+Town: Yelverton
+County: Devon
+Postcode: PL20 6LP
 
-Other
+Price per night: £97
+Number of people: 2
+Name: Nest
+Facilities: fire pit, private toilet, private shower,
+Description: Follow the river down from the medieval bridge at Huckworthy and youʼll find Nest, appropriately nestled into the bottom of a steep wooded hillside, south-facing and sheltered in its own private field. Nest is Nick's newest space at Leewood, and it’s a magnificent mix of art installation, twigs and tapestry.
 
-Image 1:
-Image 2:
-Image 3:
-Image 4:
+The main space is a well-insulated tent filled with treasures and history - it's adorned with a collection of antique furniture and authentic woven tapestries (one of which dates back to the 17th century), and the super king-sized bed inside comes with a sumptuous vintage silk canopy. Sheepskins and a large wood burning stove allow you to keep your space cosy just as your ancestors would have; of course, this all predates electricity so the camp is off-grid as you'd expect.
 
-Street:
-Town:
-County:
-Postcode:
-
-Price per night:
-Number of people:
-Name:
-Facilities:
-Description:
-Short description:
-Availability:
-Nearby leisure:
+Outside you have a fire pit for some cast iron camp fire cooking as well as an outdoor 'living willow' kitchen hidden away in the woods, while the tin bath and carefully camouflaged compost loo mean there’s no need to go far at night - even the most demanding owl would be happy to call this nest its home!
+Short description: An eclectic selection of period pieces and ancient wall hangings give this hand-built tent a positively renaissance feel.
+Availability: Year round
+Nearby leisure: fishing, walking, pubs, free wifi
 
 Pod
 
-Image 1:
-Image 2:
-Image 3:
-Image 4:
+Image 1: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/sussex/glottenham-castle/de-glottyngham/de-glottyngham-gallery/_jenny-hardy-large-0832/1685971-1-eng-GB/_jenny-hardy-large-0832_cs_gallery_preview.jpg
+Image 2: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/sussex/glottenham-castle/de-glottyngham/de-glottyngham-gallery/_jenny-hardy-large-0815/1685963-1-eng-GB/_jenny-hardy-large-0815_cs_gallery_preview.jpg
+Image 3: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/sussex/glottenham-castle/de-glottyngham/de-glottyngham-gallery/_jenny-hardy-large-0880/1686003-1-eng-GB/_jenny-hardy-large-0880_cs_gallery_preview.jpg
+Image 4: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/sussex/glottenham-castle/de-glottyngham/de-glottyngham-gallery/_jenny-hardy-large-0765/1685975-1-eng-GB/_jenny-hardy-large-0765_cs_gallery_preview.jpg
+Image 5: http://www.canopyandstars.co.uk/var/self_catering_site/storage/images/canopy-and-stars/britain/england/sussex/glottenham-castle/de-glottyngham/de-glottyngham-gallery/lake-at-glottenham-farm/985760-1-eng-GB/lake-at-glottenham-farm_cs_gallery_preview.jpg
 
-Street:
-Town:
-County:
-Postcode:
+Street: Bishops Lane
+Town: Robertsbridge
+County: Sussex
+Postcode: TN32 5EB
 
-Price per night:
-Number of people:
-Name:
-Facilities:
-Description:
-Short description:
-Availability:
-Nearby leisure:
+Price per night: £94
+Number of people: 4
+Name: Glottenham Farm
+Facilities: shared toilet, kitchen, shared shower, eco friendly
+Description: A curious pod under the trees, de Glottyngham’s handmade furniture and rustic sheepskin rugs make it a wonderful place to hide away from the outside world. Handloomed linen throws, merino fleece wool bedcovers and quirky cushions are scattered about; the wood burner keeps you cosy. Your own outdoor kitchen is just outside, and a hundred yards away there’s a social yurt for chatting and board games, a pair of compost loos, and 3 hot safari showers shared with the other camps.
+
+The dome itself is in a sunny glade below the site of the ancient castle, which now sleeps under the mound, though the moat is still visible. More recently Glottenham has gone from traditional hop production to a Higher Level Stewardship farm, with wetland, woodland and wildflower meadow habitats, organic livestock and an encouraging tendency to work with rather than against nature. It’s full of history: the Romans made charcoal here, and Christina Rossetti enthused over “the greenness and flowers to refresh our London eyes, and a small population of beasts and birds around us” when she stayed. Children and adults can join in the life of the farm and its animals, or just enjoy the peace, pubs and interesting corners of sleepy Sussex.
+Short description: Nest happily among warm sheepskins and cushions, in a geodesic dome in the woods.
+Availability: Year round
+Nearby leisure: restaurants, supermarket, places of historical interest
