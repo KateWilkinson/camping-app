@@ -51,12 +51,22 @@ module Helpers
   end
 
   def request_booking
+    visit '/'
+    click_link 'ABC Camping'
+    click_button 'Book'
     fill_in 'request_customer_name', with: 'Lucy'
     fill_in 'request_customer_email', with: 'hello@mail.com'
     fill_in 'request_customer_phone', with: '071234567'
     fill_in 'request_start_date', with: '03/05/2015'
     fill_in 'request_end_date', with: '09/05/2015'
     fill_in 'request_comments', with: 'Pets allowed?'
+    click_button 'Create Request'
   end
 
+  def log_in_as_vendor
+    click_link 'Log In'
+    fill_in('Email', with: 'test@example.com')
+    fill_in('Password', with: 'testtest')
+    click_button 'Log in'
+  end
 end

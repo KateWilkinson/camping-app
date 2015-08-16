@@ -6,7 +6,7 @@ RSpec.configure do |c|
 end
 
 feature 'A vendor can sign up' do
-  context 'when not signed in' do
+  context 'when not logged in' do
     scenario 'should see a log in link and a sign up link on vendors index' do
       visit('/vendors')
       expect(page).to have_link('Sign Up')
@@ -23,6 +23,16 @@ feature 'A vendor can sign up' do
     scenario 'should not see a sign out link on vendors index' do
       visit('/vendors')
       expect(page).not_to have_link('Log Out')
+    end
+
+    scenario 'should not see any sites' do
+      visit '/vendors'
+      expect(page).not_to have_content 'Edit Site'
+    end
+
+    scenario 'should not see any requests' do
+      visit '/vendors'
+      expect(page).not_to have_content 'requests'
     end
   end
 
@@ -224,7 +234,18 @@ feature 'When on the homepage' do
       sign_up_as_vendor
       create_site
       expect(current_path).to eq '/vendors'
-      expect(page).to have_content 'No current requests'
+      expect(page).to have_content ' No Requests made.'
+    end
+
+    it 'if a request has been made' do
+      sign_up_as_vendor
+      create_full_site
+      click_link 'Log Out'
+      request_booking
+      visit '/vendors'
+      log_in_as_vendor
+      expect(current_path).to eq '/vendors'
+      expect(page).to have_content 'Requests for ABC Camping'
     end
   end
 end
