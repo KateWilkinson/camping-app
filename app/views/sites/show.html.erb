@@ -1,8 +1,46 @@
 <h1><%= @site.name %></h1>
-<p>Price:  £<%= @site.price %></p>
+
+<p>
+  Images:<br>
+  <%= image_tag @site.image.url(:thumb) %>
+  <%= image_tag @site.image_2.url(:thumb) %>
+  <%= image_tag @site.image_3.url(:thumb) %>
+  <%= image_tag @site.image_4.url(:thumb) %>
+  <%= image_tag @site.image_5.url(:thumb) %>
+</p>
+
+<p>Accommodation Type: <%= @site.accommodation_type %></p>
+<p>Price per night:  £<%= @site.price %></p>
+<p>Max occupancy: <%= @site.occupancy %></p>
+<p>Summary: <%= @site.summary %></p>
 <p>Description:  <%= @site.description %></p>
-<%= image_tag @site.image.url(:thumb) %>
-<%= image_tag @site.image_2.url(:thumb) %>
+
+<p>
+  Address:<br>
+  <%= @site.street %><br>
+  <%= @site.town %><br>
+  <%= @site.county %><br>
+  <%= @site.postcode %><br>
+</p>
+
+<p>
+  Available from <%= @site.available_from %> to <%= @site.available_to %>
+</p>
+
+<div>
+  Facilities: <br>
+  <% @site.attributes.each do |attr_name, attr_value| %>
+    <% if attr_value == true %>
+      <span class="has-facility">
+        <%= attr_name.humanize %><br>
+      </span>
+    <% elsif attr_value == false %>
+      <span class="no-facility">
+        <%= attr_name.humanize %><br>
+      </span>
+    <% end %>
+  <% end %>
+</div>
 
 
 <%= button_to "Book", new_request_path, :method => "get" %>
