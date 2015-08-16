@@ -20,19 +20,15 @@ module Helpers
     fill_in 'site[county]', with: 'Bucks'
     fill_in 'site[postcode]', with: 'HP81BZ'
     fill_in 'site[price]', with: 40
-
     select 'Campervan', from: 'site_accommodation_type'
     fill_in 'site[occupancy]', with: 2
-
     fill_in 'site[available_from]', with: 'March'
     fill_in 'site[available_to]', with: 'October'
-
-    check('site[shared_toilets]')
-    uncheck('site[private_shower]')
-    check('site[electricity]')
     attach_file 'site_image', 'spec/features/test.jpg'
     attach_file 'site_image_2', 'spec/features/test2.jpg'
-
+    check('site[shared_toilets]')
+    uncheck('site[shared_shower]')
+    check('site[electricity]')
     click_button 'Create Site'
   end
 

@@ -164,11 +164,24 @@ feature 'While logged in a vendor can' do
       expect(page).to have_selector("img[src*='test2.jpg']")
     end
 
-    scenario 'should be able to check or uncheck different facilities/amenities' do
-      #TODO - all all familities/entertainment/amenties tests? How to test for this as only checking class at moment
+    scenario 'should be able to check/tick a facility/amenity' do
       sign_up_as_vendor
       create_full_site
+      expect(page).to have_content('Shared toilets')
       expect(page).to have_css('.has-facility')
+    end
+
+    scenario 'should be able to tick more than one facility/amenity' do
+      sign_up_as_vendor
+      create_full_site
+      expect(page).to have_content('Shared toilets')
+      expect(page).to have_content('Charging facilities')
+      expect(page).to have_css('.has-facility')
+    end
+
+    scenario 'should be able to uncheck facility/amenity' do
+      sign_up_as_vendor
+      create_full_site
       expect(page).to have_css('.no-facility')
     end
 
