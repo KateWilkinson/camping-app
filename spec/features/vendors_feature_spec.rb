@@ -24,6 +24,16 @@ feature 'A vendor can sign up' do
       visit('/vendors')
       expect(page).not_to have_link('Log Out')
     end
+
+    scenario 'should not see any sites' do
+      visit '/vendors'
+      expect(page).not_to have_content 'Edit Site'
+    end
+
+    scenario 'should not see any requests' do
+      visit '/vendors'
+      expect(page).not_to have_content 'requests'
+    end
   end
 
   context 'when signed in' do
