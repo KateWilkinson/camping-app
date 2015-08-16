@@ -37,6 +37,7 @@
 
 .custom-form
   color: #393b40
+  width: 55%
 
 .form-control:focus
   border-color: #cccccc
@@ -48,8 +49,7 @@
   font-size: 12px
   font-weight: normal
 
-.custom-input
-  width: 55%
+.custom-input, .custom-select
   border: 3px solid #393b40
   border-radius: 1px
 
@@ -57,5 +57,58 @@
   min-height: 100px
   height: auto
 
-.custom-select
-  
+select.custom-select
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  -webkit-border-radius: 1px
+  background: #fff url(down-arrow.png) no-repeat 99% center
+
+input[type=checkbox]
+  opacity: 0
+  float:left
+
+input[type=checkbox] + label
+  margin: 0 0 0 20px
+  position: relative
+  cursor: pointer
+  float: left
+
+input[type=checkbox] + label ~ label
+  margin: 0 0 0 75px
+
+input[type=checkbox] + label::before
+  content: ' '
+  position: absolute
+  left: -35px
+  top: -3px
+  width: 20px
+  height: 20px
+  display: block
+  background: white
+  border: 1px solid #A9A9A9
+
+input[type=checkbox] + label::after
+  content: ' '
+  position: absolute
+  left: -35px
+  top: -3px
+  width: 18px
+  height: 18px
+  display: block
+  z-index: 1
+  background: url('tick.svg') no-repeat center center
+  -ms-transition: all .2s ease
+  -webkit-transition: all .2s ease
+  transition: all .3s ease
+  -ms-transform: scale(0)
+  -webkit-transform: scale(0)
+  transform: scale(0)
+  opacity: 0
+
+
+input[type=checkbox]:checked + label::after
+  -ms-transform: scale(1)
+  -webkit-transform: scale(1)
+  transform: scale(1)
+  opacity: 1

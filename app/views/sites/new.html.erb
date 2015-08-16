@@ -16,49 +16,50 @@
         </section>
       <% end %>
 
-      <%= form_for @site, html: { multipart: true } do |f| %>
-        <div class="form-group custom-form">
+      <%= form_for @site, html: { multipart: true, class: 'custom-form' } do |f| %>
+        <div class="form-group">
           <%= f.label :name, class: "custom-label" %>
           <%= f.text_field :name, autofocus: true, class: "form-control custom-input"  %>
         </div>
-        <div class="form-group custom-form">
+        <div class="form-group">
           <%= f.label "Address Line 1", class: "custom-label" %>
           <%= f.text_field :street, autofocus: true, class: "form-control custom-input" %>
         </div>
-        <div class="form-group custom-form">
+        <div class="form-group">
           <%= f.label "Town/City", class: "custom-label" %>
           <%= f.text_field :town, autofocus: true, class: "form-control custom-input"  %>
         </div>
-        <div class="form-group custom-form">
+        <div class="form-group">
           <%= f.label :county, class: "custom-label" %>
           <%= f.text_field :county, autofocus: true,
           class: "form-control custom-input"  %>
         </div>
-        <div class="form-group custom-form">
+        <div class="form-group">
           <%= f.label :postcode, class: "custom-label" %>
           <%= f.text_field :postcode, class: "form-control custom-input", autofocus: true %>
         </div>
-        <div class="form-group custom-form">
+        <div class="form-group">
           <%= f.label "Price", class: "custom-label" %>
           <%= f.text_field :price, autofocus: true, class: "form-control custom-input", placeholder: "per night" %>
         </div>
-        <div class="form-group custom-form">
-          <%= f.select(:accommodation_type, [ 'Cabin', 'Campervan', 'Canal boat', 'Pitch only', 'Pod', 'Shepherd hut', 'Tent', 'Treehouse', 'Yurt', 'Other' ], { class: 'custom-select' }) %>
+        <div class="form-group">
+          <%= f.label "Accomodation type", class: "visuallyhidden" %>
+          <%= f.select(:accommodation_type, options_for_select(['Cabin', 'Campervan', 'Canal boat', 'Pitch only', 'Pod', 'Shepherd hut', 'Tent', 'Treehouse', 'Yurt', 'Other']), {}, {class: "form-control custom-select"}) %>
         </div>
-        <div class="form-group custom-form">
+        <div class="form-group">
           <%= f.label :occupancy, class: "custom-label" %>
           <%= f.text_field :occupancy, autofocus: true, class: "form-control custom-input", placeholder: "Max. no. people" %>
         </div>
-        <div class="form-group custom-form">
+        <div class="form-group">
           <%= f.label "Full description", class: "custom-label" %>
-          <%= f.text_field :description, autofocus: true, class: "form-control custom-input",  rows: 3 %>
+          <%= f.text_field :description, autofocus: true, class: "form-control custom-input textarea-tall" %>
         </div>
-        <div class="form-group custom-form">
+        <div class="form-group">
           <%= f.label "Short description", class: "custom-label" %>
           <%= f.text_field :summary, autofocus: true, class: "form-control custom-input", placeholder: "Max. 50 words" %>
         </div>
 
-        <div class="form-group custom-form">
+        <div class="form-group">
           <%= f.label "Open/Available", class: "custom-label" %>
           <%= f.text_field :available_from, autofocus: true, class: "custom-input", placeholder: "Available from (Month)" %>
           <%= f.text_field :available_to, autofocus: true, class: "custom-input", placeholder: "Available to (Month)" %>
@@ -69,17 +70,18 @@
           <%= f.label :image_2 %>
           <%= f.file_field :image_2 %>
 
-          <%= f.check_box(:shared_toilets) %>
-          <%= f.label(:shared_toilets, "Shared toilets") %>
+          <legend>Select the facilities available:</legend>
+          <div class="form-group">
+            <%= f.check_box(:shared_toilets) %>
+            <%= f.label(:shared_toilets, "Shared toilets") %>
+            <%= f.check_box(:shared_shower) %>
+            <%= f.label(:shared_shower, "Private shower") %>
+            <%= f.check_box(:private_shower) %>
+            <%= f.label(:private_shower, "Private shower") %>
+            <%= f.check_box(:electricity) %>
+            <%= f.label(:electricity, "Charging facilities available?") %>
+          </div>
 
-          <%= f.check_box(:shared_shower) %>
-          <%= f.label(:shared_shower, "Private shower") %>
-
-          <%= f.check_box(:private_shower) %>
-          <%= f.label(:private_shower, "Private shower") %>
-
-          <%= f.check_box(:electricity) %>
-          <%= f.label(:electricity, "Charging facilities available?") %>
 
           <%= f.submit %>
       <% end %>
