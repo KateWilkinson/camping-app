@@ -5,8 +5,9 @@ RSpec.configure do |c|
   c.include Helpers
 end
 
-feature 'A vendor can sign up' do
+feature 'A vendor can sign up,' do
   context 'when not logged in' do
+
     scenario 'should see a log in link and a sign up link on vendors index' do
       visit('/vendors')
       expect(page).to have_link('Sign Up')
@@ -38,169 +39,136 @@ feature 'A vendor can sign up' do
 
   context 'when signed in' do
     before do
-      visit('/vendors')
-      click_link('Sign Up')
-      fill_in('Email', with: 'test@example.com')
-      fill_in('Password', with: 'testtest')
-      fill_in('Password confirmation', with: 'testtest')
-      click_button('Sign up')
+      sign_up_as_vendor
+      create_full_site
     end
 
     scenario 'should see a log out link' do
       expect(page).to have_link 'Log Out'
     end
-  end
 
-  context 'when signed up but not logged in' do
-    before do
-      visit('/vendors')
-      click_link('Sign Up')
-      fill_in('Email', with: 'test@example.com')
-      fill_in('Password', with: 'testtest')
-      fill_in('Password confirmation', with: 'testtest')
-      click_button('Sign up')
-      click_link 'Log Out'
+    scenario 'should see a request link if site created' do
+      expect(page).to have_link 'Booking Requests'
+      click_link 'Booking Requests'
+      expect(current_path).to eq '/requests'
     end
 
-    scenario 'should be able to log in and be redirected to vendors index page' do
+    scenario 'should see a preview link if site created' do
+      pending "until MVP 3 is started"
+      expect(page).to have_link 'Preview Site'
+      click_link 'Preview Site'
+      expect(current_path).to eq '/vendor/preview/sites/3'
+    end
+
+    scenario 'they can log out and should be redirected to the listings page' do
       visit '/vendors'
-      click_link 'Log In'
-      fill_in 'Email', with: 'test@example.com'
-      fill_in 'Password', with: 'testtest'
-      click_button 'Log in'
-      expect(current_path).to eq '/vendors'
+      click_link 'Log Out'
+      expect(current_path).to eq '/'
     end
   end
 end
 
 feature 'While logged in a vendor can' do
-
-  scenario 'acccess the list page and return to the vendor home page' do
+  before do
     sign_up_as_vendor
-    click_link 'Return to list'
-    expect(current_path).to eq '/'
-    click_link 'Vendor'
-    expect(current_path).to eq '/vendors'
+    create_full_site
   end
 
-  scenario 'access the list and will stay logged in' do
-    sign_up_as_vendor
-    click_link 'Return to list'
-    expect(current_path).to eq '/'
-    click_link 'Vendor'
-    expect(current_path).to eq '/vendors'
-    expect(page).to have_content 'Log Out'
-  end
+  context 'navigate the site by' do
 
-  scenario 'add a site and should see it on the listings page' do
-    sign_up_as_vendor
-    create_site
-    click_link 'Return to list'
-    expect(current_path).to eq '/'
-    expect(page).to have_content 'ABC Camping'
+    scenario 'clicking the list page and return to the vendor home page' do
+      click_link 'Return to list'
+      expect(current_path).to eq '/'
+      click_link 'Vendor'
+      expect(current_path).to eq '/vendors'
+    end
+
+    scenario 'clicking the list and will stay logged in' do
+      click_link 'Return to list'
+      expect(current_path).to eq '/'
+      click_link 'Vendor'
+      expect(current_path).to eq '/vendors'
+      expect(page).to have_content 'Log Out'
+    end
+
+    scenario 'clicking a site and should see it on the listings page' do
+      click_link 'Return to list'
+      expect(current_path).to eq '/'
+      expect(page).to have_content 'ABC Camping'
+    end
   end
 
   context 'add campsites' do
 
     scenario 'and should see it on the vendor index' do
-      sign_up_as_vendor
-      create_site
       expect(page).to have_content 'ABC Camping'
       expect(current_path).to eq '/vendors'
     end
 
     scenario 'should not see other peoples campsites on the vendor index' do
-      sign_up_as_vendor
-      create_site
       click_link 'Log Out'
       sign_up_as_vendor2
       expect(page).not_to have_content 'ABC Camping'
     end
 
     scenario 'should not be able to add a campsite with a duplicate name' do
-      sign_up_as_vendor
-      create_site
-      create_site
+      create_full_site
       expect(page).to have_content 'Name has already been taken'
     end
 
     scenario 'should be able to add an address' do
-      sign_up_as_vendor
-      create_full_site
       expect(page).to have_content('13 Pollo Street Canterbury Bucks HP81BZ')
     end
 
     scenario 'should be able to add price per night' do
-      sign_up_as_vendor
-      create_full_site
       expect(page).to have_content('£40')
     end
 
     scenario 'should be able to select accomodation type' do
-      sign_up_as_vendor
-      create_full_site
       expect(page).to have_content('Campervan')
     end
 
     scenario 'should be able to add occupancy' do
-      sign_up_as_vendor
-      create_full_site
       expect(page).to have_content('2 people')
     end
 
     scenario 'complete a short and full description' do
-      sign_up_as_vendor
-      create_full_site
       expect(page).to have_content('family friendly campsite, near the seaside')
       expect(page).to have_content('This is a campsite blah blah blah')
     end
 
     scenario 'should be able to add occupancy' do
-      sign_up_as_vendor
-      create_full_site
       expect(page).to have_content('March to October')
     end
 
     scenario 'should be able to successfully upload an image' do
-      sign_up_as_vendor
-      create_full_site
       expect(page).to have_selector("img[src*='test.jpg']")
     end
 
     scenario 'should be able to successfully upload multiple images' do
-      sign_up_as_vendor
-      create_full_site
       expect(page).to have_selector("img[src*='test.jpg']")
       expect(page).to have_selector("img[src*='test2.jpg']")
     end
 
     scenario 'should be able to check/tick a facility/amenity' do
-      sign_up_as_vendor
-      create_full_site
       expect(page).to have_content('Shared toilets')
       expect(page).to have_css('.has-facility')
     end
 
     scenario 'should be able to tick more than one facility/amenity' do
-      sign_up_as_vendor
-      create_full_site
       expect(page).to have_content('Shared toilets')
       expect(page).to have_content('Charging facilities')
       expect(page).to have_css('.has-facility')
     end
 
     scenario 'should be able to uncheck facility/amenity' do
-      sign_up_as_vendor
-      create_full_site
       expect(page).to have_css('.no-facility')
     end
-
   end
 
   context 'edit campsites' do
+
     scenario 'vendors can edit their campsites' do
-      sign_up_as_vendor
-      create_site
       click_link 'Edit Site'
       fill_in 'Name', with: 'CBA Camping'
       click_button 'Update Site'
@@ -210,42 +178,65 @@ feature 'While logged in a vendor can' do
   end
 
   context 'delete campsites' do
+
     scenario 'vendors can delete their campsites' do
-      sign_up_as_vendor
-      create_site
       click_link 'Delete Site'
       expect(current_path).to eq '/vendors'
       expect(page).not_to have_content 'ABC Camping'
     end
 
     scenario 'they should also be removed from the listings page' do
-      sign_up_as_vendor
-      create_site
       click_link 'Delete Site'
       click_link 'Return to list'
       expect(page).not_to have_content 'ABC Camping'
     end
   end
-end
 
-feature 'When on the homepage' do
-  context 'they should see a requests section' do
-    it 'if no requests have been made' do
-      sign_up_as_vendor
-      create_site
-      expect(current_path).to eq '/vendors'
-      expect(page).to have_content ' No Requests made.'
-    end
-
-    it 'if a request has been made' do
-      sign_up_as_vendor
-      create_full_site
-      click_link 'Log Out'
+  context 'view requests' do
+    before do
       request_booking
       visit '/vendors'
-      log_in_as_vendor
-      expect(current_path).to eq '/vendors'
+      click_link 'Booking Requests'
+    end
+
+    scenario 'should have a section for confirmed bookings' do
+      expect(page).to have_content 'Bookings'
+    end
+
+    scenario 'should have a seciont for requests' do
+      expect(page).to have_content 'Requests'
+    end
+
+    scenario 'for all sites at once' do
       expect(page).to have_content 'Requests for ABC Camping'
+    end
+
+    scenario 'should be told if no requests have been made for a particular site' do
+      visit '/vendors'
+      create_full_site_2
+      click_link 'Booking Requests'
+      expect(page).to have_content  'No current requests'
+    end
+
+    scenario 'the vendor should be able to check these off when dealt with' do
+      expect(page).to have_content ''
+    end
+
+    scenario 'should be able to return to vendor index page' do
+      click_button 'Return'
+      expect(current_path).to eq '/vendors'
+    end
+
+    scenario 'should be able to delete requests once dealt with' do
+      click_button 'Delete Request'
+      expect(page).not_to have_content 'Customer Name: Lucy'
+      expect(page).to have_content 'Requests'
+    end
+
+    scenario 'should be able to make requests confirmed bookings' do
+      pending "until MVP 3 is started"
+      click_button 'Confirm Booking'
+      expect(page).to have_content 'This booking is confirmed'
     end
   end
 end
