@@ -151,12 +151,12 @@ feature 'While logged in a vendor can' do
     end
 
     scenario 'should be able to check/tick a facility/amenity' do
-      expect(page).to have_content('Shared toilets')
+      expect(page).to have_content('Toilet block')
       expect(page).to have_css('.has-facility')
     end
 
     scenario 'should be able to tick more than one facility/amenity' do
-      expect(page).to have_content('Shared toilets')
+      expect(page).to have_content('Toilet block')
       expect(page).to have_content('Charging facilities')
       expect(page).to have_css('.has-facility')
     end
