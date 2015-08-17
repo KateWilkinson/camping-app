@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   resources :sites
   resources :requests
+  resources :vendors
 
-  get 'vendors' => 'vendors#index'
   root to: 'sites#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

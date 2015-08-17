@@ -117,51 +117,62 @@ feature 'While logged in a vendor can' do
     end
 
     scenario 'should be able to add an address' do
+      click_link 'Preview'
       expect(page).to have_content('13 Pollo Street Canterbury Bucks HP81BZ')
     end
 
     scenario 'should be able to add price per night' do
+      click_link 'Preview'
       expect(page).to have_content('£40')
     end
 
     scenario 'should be able to select accomodation type' do
+      click_link 'Preview'
       expect(page).to have_content('Campervan')
     end
 
     scenario 'should be able to add occupancy' do
-      expect(page).to have_content('2 people')
+      click_link 'Preview'
+      expect(page).to have_content('2')
     end
 
     scenario 'complete a short and full description' do
+      click_link 'Preview'
       expect(page).to have_content('family friendly campsite, near the seaside')
       expect(page).to have_content('This is a campsite blah blah blah')
     end
 
-    scenario 'should be able to add occupancy' do
+    scenario 'should be able to add months campsite open' do
+      click_link 'Preview'
       expect(page).to have_content('March to October')
     end
 
     scenario 'should be able to successfully upload an image' do
+      click_link 'Preview'
       expect(page).to have_selector("img[src*='test.jpg']")
     end
 
     scenario 'should be able to successfully upload multiple images' do
+      click_link 'Preview'
       expect(page).to have_selector("img[src*='test.jpg']")
       expect(page).to have_selector("img[src*='test2.jpg']")
     end
 
     scenario 'should be able to check/tick a facility/amenity' do
+      click_link 'Preview'
       expect(page).to have_content('Toilet block')
       expect(page).to have_css('.has-facility')
     end
 
     scenario 'should be able to tick more than one facility/amenity' do
+      click_link 'Preview'
       expect(page).to have_content('Toilet block')
       expect(page).to have_content('Charging facilities')
       expect(page).to have_css('.has-facility')
     end
 
     scenario 'should be able to uncheck facility/amenity' do
+      click_link 'Preview'
       expect(page).to have_css('.no-facility')
     end
   end
@@ -169,7 +180,7 @@ feature 'While logged in a vendor can' do
   context 'edit campsites' do
 
     scenario 'vendors can edit their campsites' do
-      click_link 'Edit Site'
+      click_link 'Edit'
       fill_in 'Name', with: 'CBA Camping'
       click_button 'Update Site'
       expect(page).to have_content 'CBA Camping'
@@ -180,13 +191,13 @@ feature 'While logged in a vendor can' do
   context 'delete campsites' do
 
     scenario 'vendors can delete their campsites' do
-      click_link 'Delete Site'
+      click_link 'Delete'
       expect(current_path).to eq '/vendors'
       expect(page).not_to have_content 'ABC Camping'
     end
 
     scenario 'they should also be removed from the listings page' do
-      click_link 'Delete Site'
+      click_link 'Delete'
       click_link 'Return to list'
       expect(page).not_to have_content 'ABC Camping'
     end
