@@ -1,12 +1,12 @@
 module Helpers
 
-  def create_site
+  def create_full_site_2
     click_link('List a new site')
-    fill_in 'site[name]', with: 'ABC Camping'
-    fill_in 'site[town]', with: 'Canterbury'
-    fill_in 'site[postcode]', with: 'NP5 9XY'
-    fill_in 'site[price]', with: 40
-    fill_in 'site[description]', with: 'This is a campsite'
+    fill_in 'site[name]', with: 'Eyam Camping'
+    fill_in 'site[town]', with: 'Eyam'
+    fill_in 'site[postcode]', with: 'DE5 9TY'
+    fill_in 'site[price]', with: 60
+    fill_in 'site[description]', with: 'Peaceful'
     click_button 'Create Site'
   end
 

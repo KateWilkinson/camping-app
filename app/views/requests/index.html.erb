@@ -1,0 +1,26 @@
+<h1> Requests </h1>
+<% @sites.each do |site| %>
+  <% if site.vendor_id == current_vendor.id %>
+    <h4> Requests for <%= site.name %></h4>
+      <% if site.requests.any? %>
+        <ul>
+          <% site.requests.each do |request| %>
+            <br>
+            <p><strong>Customers name: <%= request.customer_name %></strong></p>
+            <p>Email: <%= request.customer_email %><p>
+            </p>Phone number: <%= request.customer_phone %></p>
+            <p>Dates: <%= request.start_date %> till <%= request.end_date %> </p>
+            <p>Comments: <%= request.comments %></p>
+
+            <%= button_to "Delete Request", request_path(request), method: :delete %>
+            <%= button_to "Confirm Booking" %>
+        <% end %>
+      </ul>
+    <% else %>
+      <p> No current requests </p>
+    <% end %>
+  <% end %>
+<% end %>
+<h1> Bookings </h1>
+
+<%= button_to "Return", vendors_path %>
