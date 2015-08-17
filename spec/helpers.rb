@@ -26,9 +26,9 @@ module Helpers
     fill_in 'site[available_to]', with: 'October'
     attach_file 'site_image', 'spec/features/test.jpg'
     attach_file 'site_image_2', 'spec/features/test2.jpg'
-    check('site[shared_toilets]')
-    uncheck('site[shared_shower]')
-    check('site[electricity]')
+    check('site[toilet_block]')
+    uncheck('site[shower_block]')
+    check('site[charging_facilities]')
     click_button 'Create Site'
   end
 
