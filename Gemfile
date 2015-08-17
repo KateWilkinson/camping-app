@@ -15,6 +15,8 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'rails-12factor', group: :production
+
 group :test do
     gem 'rspec-rails'
     gem 'capybara'
