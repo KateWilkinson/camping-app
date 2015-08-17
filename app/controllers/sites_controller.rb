@@ -28,7 +28,7 @@ class SitesController < ApplicationController
   end
 
   def site_params
-    params.require(:site).permit(:name, :street, :town, :county, :postcode, :description, :summary, :price, :accommodation_type, :occupancy, :available_from, :available_to, :image, :image_2, :image_3, :image_4, :image_5, :image_6, :shared_toilets, :private_toilets, :shared_shower, :private_shower, :restaurant, :shop, :kitchen, :electricity, :parking, :handicap_access, :wifi, :pets, :family, :adults, :supermarket, :eco, :campfire, :bbq, :budget, :backpacker, :forest, :lake, :mountain, :peaceful, :remote, :scenic, :walking, :wildlife, :canoeing, :climbing, :cycling, :cycle_hire, :horseriding, :sailing, :watersports, :pub )
+    params.require(:site).permit(:name, :street, :town, :county, :postcode, :description, :summary, :price, :accommodation_type, :occupancy, :available_from, :available_to, :image, :image_2, :image_3, :image_4, :image_5, :image_6, :toilet_block, :ensuite_toilet, :shower_block, :ensuite_shower, :'on-site_restaurant', :'on-site_shop', :cooking_facilities, :charging_facilities, :'on-site parking', :handicap_accessible, :wifi_available, :pets_welcome, :family_friendly, :no_children, :supermarket_nearby, :eco_friendly, :campfires_allowed, :barbecues_allowed, :towels_provided, :laundry_facilities, :forest, :lake, :mountain, :peaceful, :remote_location, :scenic, :good_for_hiking, :wildlife_haven, :canoeing_nearby, :climbing_nearby, :beach_nearby, :cycle_hire_nearby, :horse_riding_nearby, :sailing_nearby, :watersports_nearby, :pub_or_restaurant_nearby )
   end
 
   def edit

@@ -166,5 +166,20 @@ class Site < ActiveRecord::Base
     where("town like ? OR county like ? OR postcode like ?", "%#{query}%", "%#{query}%", "%#{query}%")
   end
 
+  def self.amenities
+    [:toilet_block, :ensuite_toilet, :shower_block, :ensuite_shower, :'on-site_restaurant', :'on-site_shop', :cooking_facilities, :charging_facilities, :'on-site parking', :wifi_available, :handicap_accessible, :towels_provided, :laundry_facilities]
+  end
+
+  def self.policies
+    [:family_friendly, :no_children, :pets_welcome, :eco_friendly, :campfires_allowed, :barbecues_allowed ]
+  end
+
+  def self.locationtype
+    [:forest, :lake, :mountain, :peaceful, :remote_location, :scenic, :good_for_hiking, :wildlife_haven ]
+  end
+
+  def self.leisure
+    [:canoeing_nearby, :climbing_nearby, :beach_nearby, :cycle_hire_nearby, :horse_riding_nearby, :sailing_nearby, :watersports_nearby, :pub_or_restaurant_nearby]
+  end
 
 end
