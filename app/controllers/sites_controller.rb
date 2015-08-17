@@ -1,7 +1,11 @@
 class SitesController < ApplicationController
 
   def index
-    @sites = Site.all
+    if params[:search]
+      @sites = Site.search(params[:search]).order('created_at DESC')
+    else
+      @sites = Site.all
+    end
   end
 
   def show

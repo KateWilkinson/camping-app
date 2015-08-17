@@ -2,6 +2,10 @@ class Site < ActiveRecord::Base
   belongs_to :vendor
   has_many :requests
   validates :name, uniqueness: true
+  # validates :town, presence: true
+  # validates :county, presence: true
+  # validates :postcode, presence: true
+
   has_attached_file :image,
                     :styles => {
                       :large => {
@@ -157,5 +161,10 @@ class Site < ActiveRecord::Base
 
   validates_attachment_content_type :image_6,
                                     :content_type => /\Aimage\/.*\Z/
+
+  def self.search(query)
+    where("town like ? OR county like ? OR postcode like ?", "%#{query}%", "%#{query}%", "%#{query}%")
+  end
+
 
 end
