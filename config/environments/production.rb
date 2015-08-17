@@ -78,6 +78,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.paperclip_defaults = {
+    :path => "/:class/:attachment/:id/:style/:filename",
+    :url => ":s3_domain_url",
     :storage => :s3,
     :s3_credentials => {
       :bucket => ENV['S3_BUCKET_NAME'],
