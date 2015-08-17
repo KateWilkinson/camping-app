@@ -66,7 +66,7 @@ select.custom-select
   -moz-appearance: none
   appearance: none
   -webkit-border-radius: 1px
-  background: #fff url <%= asset_path('down-arrow.png') %> no-repeat 99% center
+  background: #fff url(<%= asset_path('down-arrow.png') %>) no-repeat 99% center
 
 input[type=checkbox]
   opacity: 0
@@ -103,7 +103,7 @@ input[type=checkbox] + label::after
   height: 13px
   display: block
   z-index: 1
-  background: url<%= asset_path('tick.svg') %> no-repeat center center
+  background: url(<%= asset_path('tick.svg') %>) no-repeat center center
   -ms-transition: all .2s ease
   -webkit-transition: all .2s ease
   transition: all .3s ease
