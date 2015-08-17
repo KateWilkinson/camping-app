@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
+  devise_for :vendors, controllers: { registrations: 'registrations' }
   namespace :api, defaults: {format: 'json'} do
     resources :sites
   end
 
   resources :sites
+  resources :requests
+
+  get 'vendors' => 'vendors#index'
   root to: 'sites#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

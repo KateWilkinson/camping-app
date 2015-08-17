@@ -1,0 +1,36 @@
+<% if vendor_signed_in? %>
+  <%= link_to "Log Out", destroy_vendor_session_path, method: :delete %>
+  <%= link_to "List a new site", new_site_path %>
+  <%= link_to "Booking Requests", requests_path %>
+  <% @sites.each do |site| %>
+  <p></p>
+    <% if site.vendor_id == current_vendor.id %>
+        <%= site.name %>
+        <%= site.description %>
+        <%= site.summary %>
+        <%= site.street %>
+        <%= site.town %>
+        <%= site.county %>
+        <%= site.postcode %>
+        £<%= site.price %>
+        <%= site.occupancy %> people per <%= site.accommodation_type %>
+        <%= site.available_from %> to <%= site.available_to %>
+
+        <%= image_tag site.image.url(:thumb) %>
+        <%= image_tag site.image_2.url(:thumb) %>
+        <%= image_tag site.image_3.url(:thumb) %>
+        <%= image_tag site.image_4.url(:thumb) %>
+        <%= image_tag site.image_5.url(:thumb) %>
+        <%= image_tag site.image_6.url(:thumb) %>
+
+        <%= link_to "Edit Site", edit_site_path(site) %>
+        <%= link_to "Delete Site", site_path(site), method: :delete %>
+        <%= link_to "Preview Site", site_path(site) %>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= link_to "Sign Up", new_vendor_registration_path %>
+  <%= link_to "Log In", new_vendor_session_path %>
+<% end %>
+<br>
+<%= link_to "Return to list", '/' %>
