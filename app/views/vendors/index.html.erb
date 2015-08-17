@@ -23,9 +23,72 @@
         <%= image_tag site.image_5.url(:thumb) %>
         <%= image_tag site.image_6.url(:thumb) %>
 
+        <p>Accommodation Type: <%= site.accommodation_type %></p>
+        <p>Price per night:  £<%= site.price %></p>
+        <p>Max occupancy: <%= site.occupancy %></p>
+        <p>Summary: <%= site.summary %></p>
+        <p>Description:  <%= site.description %></p>
+
+        <ul>
+          Address:
+          <% [:street, :town, :county, :postcode].each do |address_property| %>
+            <li> <%= site.send(address_property) %> </li>
+          <% end %>
+        </ul>
+
+        <p>
+          Available from <%= site.available_from %> to <%= site.available_to %>
+        </p>
+
+        <ul>
+          Amenities:
+          <% Site.amenities.each do |amenity_name| %>
+            <% amenity_exists = site.send(amenity_name) ? "has" : "no" %>
+            <li class='<%= amenity_exists %>-facility'>
+                <%= amenity_name.to_s.humanize %>
+            </li>
+          <% end %>
+        </ul>
+
+        <ul>
+          Policies:
+          <% Site.policies.each do |policy_name| %>
+            <% policy_exists = site.send(policy_name) ? "has" : "no" %>
+            <li class='<%= policy_exists %>-facility'>
+                <%= policy_name.to_s.humanize %>
+            </li>
+          <% end %>
+        </ul>
+
+        <ul>
+          Location Type:
+          <% Site.locationtype.each do |locationtype_name| %>
+            <% locationtype_exists = site.send(locationtype_name) ? "has" : "no" %>
+            <li class='<%= locationtype_exists %>-facility'>
+                <%= locationtype_name.to_s.humanize %>
+            </li>
+          <% end %>
+        </ul>
+
+        <ul>
+          Leisure Activities Nearby:
+          <% Site.leisure.each do |leisure_name| %>
+            <% leisure_exists = site.send(leisure_name) ? "has" : "no" %>
+            <li class='<%= leisure_exists %>-facility'>
+                <%= leisure_name.to_s.humanize %>
+            </li>
+          <% end %>
+        </ul>
+
+
+
         <%= link_to "Edit Site", edit_site_path(site) %>
         <%= link_to "Delete Site", site_path(site), method: :delete %>
         <%= link_to "Preview Site", site_path(site) %>
+
+
+
+
     <% end %>
   <% end %>
 <% else %>
