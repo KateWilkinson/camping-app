@@ -35,6 +35,14 @@ feature 'requests' do
       expect(current_path).to eq '/'
       expect(page).to have_content 'Thank you. Your request has been made.'
     end
+
+    scenario 'starts a request they should be able to cancel it and return to the individual site' do
+      visit '/'
+      click_link 'ABC Camping'
+      click_button 'Book'
+      click_button 'Cancel Request'
+      expect(page).to have_content 'Price per night: '
+    end
   end
 
   scenario 'should be destroyed with relevant site' do
