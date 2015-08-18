@@ -7,14 +7,10 @@
   <p><%= f.text_field :customer_email %></p>
   <p><%= f.label "Phone Number" %></p>
   <p><%= f.text_field :customer_phone %></p>
-  <%= f.fields_for "Start Date" do |v| %>
   <p><%= f.label "Start Date" %></p>
-  <p><%= v.date_select :start_date, order: [:day, :month, :year] %></p>
-  <% end %>
-  <%= f.fields_for "End Date" do |v| %>
+  <p><%= f.date_select :start_date, order: [:day, :month, :year] %></p>
   <p><%= f.label "End Date" %></p>
-  <p><%= v.date_select :end_date, order: [:day, :month, :year] %></p>
-  <% end %>
+  <p><%= f.date_select :end_date, order: [:day, :month, :year] %></p>
   <p><%= f.label :comments %></p>
   <p><%= f.text_field :comments %></p>
   <p><%= f.submit %></p>
