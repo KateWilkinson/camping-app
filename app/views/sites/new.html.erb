@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <!-- <div class="center"> -->
+    <div class="col-md-6 col-md-offset-3">
       <div class="h-title">
         <h4>Add Campsite</h4>
-        <!-- <span class="h-underline"></span> -->
+        <span class="h-underline"></span>
       </div>
 
       <% if @site.errors.any? %>
@@ -191,5 +191,6 @@
 
       <% end %>
       <%= button_to "Cancel site creation", vendors_path %>
+    </div>
   </div>
 </div>
