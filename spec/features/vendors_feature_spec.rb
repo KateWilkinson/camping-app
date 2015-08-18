@@ -54,10 +54,10 @@ feature 'A vendor can sign up,' do
     end
 
     scenario 'should see a preview link if site created' do
-      pending "until MVP 3 is started"
-      expect(page).to have_link 'Preview Site'
-      click_link 'Preview Site'
-      expect(current_path).to eq '/vendor/preview/sites/3'
+      expect(page).to have_link 'Preview'
+      click_link 'Preview'
+      expect(current_path).not_to eq '/vendors'
+      expect(page).to have_content 'ABC Camping'
     end
 
     scenario 'they can log out and should be redirected to the listings page' do
