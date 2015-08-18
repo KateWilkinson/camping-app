@@ -1,6 +1,6 @@
 class Site < ActiveRecord::Base
   belongs_to :vendor
-  has_many :requests
+  has_many :requests, dependent: :destroy
   validates :name, uniqueness: true
   # validates :town, presence: true
   # validates :county, presence: true
