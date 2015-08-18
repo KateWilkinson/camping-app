@@ -8,9 +8,9 @@
   <p><%= f.label "Phone Number" %></p>
   <p><%= f.text_field :customer_phone %></p>
   <p><%= f.label "Start Date" %></p>
-  <p><%= f.text_field :start_date %></p>
+  <p><%= f.date_select :start_date, order: [:day, :month, :year] %></p>
   <p><%= f.label "End Date" %></p>
-  <p><%= f.text_field :end_date %></p>
+  <p><%= f.date_select :end_date, order: [:day, :month, :year] %></p>
   <p><%= f.label :comments %></p>
   <p><%= f.text_field :comments %></p>
   <p><%= f.submit %></p>

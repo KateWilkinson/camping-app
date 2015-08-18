@@ -125,6 +125,9 @@ class Site < ActiveRecord::Base
                         },
                       },
                     :default_url => ""
+                    # :url => "/system/sites/images/:id/:style/:filename",
+                    # :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
+                    # :storage => :filesystem
 
   validates_attachment_content_type :image,
                                     :content_type => /\Aimage\/.*\Z/

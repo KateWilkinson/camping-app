@@ -9,7 +9,7 @@
             <p><strong>Customers name: <%= request.customer_name %></strong></p>
             <p>Email: <%= request.customer_email %><p>
             </p>Phone number: <%= request.customer_phone %></p>
-            <p>Dates: <%= request.start_date %> till <%= request.end_date %> </p>
+            <p>From <%= request.start_date.strftime('%e %B %Y') %> to <%= request.end_date.strftime('%e %B %Y') %> </p>
             <p>Comments: <%= request.comments %></p>
 
             <%= button_to "Delete Request", request_path(request), method: :delete %>
