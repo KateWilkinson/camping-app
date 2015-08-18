@@ -1,8 +1,13 @@
 class SitesController < ApplicationController
 
   def index
-    if params[:search]
-      @sites = Site.search(params[:search]).order('created_at DESC')
+    if params[:search] && params[:family_friendly]
+      sites = Site.search(params[:search])
+      @sites = sites.filter(params[:family_friendly])
+    elsif params[:search]
+      @sites = Site.search(params[:search])
+    elsif params[:family_friendly]
+      @sites = Site.filter(params[:family_friendly])
     else
       @sites = Site.all
     end

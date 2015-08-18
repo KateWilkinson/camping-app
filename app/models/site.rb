@@ -24,7 +24,8 @@ class Site < ActiveRecord::Base
                         :quality => 40,
                       },
                     },
-                    :default_url => ""
+                    :default_url => "",
+                    :bucket => 'beyond-camping'
 
   has_attached_file :image_2,
                       :styles => {
@@ -148,7 +149,11 @@ class Site < ActiveRecord::Base
                                     :content_type => /\Aimage\/.*\Z/
 
   def self.search(query)
-    where("town like ? OR county like ? OR postcode like ?", "%#{query}%", "%#{query}%", "%#{query}%")
+    where("LOWER(town) like ? OR LOWER(county) like ? OR LOWER(postcode) like ?", "%#{query.downcase}%", "%#{query.downcase}%", "%#{query.downcase}%")
+  end
+
+  def self.filter(filter)
+    where('family_friendly', "%#{filter}")
   end
 
   def self.amenities
