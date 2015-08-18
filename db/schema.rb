@@ -30,13 +30,6 @@ ActiveRecord::Schema.define(version: 20150817110918) do
 
   add_index "requests", ["site_id"], name: "index_requests_on_site_id", using: :btree
 
-  create_table "searches", force: :cascade do |t|
-    t.string   "town"
-    t.string   "accommodation_type"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-  end
-
   create_table "sites", force: :cascade do |t|
     t.string   "name"
     t.string   "town"
