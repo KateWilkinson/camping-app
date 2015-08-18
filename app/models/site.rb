@@ -1,6 +1,6 @@
 class Site < ActiveRecord::Base
   belongs_to :vendor
-  has_many :requests
+  has_many :requests, dependent: :destroy
   validates :name, uniqueness: true
   # validates :town, presence: true
   # validates :county, presence: true
@@ -25,7 +25,7 @@ class Site < ActiveRecord::Base
                       },
                     },
                     :default_url => "",
-                    :bucket => 'beyond-camping'
+                    bucket: 'beyond-camping'
 
   has_attached_file :image_2,
                       :styles => {
