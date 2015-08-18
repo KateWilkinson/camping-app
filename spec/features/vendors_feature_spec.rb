@@ -105,6 +105,13 @@ feature 'While logged in a vendor can' do
       expect(current_path).to eq '/vendors'
     end
 
+    scenario 'and should be able to cancel request' do
+      click_link 'List a new site'
+      click_button 'Cancel site creation'
+      expect(current_path).to eq '/vendors'
+      expect(page).to have_content 'Booking Requests'
+    end
+
     scenario 'should not see other peoples campsites on the vendor index' do
       click_link 'Log Out'
       sign_up_as_vendor2
