@@ -24,7 +24,8 @@ class Site < ActiveRecord::Base
                         :quality => 40,
                       },
                     },
-                    :default_url => ""
+                    :default_url => "",
+                    bucket: 'beyond-camping'
 
   has_attached_file :image_2,
                       :styles => {
