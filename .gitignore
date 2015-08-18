@@ -14,8 +14,4 @@
 
 /public/system/*
 .env
-<<<<<<< HEAD
 /spec/features/sites/*
-=======
-/spec/features/sites/*
->>>>>>> 8a9ae370f06de1a43446119ead03aaace4c60e1c
