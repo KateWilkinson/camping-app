@@ -24,7 +24,10 @@ class Site < ActiveRecord::Base
                         :quality => 40,
                       },
                     },
-                    :default_url => ""
+                    :default_url => "",
+                    :url => "/system/sites/images/:id/:style/:filename",
+                    :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
+                    :storage => :filesystem
 
   has_attached_file :image_2,
                       :styles => {
@@ -44,7 +47,10 @@ class Site < ActiveRecord::Base
                           :quality => 40,
                         },
                       },
-                    :default_url => ""
+                    :default_url => "",
+                    :url => "/system/sites/images/:id/:style/:filename",
+                    :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
+                    :storage => :filesystem
 
   has_attached_file :image_3,
                       :styles => {
@@ -64,7 +70,10 @@ class Site < ActiveRecord::Base
                           :quality => 40,
                         },
                       },
-                    :default_url => ""
+                    :default_url => "",
+                    :url => "/system/sites/images/:id/:style/:filename",
+                    :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
+                    :storage => :filesystem
 
   has_attached_file :image_4,
                       :styles => {
@@ -84,7 +93,10 @@ class Site < ActiveRecord::Base
                           :quality => 40,
                         },
                       },
-                    :default_url => ""
+                    :default_url => "",
+                    :url => "/system/sites/images/:id/:style/:filename",
+                    :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
+                    :storage => :filesystem
 
   has_attached_file :image_5,
                       :styles => {
@@ -104,7 +116,10 @@ class Site < ActiveRecord::Base
                           :quality => 40,
                         },
                       },
-                    :default_url => ""
+                    :default_url => "",
+                    :url => "/system/sites/images/:id/:style/:filename",
+                    :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
+                    :storage => :filesystem
 
   has_attached_file :image_6,
                       :styles => {
@@ -124,7 +139,10 @@ class Site < ActiveRecord::Base
                           :quality => 40,
                         },
                       },
-                    :default_url => ""
+                    :default_url => "",
+                    :url => "/system/sites/images/:id/:style/:filename",
+                    :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
+                    :storage => :filesystem
 
   validates_attachment_content_type :image,
                                     :content_type => /\Aimage\/.*\Z/
