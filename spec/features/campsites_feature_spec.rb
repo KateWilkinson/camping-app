@@ -26,6 +26,14 @@ feature 'sites' do
       expect(page).to have_content 'ABC Camping'
       expect(current_path).to eq "/sites/#{abc.id}"
     end
+
+    scenario 'they should be able to return to the listings page' do
+      visit '/'
+      click_link 'ABC Camping'
+      click_button 'Back'
+      expect(current_path).to eq '/sites'
+      expect(page).to have_content 'Camping Emporium'
+    end
   end
 
   context 'when user conducts a search on town' do
