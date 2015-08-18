@@ -149,7 +149,11 @@ class Site < ActiveRecord::Base
                                     :content_type => /\Aimage\/.*\Z/
 
   def self.search(query)
-    where("town like ? OR county like ? OR postcode like ?", "%#{query}%", "%#{query}%", "%#{query}%")
+    where("LOWER(town) like ? OR LOWER(county) like ? OR LOWER(postcode) like ?", "%#{query.downcase}%", "%#{query.downcase}%", "%#{query.downcase}%")
+  end
+
+  def self.filter(filter)
+    where('family_friendly', "%#{filter}")
   end
 
   def self.amenities
