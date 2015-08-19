@@ -16,7 +16,37 @@
     <%= label_tag(:mountain, 'Mountain') %>
   </div>
   <p></p>
-  <button class='btn' type='submit'>Find Sites</button>
+  <div>
+    <%= check_box_tag :lake, true, false %>
+    <%= label_tag(:lake, 'Lake') %>
+  </div>
+  <p></p>
+  <div>
+    <%= check_box_tag :scenic, true, false %>
+    <%= label_tag(:scenic, 'Scenic') %>
+  </div>
+  <p></p>
+  <div>
+    <%= check_box_tag :peaceful, true, false %>
+    <%= label_tag(:peaceful, 'Peaceful') %>
+  </div>
+  <p></p>
+  <div>
+    <%= check_box_tag :remote_location, true, false %>
+    <%= label_tag(:remote_location, 'Remote Location') %>
+  </div>
+  <p></p>
+    <div>
+    <%= check_box_tag :wildlife_haven, true, false %>
+    <%= label_tag(:wildlife_haven, 'Wildlife Haven') %>
+  </div>
+  <p></p>
+  <div>
+    <%= check_box_tag :good_for_hiking, true, false %>
+    <%= label_tag(:good_for_hiking, 'Good For Hiking') %>
+  </div>
+  <p></p>
+  <button id='search-button' type='submit'>Search</button>
 <% end %>
 
 <% if @sites.any? %>
