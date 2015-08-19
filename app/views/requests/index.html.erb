@@ -3,17 +3,18 @@
   <% if site.vendor_id == current_vendor.id %>
     <h4> Requests for <%= site.name %></h4>
       <% if site.requests.any? %>
-        <ul>
+        <ul id="left">
           <% site.requests.each do |request| %>
             <br>
-            <p><strong>Customers name: <%= request.customer_name %></strong></p>
-            <p>Email: <%= request.customer_email %><p>
-            </p>Phone number: <%= request.customer_phone %></p>
-            <p>From <%= request.start_date.strftime('%e %B %Y') %> to <%= request.end_date.strftime('%e %B %Y') %> </p>
-            <p>Comments: <%= request.comments %></p>
-
-            <%= button_to "Delete Request", request_path(request), method: :delete %>
-            <%= button_to "Confirm Booking" %>
+            <div class='cust_info'>
+              <p><strong>Customers name: <%= request.customer_name %></strong></p>
+              <p>Email: <%= request.customer_email %><p>
+              </p>Phone number: <%= request.customer_phone %></p>
+              <p>From <%= request.start_date.strftime('%e %B %Y') %> to <%= request.end_date.strftime('%e %B %Y') %> </p>
+              <p>Comments: <%= request.comments %></p>
+              <%= button_to "Delete Request", request_path(request), method: :delete %>
+              Confirm booking <input type="checkbox" id="request_check" name="request" onclick="move_info($(this).parent())" value="booking" style="opacity:1">
+            </div>
         <% end %>
       </ul>
     <% else %>
@@ -22,5 +23,7 @@
   <% end %>
 <% end %>
 <h1> Bookings </h1>
+  <div id="right">
+  </div>
 
 <%= button_to "Return", vendors_path %>

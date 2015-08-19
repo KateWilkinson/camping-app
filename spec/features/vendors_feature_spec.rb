@@ -250,11 +250,5 @@ feature 'While logged in a vendor can' do
       expect(page).not_to have_content 'Customer Name: Lucy'
       expect(page).to have_content 'Requests'
     end
-
-    scenario 'should be able to make requests confirmed bookings' do
-      pending "until MVP 3 is started"
-      click_button 'Confirm Booking'
-      expect(page).to have_content 'This booking is confirmed'
-    end
   end
 end
