@@ -1,7 +1,14 @@
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <div class="h-title">
+      <h2>Vendor Homepage</h2>
+      <span class="h-underline"></span>
+    </div>
+
 <% if vendor_signed_in? %>
-  <%= link_to "Log Out", destroy_vendor_session_path, method: :delete %>
-  <%= link_to "List a new site", new_site_path %>
-  <%= link_to "Booking Requests", requests_path %>
+
+  <span class="reset vendor_function"><%= link_to "List a new site", new_site_path %></span>
+  <span class="reset vendor_function"><%= link_to "Booking Requests", requests_path %></span>
   <div col-md-6>
   <% @sites.each do |site| %>
   <p></p>
@@ -13,6 +20,8 @@
 
     <% end %>
   <% end %>
+  <p>
+  <%= link_to "Log Out", destroy_vendor_session_path, method: :delete %></p>
 <% else %>
   <%= link_to "Sign Up", new_vendor_registration_path %>
   <%= link_to "Log In", new_vendor_session_path %>
