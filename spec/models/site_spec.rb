@@ -12,4 +12,18 @@ describe Site, type: :model do
     expect(site).to have(1).error_on(:summary)
     expect(site).not_to be_valid
   end
+
+  describe 'search' do
+
+    let!(:site1) { Site.create(name: 'First site', town: 'Glastonbury') }
+    let!(:site2) { Site.create(name: 'Second site', town: 'Canterbury') }
+
+    xit 'searches database and returns campsites that match search criteria' do
+      sites = Site.all
+      site = sites.search('Glastonbury')
+      expect(site).to eq(:site1)
+    end
+
+  end
+
 end
