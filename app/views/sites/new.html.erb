@@ -42,7 +42,7 @@
         <%= f.text_field :price, autofocus: true, class: "form-control custom-input", placeholder: "per night" %>
       </div>
       <div class="form-group">
-        <%= f.label "Accomodation type", class: "visuallyhidden" %>
+        <%= f.label "Accomodation type", class: "visuallyhidden sml-text" %>
         <%= f.select(:accommodation_type, options_for_select(['Cabin', 'Campervan', 'Canal boat', 'Pitch only', 'Pod', 'Shepherd hut', 'Tent', 'Treehouse', 'Yurt', 'Other']), {}, {class: "form-control custom-select"}) %>
       </div>
       <div class="form-group">
@@ -71,14 +71,14 @@
       <legend>Upload images:</legend>
       <div class="form-group">
         <div class="col-xs-12 col-md-6 pad-right">
-          <%= f.file_field :image, class: "upload-btn sml-text" %>
-          <%= f.file_field :image_2, class: "upload-btn sml-text" %>
-          <%= f.file_field :image_3, class: "upload-btn sml-text" %>
+          <%= f.file_field :image, class: "solid-brd-btn sml-text" %>
+          <%= f.file_field :image_2, class: "solid-brd-btn sml-text" %>
+          <%= f.file_field :image_3, class: "solid-brd-btn sml-text" %>
           </div>
           <div class="col-xs-12 col-md-6 no-pad">
-          <%= f.file_field :image_4, class: "upload-btn sml-text" %>
-          <%= f.file_field :image_5, class: "upload-btn sml-text" %>
-          <%= f.file_field :image_6, class: "upload-btn sml-text" %>
+          <%= f.file_field :image_4, class: "solid-brd-btn sml-text" %>
+          <%= f.file_field :image_5, class: "solid-brd-btn sml-text" %>
+          <%= f.file_field :image_6, class: "solid-brd-btn sml-text" %>
         </div>
       </div>
 
@@ -195,11 +195,13 @@
           <%= f.label(:pub_or_restaurant_nearby, "Pub/restaurant nearby") %>
         </div>
 
-        <div class="form-group form-btn reset sml-text">
-          <%= f.submit %>
+        <div class="form-group form-btn upload-btn">
+          <%= f.submit 'Create site', :class => "full-width sml-text" %>
         </div>
 
     <% end %>
-    <%= button_to "Cancel site creation", vendors_path %>
+    <div class="row">
+      <%= button_to "Cancel site creation", vendors_path %>
+    </div>
   </div>
 </div>

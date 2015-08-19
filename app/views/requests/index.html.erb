@@ -39,8 +39,7 @@
                 </table>
 
                 Confirm booking <input class="reset functions" type="checkbox" id="request_check" name="request" onclick="move_info($(this).parent())" value="booking" style="opacity:1">
-                <div class="functions delete"><%= button_to "Delete", request_path(request), method: :delete %></div>
-
+                <div class="functions delete"><%= button_to "Delete", request_path(request), method: :delete, :class => "solid-brd-btn" %></div>
               </div>
             <% end %>
           </div>
