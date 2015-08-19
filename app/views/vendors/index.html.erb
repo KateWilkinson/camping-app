@@ -1,31 +1,30 @@
 <div class="row">
-  <div class="col-xs-6 col-xs-offset-3">
-    <div class="h-title">
-      <h2>Vendor Homepage</h2>
-      <span class="h-underline"></span>
-    </div>
+  <div class="h-title">
+    <h2>Vendor Homepage</h2>
+    <span class="h-underline"></span>
+  </div>
 
-<% if vendor_signed_in? %>
+  <% if vendor_signed_in? %>
 
-  <span class="reset vendor_function"><%= link_to "List a new site", new_site_path %></span>
-  <span class="reset vendor_function"><%= link_to "Booking Requests", requests_path %></span>
-  <div col-md-6>
-  <% @sites.each do |site| %>
-  <p></p>
-    <% if site.vendor_id == current_vendor.id %>
-        <%= site.name %>
-        <%= link_to "Edit", edit_site_path(site) %>
-        <%= link_to "Delete", site_path(site), method: :delete %>
-        <%= link_to "Preview", vendor_path(site) %>
-
+    <span class="reset vendor_function"><%= link_to "List a new site", new_site_path %></span>
+    <span class="reset vendor_function"><%= link_to "Booking Requests", requests_path %></span>
+    <% @sites.each do |site| %>
+      <div class="vendor_sites">
+      <% if site.vendor_id == current_vendor.id %>
+          <%= site.name %>
+          <p><%= link_to "Edit", edit_site_path(site) %>
+          <%= link_to "Delete", site_path(site), method: :delete %>
+          <%= link_to "Preview", vendor_path(site) %></p>
+      <% end %>
+      </div>
     <% end %>
+    <p>
+      <%= link_to "Log Out", destroy_vendor_session_path, method: :delete %>
+    </p>
+  <% else %>
+    <%= link_to "Sign Up", new_vendor_registration_path %>
+    <%= link_to "Log In", new_vendor_session_path %>
   <% end %>
-  <p>
-  <%= link_to "Log Out", destroy_vendor_session_path, method: :delete %></p>
-<% else %>
-  <%= link_to "Sign Up", new_vendor_registration_path %>
-  <%= link_to "Log In", new_vendor_session_path %>
-<% end %>
+
+  <%= link_to "Return to list", '/' %>
 </div>
-<br>
-<%= link_to "Return to list", '/' %>
