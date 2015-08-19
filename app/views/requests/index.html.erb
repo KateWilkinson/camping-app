@@ -1,41 +1,68 @@
-<div class="col-md-6">
-<h1> Requests </h1>
-<% @sites.each do |site| %>
-  <% if site.vendor_id == current_vendor.id %>
-    <!-- <h4> Requests for <%= site.name %></h4> -->
-      <% if site.requests.any? %>
-        <ul id="left">
-          <% site.requests.each do |request| %>
-            <br>
-            <div class='cust_info'>
-              <h3 class="site_title"> <%= site.name %></h3>
-              <p><strong>Customers name: <%= request.customer_name %></strong></p>
-              <p>Email: <%= request.customer_email %><p>
-              </p>Phone number: <%= request.customer_phone %></p>
-              <p>From <%= request.start_date.strftime('%e %B %Y') %> to <%= request.end_date.strftime('%e %B %Y') %> </p>
-              <p>Comments: <%= request.comments %></p>
-              <%= button_to "Delete Request", request_path(request), method: :delete %>
-              Confirm booking <input type="checkbox" id="request_check" name="request" onclick="move_info($(this).parent())" value="booking" style="opacity:1">
-            </div>
-        <% end %>
-      </ul>
-    <% else %>
-      <p> No current requests </p>
-    <% end %>
-  <% end %>
-<% end %>
-</div>
-<div class="col-md-6">
-<h1> Bookings </h1>
-        <ul id="right">
-          <p>
-            <div id="no-bookings">
-              No current bookings
-            </div>
-          </p>
-        </ul>
-  <br>
-</div>
-<br>
+<div class="col-md-6 line">
+  <div class="h-title">
+    <h2>Requests</h2>
+    <span class="h-underline"></span>
+  </div>
+  <% @sites.each do |site| %>
+    <% if site.vendor_id == current_vendor.id %>
+        <% if site.requests.any? %>
+          <div id="left">
+            <% site.requests.each do |request| %>
+              <div class='cust_info'>
+                <div class="site_name"><%= site.name %></div>
+                <table class="requests_table">
+                  <col width="150">
+                  <col width="250">
+                  <tr>
+                      <td>Customer name:</td>
+                      <td><%= request.customer_name %></td>
+                  </tr>
+                  <tr>
+                    <td>Dates requested:</td>
+                    <td><%= request.start_date.strftime('%e %B %Y') %> to <%= request.end_date.strftime('%e %B %Y') %></td>
+                  </tr>
+                  <tr>
+                    <td>Phone number:</td>
+                    <td><%= request.customer_phone %></td>
+                  </tr>
+                  <tr>
+                    <td>Email:</td>
+                    <td><%= request.customer_email %></td>
+                  </tr>
+                  <tr>
+                    <td>Comments:</td>
+                    <td><%= request.comments %></td>
+                  </tr>
+                  <tr class="blank_row">
+                    <td colspan="2"></td>
+                  </tr>
+                </table>
 
-<%= button_to "Return", vendors_path %>
+                Confirm booking <input class="reset functions" type="checkbox" id="request_check" name="request" onclick="move_info($(this).parent())" value="booking" style="opacity:1">
+                <div class="functions delete"><%= button_to "Delete", request_path(request), method: :delete %></div>
+
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+</div>
+
+<div class="col-md-6">
+  <div class="h-title">
+    <h2>Bookings</h2>
+    <span class="h-underline"></span>
+  </div>
+    <div id="right">
+      <div id="no-bookings">
+        <p class="no-bookings">
+          No current bookings
+        </p>
+      </div>
+    </div>
+</div>
+
+<div class="return_button form-btn reset">
+  <%= button_to "Return", vendors_path %>
+<div>
