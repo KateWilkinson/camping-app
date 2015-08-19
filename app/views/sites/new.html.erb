@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <!-- <div class="center"> -->
+    <div class="col-xs-6 col-xs-offset-3">
       <div class="h-title">
         <h4>Add Campsite</h4>
-        <!-- <span class="h-underline"></span> -->
+        <span class="h-underline"></span>
       </div>
 
       <% if @site.errors.any? %>
@@ -61,16 +61,25 @@
 
         <div class="form-group">
           <%= f.label "Open dates:", class: "custom-label" %><br />
-            <%= f.text_field :available_from, autofocus: true, class: "form-control custom-input", placeholder: "Month" %>
+            <div class="col-xs-3">
+              <%= f.text_field :available_from, autofocus: true, class: "form-control custom-input", placeholder: "Month" %>
+            </div>
+            <div class="col-xs-3">
             <%= f.text_field :available_to, autofocus: true, class: "form-control custom-input", placeholder: "Month" %>
+          </div>
         </div>
 
+        <legend>Upload images:</legend>
         <div class="form-group">
-          <p>Upload images</p>
+          Upload images
           <!-- <%= f.label :image %> -->
           <%= f.file_field :image %>
           <!-- <%= f.label :image_2 %> -->
           <%= f.file_field :image_2 %>
+          <%= f.file_field :image_3 %>
+          <%= f.file_field :image_4 %>
+          <%= f.file_field :image_5 %>
+          <%= f.file_field :image_6 %>
         </div>
 
           <legend>Select the amenities available:</legend>
@@ -191,5 +200,6 @@
 
       <% end %>
       <%= button_to "Cancel site creation", vendors_path %>
+    </div>
   </div>
 </div>
