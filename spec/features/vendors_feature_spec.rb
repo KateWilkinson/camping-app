@@ -224,11 +224,11 @@ feature 'While logged in a vendor can' do
       expect(page).to have_content 'ABC Camping'
     end
 
-    scenario 'should be told if no requests have been made for a particular site' do
+    scenario 'should be told if no bookings have been made for sites' do
       visit '/vendors'
       create_full_site_2
       click_link 'Booking Requests'
-      expect(page).to have_content  'No current requests'
+      expect(page).to have_content  'No current bookings'
     end
 
     scenario 'the vendor should be able to check these off when dealt with' do
@@ -241,7 +241,7 @@ feature 'While logged in a vendor can' do
     end
 
     scenario 'should be able to delete requests once dealt with' do
-      click_button 'Delete Request'
+      click_button 'Delete'
       expect(page).not_to have_content 'Customer Name: Lucy'
       expect(page).to have_content 'Requests'
     end
