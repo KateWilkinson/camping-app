@@ -2,11 +2,11 @@
   <%= link_to "Log Out", destroy_vendor_session_path, method: :delete %>
   <%= link_to "List a new site", new_site_path %>
   <%= link_to "Booking Requests", requests_path %>
+  <div col-md-6>
   <% @sites.each do |site| %>
   <p></p>
     <% if site.vendor_id == current_vendor.id %>
         <%= site.name %>
-
         <%= link_to "Edit", edit_site_path(site) %>
         <%= link_to "Delete", site_path(site), method: :delete %>
         <%= link_to "Preview", vendor_path(site) %>
@@ -17,5 +17,6 @@
   <%= link_to "Sign Up", new_vendor_registration_path %>
   <%= link_to "Log In", new_vendor_session_path %>
 <% end %>
+</div>
 <br>
 <%= link_to "Return to list", '/' %>
