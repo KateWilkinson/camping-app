@@ -2,7 +2,7 @@ var isLeft = true;
 
 function move_info(request){
   if (isLeft === true) {
-    $('#no-bookings').fadeOut(1000);
+    $('#no-bookings').fadeOut(100);
     $request_info = request;
     $('request_info').remove();
     $('#right').append($request_info);
