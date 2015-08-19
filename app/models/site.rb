@@ -1,10 +1,7 @@
 class Site < ActiveRecord::Base
   belongs_to :vendor
   has_many :requests, dependent: :destroy
-  validates :name, uniqueness: true
-  # validates :town, presence: true
-  # validates :county, presence: true
-  # validates :postcode, presence: true
+  validates :summary, length: {maximum: 70}
 
   has_attached_file :image,
                     :styles => {

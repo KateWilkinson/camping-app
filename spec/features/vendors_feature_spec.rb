@@ -118,11 +118,6 @@ feature 'While logged in a vendor can' do
       expect(page).not_to have_content 'ABC Camping'
     end
 
-    scenario 'should not be able to add a campsite with a duplicate name' do
-      create_full_site
-      expect(page).to have_content 'Name has already been taken'
-    end
-
     scenario 'should be able to add an address' do
       click_link 'Preview'
       expect(page).to have_content('13 Pollo Street Canterbury Bucks HP81BZ')
