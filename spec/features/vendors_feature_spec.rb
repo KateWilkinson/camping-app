@@ -221,7 +221,7 @@ feature 'While logged in a vendor can' do
     end
 
     scenario 'for all sites at once' do
-      expect(page).to have_content 'Requests for ABC Camping'
+      expect(page).to have_content 'ABC Camping'
     end
 
     scenario 'should be told if no requests have been made for a particular site' do
