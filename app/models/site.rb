@@ -153,7 +153,7 @@ class Site < ActiveRecord::Base
   end
 
   def self.filter(filter)
-    where('family_friendly', "%#{filter}")
+    where('forest', "%#{filter}")
   end
 
   def self.amenities
