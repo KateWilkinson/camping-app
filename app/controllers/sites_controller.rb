@@ -1,13 +1,26 @@
 class SitesController < ApplicationController
 
+  # def index
+  #   if params[:search] && params[:family_friendly]
+  #     sites = Site.search(params[:search])
+  #     @sites = sites.filter(params[:family_friendly])
+  #   elsif params[:search]
+  #     @sites = Site.search(params[:search])
+  #   elsif params[:family_friendly]
+  #     @sites = Site.filter(params[:family_friendly])
+  #   else
+  #     @sites = Site.all
+  #   end
+  # end
+
   def index
-    if params[:search] && params[:family_friendly]
-      sites = Site.search(params[:search])
-      @sites = sites.filter(params[:family_friendly])
-    elsif params[:search]
+    if params[:search]
       @sites = Site.search(params[:search])
-    elsif params[:family_friendly]
-      @sites = Site.filter(params[:family_friendly])
+      Site.locationtype.each do |p|
+        if params[p]
+          @sites = @sites.filter(params[p])
+        end
+      end
     else
       @sites = Site.all
     end
