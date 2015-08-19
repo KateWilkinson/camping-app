@@ -43,7 +43,7 @@ feature 'sites' do
     scenario 'user enters town as search query' do
       visit '/'
       fill_in('search', with: 'Glastonbury')
-      click_button('Find Sites')
+      click_link('Find Sites')
       expect(page).to have_content('ABC Camping')
       expect(page).not_to have_content('XYZ Camping')
     end

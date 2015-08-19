@@ -152,8 +152,8 @@ class Site < ActiveRecord::Base
     where("LOWER(town) like ? OR LOWER(county) like ? OR LOWER(postcode) like ?", "%#{query.downcase}%", "%#{query.downcase}%", "%#{query.downcase}%")
   end
 
-  def self.filter(filter)
-    where('forest', "%#{filter}")
+  def self.filter(locationtype, filter)
+    where(locationtype.to_s, "%#{filter}")
   end
 
   def self.amenities
