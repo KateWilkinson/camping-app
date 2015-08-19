@@ -20,6 +20,12 @@
   min-height: 100px
   height: auto
 
+.pad-right
+  padding: 0 10px 0 0
+
+.no-pad
+  padding: 0
+
 .greybox
   font-size: 16px
   padding: 15px
@@ -121,8 +127,17 @@ input[type=checkbox]:checked + label::after
   -webkit-user-select: text
 
 
-.reset input[type=submit]
+.reset input[type=submit], .reset input[type=button], input[type=file], input[type="file"]::-webkit-file-upload-button,
+button
   -webkit-appearance: none
+  border-radius: 0
+  border-image: none
+  background-color: transparent
+
+input[type="file"]::-webkit-file-upload-button
+  margin: 0 0 10px
+  border: 3px solid #393b40
+  color: #cccccc
 
 .form-btn
   display: inline-block
@@ -131,7 +146,7 @@ input[type=checkbox]:checked + label::after
   font-weight: bold
   cursor: pointer
   background-color: #4D9C2D
-  color: #fff
+  color: #ffffff
   border: none
   letter-spacing: 1px
   width: 100%
