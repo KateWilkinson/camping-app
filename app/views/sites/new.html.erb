@@ -1,205 +1,205 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
-      <div class="h-title">
-        <h4>Add Campsite</h4>
-        <span class="h-underline"></span>
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <div class="h-title">
+      <h4>Add Campsite</h4>
+      <span class="h-underline"></span>
+    </div>
+
+    <% if @site.errors.any? %>
+      <section id='errors'>
+        <ul>
+          <% @site.errors.full_messages.each do |message|%>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </section>
+    <% end %>
+
+    <%= form_for @site, html: { multipart: true, class: 'custom-form' } do |f| %>
+      <div class="form-group">
+        <%= f.label :name, class: "custom-label" %>
+        <%= f.text_field :name, autofocus: true, class: "form-control custom-input"  %>
+      </div>
+      <div class="form-group">
+        <%= f.label "Address Line 1", class: "custom-label" %>
+        <%= f.text_field :street, autofocus: true, class: "form-control custom-input" %>
+      </div>
+      <div class="form-group">
+        <%= f.label "Town/City", class: "custom-label" %>
+        <%= f.text_field :town, autofocus: true, class: "form-control custom-input"  %>
+      </div>
+      <div class="form-group">
+        <%= f.label :county, class: "custom-label" %>
+        <%= f.text_field :county, autofocus: true,
+        class: "form-control custom-input"  %>
+      </div>
+      <div class="form-group">
+        <%= f.label :postcode, class: "custom-label" %>
+        <%= f.text_field :postcode, class: "form-control custom-input", autofocus: true %>
+      </div>
+      <div class="form-group">
+        <%= f.label "Price", class: "custom-label" %>
+        <%= f.text_field :price, autofocus: true, class: "form-control custom-input", placeholder: "per night" %>
+      </div>
+      <div class="form-group">
+        <%= f.label "Accomodation type", class: "visuallyhidden" %>
+        <%= f.select(:accommodation_type, options_for_select(['Cabin', 'Campervan', 'Canal boat', 'Pitch only', 'Pod', 'Shepherd hut', 'Tent', 'Treehouse', 'Yurt', 'Other']), {}, {class: "form-control custom-select"}) %>
+      </div>
+      <div class="form-group">
+        <%= f.label :occupancy, class: "custom-label" %>
+        <%= f.text_field :occupancy, autofocus: true, class: "form-control custom-input", placeholder: "Sleeps" %>
+      </div>
+      <div class="form-group">
+        <%= f.label "Full description", class: "custom-label" %>
+        <%= f.text_field :description, autofocus: true, class: "form-control custom-input textarea-tall" %>
+      </div>
+      <div class="form-group">
+        <%= f.label "Short description", class: "custom-label" %>
+        <%= f.text_field :summary, autofocus: true, class: "form-control custom-input", placeholder: "Max. 50 words" %>
       </div>
 
-      <% if @site.errors.any? %>
-        <section id='errors'>
-          <ul>
-            <% @site.errors.full_messages.each do |message|%>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </section>
-      <% end %>
+      <div class="form-group">
+        <%= f.label "Open dates:", class: "custom-label" %><br />
+          <div class="col-xs-12 col-md-6 pad-right">
+            <%= f.text_field :available_from, autofocus: true, class: "form-control custom-input", placeholder: "Month" %>
+          </div>
+          <div class="col-xs-12 col-md-6 no-pad">
+          <%= f.text_field :available_to, autofocus: true, class: "form-control custom-input", placeholder: "Month" %>
+        </div>
+      </div>
 
-      <%= form_for @site, html: { multipart: true, class: 'custom-form' } do |f| %>
-        <div class="form-group">
-          <%= f.label :name, class: "custom-label" %>
-          <%= f.text_field :name, autofocus: true, class: "form-control custom-input"  %>
+      <legend>Upload images:</legend>
+      <div class="form-group">
+        <div class="col-xs-12 col-md-6 pad-right">
+          <%= f.file_field :image, class: "upload-btn sml-text" %>
+          <%= f.file_field :image_2, class: "upload-btn sml-text" %>
+          <%= f.file_field :image_3, class: "upload-btn sml-text" %>
+          </div>
+          <div class="col-xs-12 col-md-6 no-pad">
+          <%= f.file_field :image_4, class: "upload-btn sml-text" %>
+          <%= f.file_field :image_5, class: "upload-btn sml-text" %>
+          <%= f.file_field :image_6, class: "upload-btn sml-text" %>
         </div>
+      </div>
+
+        <legend>Select the amenities available:</legend>
         <div class="form-group">
-          <%= f.label "Address Line 1", class: "custom-label" %>
-          <%= f.text_field :street, autofocus: true, class: "form-control custom-input" %>
-        </div>
-        <div class="form-group">
-          <%= f.label "Town/City", class: "custom-label" %>
-          <%= f.text_field :town, autofocus: true, class: "form-control custom-input"  %>
-        </div>
-        <div class="form-group">
-          <%= f.label :county, class: "custom-label" %>
-          <%= f.text_field :county, autofocus: true,
-          class: "form-control custom-input"  %>
-        </div>
-        <div class="form-group">
-          <%= f.label :postcode, class: "custom-label" %>
-          <%= f.text_field :postcode, class: "form-control custom-input", autofocus: true %>
-        </div>
-        <div class="form-group">
-          <%= f.label "Price", class: "custom-label" %>
-          <%= f.text_field :price, autofocus: true, class: "form-control custom-input", placeholder: "per night" %>
-        </div>
-        <div class="form-group">
-          <%= f.label "Accomodation type", class: "visuallyhidden" %>
-          <%= f.select(:accommodation_type, options_for_select(['Cabin', 'Campervan', 'Canal boat', 'Pitch only', 'Pod', 'Shepherd hut', 'Tent', 'Treehouse', 'Yurt', 'Other']), {}, {class: "form-control custom-select"}) %>
-        </div>
-        <div class="form-group">
-          <%= f.label :occupancy, class: "custom-label" %>
-          <%= f.text_field :occupancy, autofocus: true, class: "form-control custom-input", placeholder: "Sleeps" %>
-        </div>
-        <div class="form-group">
-          <%= f.label "Full description", class: "custom-label" %>
-          <%= f.text_field :description, autofocus: true, class: "form-control custom-input textarea-tall" %>
-        </div>
-        <div class="form-group">
-          <%= f.label "Short description", class: "custom-label" %>
-          <%= f.text_field :summary, autofocus: true, class: "form-control custom-input", placeholder: "Max. 50 words" %>
+          <%= f.check_box :toilet_block, class: "checkbox-inline" %>
+          <%= f.label(:toilet_block, "Toilet block") %>
+          <%= f.check_box :ensuite_toilet, class: "checkbox-inline" %>
+          <%= f.label(:ensuite_toilet, "Ensuite toilet") %>
+          <%= f.check_box :shower_block, class: "checkbox-inline" %>
+          <%= f.label(:shower_block, "Shower block") %>
         </div>
 
         <div class="form-group">
-          <%= f.label "Open dates:", class: "custom-label" %><br />
-            <div class="col-xs-3">
-              <%= f.text_field :available_from, autofocus: true, class: "form-control custom-input", placeholder: "Month" %>
-            </div>
-            <div class="col-xs-3">
-            <%= f.text_field :available_to, autofocus: true, class: "form-control custom-input", placeholder: "Month" %>
-          </div>
+          <%= f.check_box :ensuite_shower, class: "checkbox-inline" %>
+          <%= f.label(:ensuite_shower, "Ensuite shower") %>
+          <%= f.check_box "on-site_restaurant", class: "checkbox-inline" %>
+          <%= f.label("on-site_restaurant", "On-site restaurant") %>
+          <%= f.check_box "on-site_shop", class: "checkbox-inline" %>
+          <%= f.label("on-site_shop", "On-site shop") %>
         </div>
 
-        <legend>Upload images:</legend>
         <div class="form-group">
-          Upload images
-          <!-- <%= f.label :image %> -->
-          <%= f.file_field :image %>
-          <!-- <%= f.label :image_2 %> -->
-          <%= f.file_field :image_2 %>
-          <%= f.file_field :image_3 %>
-          <%= f.file_field :image_4 %>
-          <%= f.file_field :image_5 %>
-          <%= f.file_field :image_6 %>
+          <%= f.check_box :cooking_facilities, class: "checkbox-inline" %>
+          <%= f.label(:cooking_facilities, "Cooking facilities") %>
+          <%= f.check_box :charging_facilities, class: "checkbox-inline" %>
+          <%= f.label(:charging_facilities, "Charging facilities") %>
+          <%= f.check_box "on-site parking", class: "checkbox-inline" %>
+          <%= f.label("on-site parking", "On-site parking") %>
         </div>
 
-          <legend>Select the amenities available:</legend>
-          <div class="form-group">
-            <%= f.check_box(:toilet_block) %>
-            <%= f.label(:toilet_block, "Toilet block") %>
-            <%= f.check_box(:ensuite_toilet) %>
-            <%= f.label(:ensuite_toilet, "Ensuite toilet") %>
-            <%= f.check_box(:shower_block) %>
-            <%= f.label(:shower_block, "Shower block") %>
-            <%= f.check_box(:ensuite_shower) %>
-            <%= f.label(:ensuite_shower, "Ensuite shower") %>
-          </div>
+        <div class="form-group">
+          <%= f.check_box :handicap_accessible, class: "checkbox-inline" %>
+          <%= f.label(:handicap_accessible, "Handicap accessible") %>
+          <%= f.check_box :wifi_available, class: "checkbox-inline" %>
+          <%= f.label(:wifi_available, "Wifi available") %>
+        </div>
 
-          <div class="form-group">
-            <%= f.check_box("on-site_restaurant") %>
-            <%= f.label("on-site_restaurant", "On-site restaurant") %>
-            <%= f.check_box("on-site_shop") %>
-            <%= f.label("on-site_shop", "On-site shop") %>
-            <%= f.check_box(:cooking_facilities) %>
-            <%= f.label(:cooking_facilities, "Cooking facilities") %>
-          </div>
+        <legend>Select the appropriate policies:</legend>
+        <div class="form-group">
+          <%= f.check_box :pets_welcome, class: "checkbox-inline" %>
+          <%= f.label(:pets_welcome, "Pets welcome") %>
+          <%= f.check_box :family_friendly, class: "checkbox-inline" %>
+          <%= f.label(:family_friendly, "Family-friendly") %>
+          <%= f.check_box :no_children, class: "checkbox-inline" %>
+          <%= f.label(:no_children, "No children") %>
+        </div>
 
-          <div class="form-group">
-            <%= f.check_box(:charging_facilities) %>
-            <%= f.label(:charging_facilities, "Charging facilities") %>
-            <%= f.check_box("on-site parking") %>
-            <%= f.label("on-site parking", "On-site parking") %>
-            <%= f.check_box(:handicap_accessible) %>
-            <%= f.label(:handicap_accessible, "Handicap accessible") %>
-          </div>
+        <div class="form-group">
+          <%= f.check_box :supermarket_nearby, class: "checkbox-inline" %>
+          <%= f.label(:supermarket_nearby, "Supermarket nearby") %>
+          <%= f.check_box :eco_friendly, class: "checkbox-inline" %>
+          <%= f.label(:eco_friendly, "Eco friendly") %>
+          <%= f.check_box :campfires_allowed, class: "checkbox-inline" %>
+          <%= f.label(:campfires_allowed, "Campfires allowed") %>
+        </div>
 
-          <div class="form-group">
-            <%= f.check_box(:wifi_available) %>
-            <%= f.label(:wifi_available, "Wifi available") %>
-          </div>
+        <div class="form-group">
+          <%= f.check_box :barbecues_allowed, class: "checkbox-inline" %>
+          <%= f.label(:barbecues_allowed, "Barbecues allowed") %>
+          <%= f.check_box :laundry_facilities, class: "checkbox-inline" %>
+          <%= f.label(:laundry_facilities, "Laundry facilities") %>
+          <%= f.check_box :towels_provided, class: "checkbox-inline" %>
+          <%= f.label(:towels_provided, "Towels provided") %>
+        </div>
 
-          <legend>Select the appropriate policies:</legend>
-          <div class="form-group">
-            <%= f.check_box(:pets_welcome) %>
-            <%= f.label(:pets_welcome, "Pets welcome") %>
-            <%= f.check_box(:family_friendly) %>
-            <%= f.label(:family_friendly, "Family-friendly") %>
-            <%= f.check_box(:no_children) %>
-            <%= f.label(:no_children, "No children") %>
-          </div>
+        <legend>Select themes/location type:</legend>
+        <div class="form-group">
+          <%= f.check_box :forest, class: "checkbox-inline" %>
+          <%= f.label(:forest, "Forest") %>
+          <%= f.check_box :lake, class: "checkbox-inline" %>
+          <%= f.label(:lake, "Lake") %>
+          <%= f.check_box :mountain, class: "checkbox-inline" %>
+          <%= f.label(:mountain, "Mountain") %>
+        </div>
 
-          <div class="form-group">
-            <%= f.check_box(:supermarket_nearby) %>
-            <%= f.label(:supermarket_nearby, "Supermarket nearby") %>
-            <%= f.check_box(:eco_friendly) %>
-            <%= f.label(:eco_friendly, "Eco friendly") %>
-            <%= f.check_box(:campfires_allowed) %>
-            <%= f.label(:campfires_allowed, "Campfires allowed") %>
-          </div>
+        <div class="form-group">
+          <%= f.check_box :peaceful, class: "checkbox-inline" %>
+          <%= f.label(:peaceful, "Peaceful") %>
+          <%= f.check_box :remote_location, class: "checkbox-inline" %>
+          <%= f.label(:remote_location, "Remote location") %>
+          <%= f.check_box :scenic, class: "checkbox-inline" %>
+          <%= f.label(:scenic, "Scenic") %>
+        </div>
 
-          <div class="form-group">
-            <%= f.check_box(:barbecues_allowed) %>
-            <%= f.label(:barbecues_allowed, "Barbecues allowed") %>
-            <%= f.check_box(:laundry_facilities) %>
-            <%= f.label(:laundry_facilities, "Laundry facilities") %>
-            <%= f.check_box(:towels_provided) %>
-            <%= f.label(:towels_provided, "Towels provided") %>
-          </div>
+        <div class="form-group">
+          <%= f.check_box :good_for_hiking, class: "checkbox-inline" %>
+          <%= f.label(:good_for_hiking, "Good for walkers/hiking") %>
+          <%= f.check_box :wildlife_haven, class: "checkbox-inline" %>
+          <%= f.label(:wildlife_haven, "Wildlife haven") %>
+        </div>
 
-          <legend>Select themes/location type:</legend>
-          <div class="form-group">
-            <%= f.check_box(:forest) %>
-            <%= f.label(:forest, "Forest") %>
-            <%= f.check_box(:lake) %>
-            <%= f.label(:lake, "Lake") %>
-            <%= f.check_box(:mountain) %>
-            <%= f.label(:mountain, "Mountain") %>
-          </div>
+        <legend>Select leisure facilities nearby:</legend>
+        <div class="form-group">
+          <%= f.check_box :canoeing_nearby, class: "checkbox-inline" %>
+          <%= f.label(:canoeing_nearby, "Canoeing nearby") %>
+          <%= f.check_box :beach_nearby, class: "checkbox-inline" %>
+          <%= f.label(:beach_nearby, "Beach nearby") %>
+          <%= f.check_box :cycle_hire_nearby, class: "checkbox-inline" %>
+          <%= f.label(:cycle_hire_nearby, "Bike hire available") %>
+        </div>
 
-          <div class="form-group">
-            <%= f.check_box(:peaceful) %>
-            <%= f.label(:peaceful, "Peaceful") %>
-            <%= f.check_box(:remote_location) %>
-            <%= f.label(:remote_location, "Remote location") %>
-            <%= f.check_box(:scenic) %>
-            <%= f.label(:scenic, "Scenic") %>
-          </div>
+        <div class="form-group">
+          <%= f.check_box :horse_riding_nearby, class: "checkbox-inline" %>
+          <%= f.label(:horse_riding_nearby, "Horse riding nearby") %>
+          <%= f.check_box :sailing_nearby, class: "checkbox-inline" %>
+          <%= f.label(:sailing_nearby, "Sailing nearby") %>
+          <%= f.check_box :watersports_nearby, class: "checkbox-inline" %>
+          <%= f.label(:watersports_nearby, "Watersports nearby") %>
+        </div>
 
-          <div class="form-group">
-            <%= f.check_box(:good_for_hiking) %>
-            <%= f.label(:good_for_hiking, "Good for walkers/hiking") %>
-            <%= f.check_box(:wildlife_haven) %>
-            <%= f.label(:wildlife_haven, "Wildlife haven") %>
-          </div>
+        <div class="form-group">
+          <%= f.check_box :pub_or_restaurant_nearby, class: "checkbox-inline" %>
+          <%= f.label(:pub_or_restaurant_nearby, "Pub/restaurant nearby") %>
+        </div>
 
-          <legend>Select leisure facilities nearby:</legend>
-          <div class="form-group">
-            <%= f.check_box(:canoeing_nearby) %>
-            <%= f.label(:canoeing_nearby, "Canoeing nearby") %>
-            <%= f.check_box(:beach_nearby) %>
-            <%= f.label(:beach_nearby, "Beach nearby") %>
-            <%= f.check_box(:cycle_hire_nearby) %>
-            <%= f.label(:cycle_hire_nearby, "Bike hire available") %>
-          </div>
+        <div class="form-group form-btn reset sml-text">
+          <%= f.submit %>
+        </div>
 
-          <div class="form-group">
-            <%= f.check_box(:horse_riding_nearby) %>
-            <%= f.label(:horse_riding_nearby, "Horse riding nearby") %>
-            <%= f.check_box(:sailing_nearby) %>
-            <%= f.label(:sailing_nearby, "Sailing nearby") %>
-            <%= f.check_box(:watersports_nearby) %>
-            <%= f.label(:watersports_nearby, "Watersports nearby") %>
-          </div>
-
-          <div class="form-group">
-            <%= f.check_box(:pub_or_restaurant_nearby) %>
-            <%= f.label(:pub_or_restaurant_nearby, "Pub/restaurant nearby") %>
-          </div>
-
-
-            <%= f.submit %>
-
-      <% end %>
-      <%= button_to "Cancel site creation", vendors_path %>
-    </div>
+    <% end %>
+    <%= button_to "Cancel site creation", vendors_path %>
   </div>
 </div>

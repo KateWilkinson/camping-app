@@ -20,6 +20,11 @@
   min-height: 100px
   height: auto
 
+.pad-right
+  padding: 0 10px 0 0
+
+.no-pad
+  padding: 0
 
 .greybox
   font-size: 16px
@@ -49,7 +54,7 @@ select.custom-select
   -moz-appearance: none
   appearance: none
   -webkit-border-radius: 1px
-  background: #fff url(<%= asset_path('down-arrow.png') %>) no-repeat 99% center
+  background: #fff url(asset-path('down-arrow.png')) no-repeat 99% center
 
 
 /* styles for checkbox - form */
@@ -89,7 +94,7 @@ input[type=checkbox] + label::after
   height: 13px
   display: block
   z-index: 1
-  background: url(<%= asset_path('tick.svg') %>) no-repeat center center
+  background: url(asset-path('tick.svg')) no-repeat center center
   -ms-transition: all .2s ease
   -webkit-transition: all .2s ease
   transition: all .3s ease
@@ -97,7 +102,8 @@ input[type=checkbox] + label::after
   -webkit-transform: scale(0)
   transform: scale(0)
   opacity: 0
-
+  //
+  // background: url(asset_path('tick.svg')) no-repeat center center
 
 input[type=checkbox]:checked + label::after
   -ms-transform: scale(1)
@@ -121,8 +127,17 @@ input[type=checkbox]:checked + label::after
   -webkit-user-select: text
 
 
-.reset input[type=submit]
+.reset input[type=submit], .reset input[type=button], input[type=file], input[type="file"]::-webkit-file-upload-button,
+button
   -webkit-appearance: none
+  border-radius: 0
+  border-image: none
+  background-color: transparent
+
+input[type="file"]::-webkit-file-upload-button
+  margin: 0 0 10px
+  border: 3px solid #393b40
+  color: #cccccc
 
 .form-btn
   display: inline-block
@@ -130,10 +145,26 @@ input[type=checkbox]:checked + label::after
   text-transform: uppercase
   font-weight: bold
   cursor: pointer
-  background-color: #35c793
-  color: #fff
+  background-color: #4D9C2D
+  color: #ffffff
   border: none
   letter-spacing: 1px
   width: 100%
   padding: 15px 0
   margin: 15px 0
+
+  // background-color: transparent
+  // border: 3px solid #393b40
+
+legend
+  font-size: 16px
+  padding-top: 20px
+
+.sml-text
+  font-size: 12px
+
+.devise-links a
+  color: #393b40
+
+.devise-links a:hover
+  color: #393b40
