@@ -7,6 +7,8 @@ class SitesController < ApplicationController
         if params[p]
           @sites = @sites.filter(p, params[p])
         end
+      @sites = @sites.pricefilter(params[:price])
+      @price = params[:price]
       end
     else
       @sites = Site.all
