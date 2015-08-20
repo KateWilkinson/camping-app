@@ -10,14 +10,14 @@
     <span class="reset vendor_function"><%= link_to "List a new site", new_site_path %></span>
     <span class="reset vendor_function"><%= link_to "Booking Requests", requests_path %></span>
     <% @sites.each do |site| %>
-      <div class="vendor_sites">
       <% if site.vendor_id == current_vendor.id %>
+        <div class="vendor_sites">
           <%= site.name %>
           <p><%= link_to "Edit", edit_site_path(site) %>
           <%= link_to "Delete", site_path(site), method: :delete %>
           <%= link_to "Preview", vendor_path(site) %></p>
+          </div>
       <% end %>
-      </div>
     <% end %>
     <p>
       <%= link_to "Log Out", destroy_vendor_session_path, method: :delete %>
