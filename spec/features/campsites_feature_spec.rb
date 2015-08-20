@@ -91,7 +91,5 @@ feature 'homepage and search' do
       expect(page).not_to have_content('DEF Camping')
       expect(page).not_to have_content('XYZ Camping')
     end
-
   end
-
 end
