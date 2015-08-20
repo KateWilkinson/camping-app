@@ -43,16 +43,31 @@
   -webkit-border-radius: 0px
 
 
+/*** styles for dropdown ***/
 
-/* styles for dropdown - form */
-
-select.custom-select
+select.custom-select, select#request_start_date_3i, select#request_start_date_2i,
+select#request_start_date_1i,
+select#request_end_date_3i, select#request_end_date_2i,
+select#request_end_date_1i,
   -webkit-appearance: none
   -moz-appearance: none
   appearance: none
   -webkit-border-radius: 1px
   background: #fff url(asset-path('down-arrow.png')) no-repeat 99% center
+  padding: 5px
+  border: 3px solid $mid-grey
 
+
+select#request_start_date_3i, select#request_end_date_3i
+  width: 50px
+
+select#request_start_date_2i,
+select#request_end_date_2i
+  width: 125px
+
+select#request_start_date_1i,
+select#request_end_date_1i
+  width: 90px
 
 /* styles for checkbox - form */
 
@@ -149,7 +164,7 @@ input[type="submit"].solid-brd-btn
   border: 3px solid $mid-grey
   color: $mid-grey
 
-button:focus, select:focus
+button:focus, select:focus, date_select:focus
   outline: none
 
 select a
@@ -169,3 +184,6 @@ legend
   color: $mid-grey
   &:hover
     color: $mid-grey
+
+.b
+  font-weight: $strong

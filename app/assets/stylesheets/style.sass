@@ -3,11 +3,18 @@
 
 /* NAV */
 
+.bc-logo
+  width: 80px
+  height: 80px
+
 .custom-navbar
-  min-height: 110px
+  min-height: 115px
+  background-color: #f1f1f1
   a
     color: $dark-grey
     text-decoration: none
+    font-weight: $strong
+    font-size: 16px
   &:hover
     text-decoration: underline
 
@@ -21,6 +28,15 @@ ul.custom-nav-link li:before
   content: "+"
   margin-right: 10px
   // font-size: 19px
+
+
+.container #para-logo
+  background: url(images/para-logo-home.png) no-repeat center center
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+
 
 span.text-content
   background: rgba(77, 156, 45, 0.8)
@@ -96,7 +112,8 @@ span.text-content h1, span.text-content h2, span.text-content h3
 
 .no-facility
   text-decoration: line-through
-  color: $dark-grey
+  color: $mid-grey
+  width: 80%
 
 
 /* Headers and titles */
@@ -127,6 +144,6 @@ span.text-content h1, span.text-content h2, span.text-content h3
   border: none
   letter-spacing: 1px
   width: 100%
-  padding: 15px 0
+  padding: 12px 0
   margin: 15px 0
   outline: none

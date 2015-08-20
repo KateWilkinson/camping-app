@@ -1,6 +1,13 @@
+<nav class="navbar custom-navbar">
+  <div class="container-fluid">
+      <a class="navbar-brand center" href="/">
+        <img alt="Beyond camping" src="<%= image_url "Logo-darkgrey-sml.png" %>" class="bc-logo">
+      </a>
+  </div>
+</nav>
 <div class="container">
-  <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
+  <!-- <div class="row"> -->
+    <div class="col-xs-10 col-xs-offset-1">
       <div class="h-title">
         <h4><%= @site.name %></h4>
         <span class="h-underline"></span>
@@ -90,7 +97,6 @@
           </div>
         </div>
 
-
         <!-- <ul>
           Location Type:
           <% Site.locationtype.each do |locationtype_name| %>
@@ -101,25 +107,23 @@
           <% end %>
         </ul> -->
 
-
       </div>
 
       <div class="row">
-        <%= button_to "Book", new_request_path, :method => "get" %>
-        <%= button_to "Back", sites_path, :method => "get" %>
+        <div class="form-group form-btn upload-btn sml-width">
+          <%= button_to "Booking enquiry", new_request_path, :method => "get", :class => "green-btn" %>
+        </div>
       </div>
-
+<!-- <%= button_to "Back", sites_path, :method => "get" %> -->
 
     </div>
 
-  </div>
+  <!-- </div> -->
 </div>
 <script>
 	(function() {
-
 		[].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
 			new CBPFWTabs( el );
 		});
-
 	})();
-	</script>
+</script>
