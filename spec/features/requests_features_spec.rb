@@ -45,6 +45,5 @@ feature 'requests' do
     visit '/vendors'
     click_link 'Delete'
     expect(page).not_to have_content 'ABC Camping'
-    expect(page).to have_content 'Site deleted successfully'
   end
 end
