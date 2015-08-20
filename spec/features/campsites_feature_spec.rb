@@ -10,7 +10,7 @@ feature 'homepage and search' do
 
     scenario 'they see the homepage' do
       visit '/'
-      expect(page).to have_css('#header')
+      expect(page).to have_css("img[alt='Beyond camping']")
     end
 
     scenario 'they can see the full list of campsites' do
@@ -33,7 +33,7 @@ feature 'homepage and search' do
       click_link 'ABC Camping'
       click_button 'Back'
       expect(current_path).to eq '/sites'
-      expect(page).to have_css('#header')
+      expect(page).to have_css("img[alt='Beyond camping']")
     end
   end
 

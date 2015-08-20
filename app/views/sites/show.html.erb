@@ -1,23 +1,13 @@
-<!doctype html>
-<html>
+
   <head>
-      <style type="text/css">
-        #map
-        {
-          height:300px;
-          width:300px;
-          display:block;
-          border-radius: 10px;
-        }
-      </style>
       <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js">
       </script>
       <%= javascript_include_tag('sites.js') %>
   </head>
 
-  <body>
-
-    <div id="map"></div>
+    <div class="container">
+      <div class="row">
+    <div id="map" class="g-map"></div>
 
     <h1><%= @site.name %></h1>
 
@@ -91,6 +81,5 @@
     <%= button_to "Book", new_request_path, :method => "get" %>
     <%= button_to "Back", sites_path, :method => "get" %>
 
-  </body>
-
-</html>
+</div>
+</div>

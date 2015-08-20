@@ -7,7 +7,7 @@ module Helpers
     fill_in 'site[postcode]', with: 'DE5 9TY'
     fill_in 'site[price]', with: 60
     fill_in 'site[description]', with: 'Peaceful'
-    click_button 'Create Site'
+    click_button 'Create site'
   end
 
   def create_full_site
@@ -29,7 +29,7 @@ module Helpers
     check('site[toilet_block]')
     uncheck('site[shower_block]')
     check('site[charging_facilities]')
-    click_button 'Create Site'
+    click_button 'Create site'
   end
 
   def sign_up_as_vendor

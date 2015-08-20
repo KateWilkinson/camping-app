@@ -1,4 +1,5 @@
-<div class="row">
+<div class="container">
+  <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="h-title">
       <h4>Log in</h4>
@@ -23,12 +24,13 @@
         </div>
       <% end -%>
 
-      <div class="form-group actions form-btn reset sml-text">
-        <%= f.submit "Log in" %>
+      <div class="form-group actions form-btn reset">
+        <%= f.submit "Log in", :class => "full-width sml-text" %>
       </div>
     <% end %>
     <div class="devise-links">
       <%= render "devise/shared/links" %>
     </div>
   </div>
+</div>
 </div>
