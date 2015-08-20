@@ -138,6 +138,10 @@ class Site < ActiveRecord::Base
     where(locationtype.to_s, "%#{filter}")
   end
 
+  def self.pricefilter(maxprice)
+    where('price <= ?', maxprice )
+  end
+
   def self.amenities
     [:toilet_block, :ensuite_toilet, :shower_block, :ensuite_shower, :'on-site_restaurant', :'on-site_shop', :cooking_facilities, :charging_facilities, :'on-site parking', :wifi_available, :handicap_accessible, :towels_provided, :laundry_facilities]
   end
