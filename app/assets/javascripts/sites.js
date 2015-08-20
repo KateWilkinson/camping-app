@@ -2,7 +2,6 @@ function getPosition(callback) {
 
   var geocoder = new google.maps.Geocoder();
   var postcode = document.getElementById("postcode").innerHTML;
-  // var postcode = 'E17 4GD'
 
   geocoder.geocode({'address': postcode}, function(results, status)
   {
