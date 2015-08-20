@@ -4,42 +4,38 @@ class Site < ActiveRecord::Base
   validates :summary, length: {maximum: 70}
 
   has_attached_file :image,
-                    :styles => {
-                      :large => {
-                        :geometry => '1000x1000#',
-                        :format => 'jpg',
-                        :quality => 95,
-                      },
-                      :medium => {
-                        :geometry => '400x400#',
-                        :format => 'jpg',
-                        :quality => 75,
-                      },
-                      :thumb => {
-                        :geometry => '100x100#',
-                        :format => 'jpg',
-                        :quality => 40,
-                      },
-                    },
-                    :default_url => "",
-                    bucket: 'beyond-camping'
-
-  has_attached_file :image_2,
                       :styles => {
                         :large => {
-                          :geometry => '1000x1000#',
+                          :geometry => '600x600#',
                           :format => 'jpg',
-                          :quality => 95,
                         },
                         :medium => {
-                          :geometry => '400x400#',
+                          :geometry => '350x350#',
                           :format => 'jpg',
-                          :quality => 75,
                         },
                         :thumb => {
                           :geometry => '100x100#',
                           :format => 'jpg',
-                          :quality => 40,
+                          :quality => 50,
+                        },
+                      },
+                      :default_url => "",
+                      bucket: 'beyond-camping'
+
+  has_attached_file :image_2,
+                      :styles => {
+                        :large => {
+                          :geometry => '600x600#',
+                          :format => 'jpg',
+                        },
+                        :medium => {
+                          :geometry => '350x350#',
+                          :format => 'jpg',
+                        },
+                        :thumb => {
+                          :geometry => '100x100#',
+                          :format => 'jpg',
+                          :quality => 50,
                         },
                       },
                     :default_url => ""
@@ -47,19 +43,17 @@ class Site < ActiveRecord::Base
   has_attached_file :image_3,
                       :styles => {
                         :large => {
-                          :geometry => '1000x1000#',
+                          :geometry => '600x600#',
                           :format => 'jpg',
-                          :quality => 95,
                         },
                         :medium => {
-                          :geometry => '400x400#',
+                          :geometry => '350x350#',
                           :format => 'jpg',
-                          :quality => 75,
                         },
                         :thumb => {
                           :geometry => '100x100#',
                           :format => 'jpg',
-                          :quality => 40,
+                          :quality => 50,
                         },
                       },
                     :default_url => ""
@@ -67,19 +61,17 @@ class Site < ActiveRecord::Base
   has_attached_file :image_4,
                       :styles => {
                         :large => {
-                          :geometry => '1000x1000#',
+                          :geometry => '600x600#',
                           :format => 'jpg',
-                          :quality => 95,
                         },
                         :medium => {
-                          :geometry => '400x400#',
+                          :geometry => '350x350#',
                           :format => 'jpg',
-                          :quality => 75,
                         },
                         :thumb => {
                           :geometry => '100x100#',
                           :format => 'jpg',
-                          :quality => 40,
+                          :quality => 50,
                         },
                       },
                     :default_url => ""
@@ -87,19 +79,17 @@ class Site < ActiveRecord::Base
   has_attached_file :image_5,
                       :styles => {
                         :large => {
-                          :geometry => '1000x1000#',
+                          :geometry => '600x600#',
                           :format => 'jpg',
-                          :quality => 95,
                         },
                         :medium => {
-                          :geometry => '400x400#',
+                          :geometry => '350x350#',
                           :format => 'jpg',
-                          :quality => 75,
                         },
                         :thumb => {
                           :geometry => '100x100#',
                           :format => 'jpg',
-                          :quality => 40,
+                          :quality => 50,
                         },
                       },
                     :default_url => ""
@@ -107,25 +97,20 @@ class Site < ActiveRecord::Base
   has_attached_file :image_6,
                       :styles => {
                         :large => {
-                          :geometry => '1000x1000#',
+                          :geometry => '600x600#',
                           :format => 'jpg',
-                          :quality => 95,
                         },
                         :medium => {
-                          :geometry => '400x400#',
+                          :geometry => '350x350#',
                           :format => 'jpg',
-                          :quality => 75,
                         },
                         :thumb => {
                           :geometry => '100x100#',
                           :format => 'jpg',
-                          :quality => 40,
+                          :quality => 50,
                         },
                       },
                     :default_url => ""
-                    # :url => "/system/sites/images/:id/:style/:filename",
-                    # :path => "#{Rails.root}/public/system/:class/images/:id/:style/:basename.:extension",
-                    # :storage => :filesystem
 
   validates_attachment_content_type :image,
                                     :content_type => /\Aimage\/.*\Z/
