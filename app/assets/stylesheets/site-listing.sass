@@ -1,5 +1,269 @@
+
+/****** SLIDESHOW ******/
+.photo-viewer
+  position: relative
+  width: 100%
+  height: 600px
+  overflow: hidden
+
+.photo-viewer.is-loading:after
+  position: absolute
+  top: 0
+  left: 0
+
+.photo-viewer img
+  position: absolute
+  max-width: 100%
+  max-height: 100%
+  top: 50%
+  left: 50%
+
+.thumbnails
+  margin: 10px 5px 0 0
+  height: 60px
+
+a.active
+  opacity: 0.3
+
+
 .g-map
   height: 300px
   width: 300px
   display: block
   border-radius: 1px
+  float: left
+
+.site-address
+  float: left
+  text-align: left
+  padding-left: 30px
+
+
+
+
+.site-listing
+  margin-top: 100px
+  ul li
+    list-style: none
+
+tabs
+  position: relative
+  overflow: hidden
+  margin: 0 auto
+  width: 100%
+  font-weight: $med
+  font-size: 1.25em
+
+/* Nav */
+.tabs nav
+  text-align: center
+
+.tabs ul
+  position: relative
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: flex
+  margin: 0 auto
+  padding: 0
+  max-width: 1200px
+  list-style: none
+  -ms-box-orient: horizontal
+  -ms-box-pack: center
+  -webkit-flex-flow: row wrap
+  -moz-flex-flow: row wrap
+  -ms-flex-flow: row wrap
+  flex-flow: row wrap
+  -webkit-justify-content: center
+  -moz-justify-content: center
+  -ms-justify-content: center
+  justify-content: center
+
+.tabs nav ul li
+  position: relative
+  z-index: 1
+  display: block
+  margin: 0
+  text-align: center
+  -webkit-flex: 1
+  -moz-flex: 1
+  -ms-flex: 1
+  flex: 1
+
+.tabs nav a
+  position: relative
+  display: block
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+  line-height: 2.5
+  text-decoration: none
+
+.tabs nav a span
+  vertical-align: middle
+  font-size: 16px
+
+.tabs nav li.tab-current a
+  color: $green
+
+.tabs nav a:focus
+  outline: none
+
+  /* Icons */
+// .icon::before
+//   z-index: 10
+//   display: inline-block
+//   margin: 0 0.4em 0 0
+//   vertical-align: middle
+//   text-transform: none
+//   font-weight: normal
+//   font-variant: normal
+//   font-size: 1.3em
+//   line-height: 1
+//   speak: none
+//   -webkit-backface-visibility: hidden
+//   -webkit-font-smoothing: antialiased
+//   -moz-osx-font-smoothing: grayscale
+//
+// .icon-upload::before
+//   content: "\e68a"
+//
+// .icon-tools::before
+//   content: "\e60a"
+//
+// .icon-plane::before
+//   content: "\e625"
+//
+// .icon-joy::before
+//   content: "\e6a4"
+//
+// .icon-plug::before
+//   content: "\e69a"
+//
+// .icon-home::before
+//   content: "\e648"
+//
+// .icon-gift::before
+//   content: "\e652"
+//
+// .icon-display::before
+//   content: "\e65e"
+//
+// .icon-date::before
+//   content: "\e660"
+//
+// .icon-config::before
+//   content: "\e666"
+//
+// .icon-coffee::before
+//   content: "\e669"
+//
+// .icon-camera::before
+//   content: "\e66f"
+//
+// .icon-box::before
+//   content: "\e674"
+
+  /* Content */
+.content-wrap
+  position: relative
+
+.content-wrap section
+  display: none
+  margin: 0 auto
+  padding: 1em
+  max-width: 1000px
+  text-align: left
+  padding: 30px
+
+.content-wrap section.content-current
+  display: block
+
+.content-wrap section p
+  margin: 0
+  padding: 10px 0
+  color: $dark-grey
+  font-weight: 400
+  font-size: 14px
+  line-height: 16px
+
+.content-wrap section p.no-pad
+  padding: 2px 0 !important
+
+
+
+
+.listing-bold
+  font-weight: $strong
+
+
+
+
+  /* Fallback */
+.no-js .content-wrap section
+  display: block
+  padding-bottom: 2em
+  border-bottom: 1px solid rgba(255,255,255,0.6)
+
+.no-flexbox nav ul
+  display: block
+
+.no-flexbox nav ul li
+  min-width: 15%
+  display: inline-block
+  //
+  // @media screen and (max-width: 58em) {
+  // 	.tabs nav a.icon span {
+  // 		display: none;
+  // 	}
+  // 	.tabs nav a:before {
+  // 		margin-right: 0;
+  // 	}
+  // }
+
+.tabs-style-linemove nav
+  background: #fff
+
+.tabs-style-linemove nav li:last-child::before
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 4px
+  background: $green
+  content: ''
+  -webkit-transition: -webkit-transform 0.3s
+  transition: transform 0.3s
+
+  /* Move the line */
+.tabs-style-linemove nav li:first-child.tab-current ~ li:last-child::before
+  -webkit-transform: translate3d(-400%,0,0)
+  transform: translate3d(-400%,0,0)
+
+.tabs-style-linemove nav li:nth-child(2).tab-current ~ li:last-child::before
+  -webkit-transform: translate3d(-300%,0,0)
+  transform: translate3d(-300%,0,0)
+
+.tabs-style-linemove nav li:nth-child(3).tab-current ~ li:last-child::before
+  -webkit-transform: translate3d(-200%,0,0)
+  transform: translate3d(-200%,0,0)
+
+.tabs-style-linemove nav li:nth-child(4).tab-current ~ li:last-child::before
+  -webkit-transform: translate3d(-100%,0,0)
+  transform: translate3d(-100%,0,0)
+
+.tabs-style-linemove nav a
+  padding: 1em 0
+  color: $mid-grey
+  line-height: 1
+  -webkit-transition: color 0.3s, -webkit-transform 0.3s
+  transition: color 0.3s, transform 0.3s
+
+.tabs-style-linemove nav li.tab-current a
+  color: $green
+  -webkit-transform: translate3d(0,8px,0)
+  transform: translate3d(0,8px,0)
+
+.tabs-style-linemove nav a span
+  font-weight: 700

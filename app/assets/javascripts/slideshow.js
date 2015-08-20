@@ -98,6 +98,6 @@ $(document).on('click', '.thumb', function(e){
     });
   }
 });
-$( document ).ready(function() {
+$(document).on('page:change',function() {
   $('.thumb').eq(0).click();
 });

@@ -1,22 +1,35 @@
 <div class="container">
   <div class="row">
-<h1>Booking Requests</h1>
-<%= form_for [@request] do |f| %>
-  <p><%= f.label :name %></p>
-  <p><%= f.text_field :customer_name %></p>
-  <p><%= f.label :email %></p>
-  <p><%= f.text_field :customer_email %></p>
-  <p><%= f.label "Phone Number" %></p>
-  <p><%= f.text_field :customer_phone %></p>
-  <p><%= f.label "Start Date" %></p>
-  <p><%= f.date_select :start_date, order: [:day, :month, :year] %></p>
-  <p><%= f.label "End Date" %></p>
-  <p><%= f.date_select :end_date, order: [:day, :month, :year] %></p>
-  <p><%= f.label :comments %></p>
-  <p><%= f.text_field :comments %></p>
-  <p><%= f.submit %></p>
-<% end %>
+    <div class="col-xs-6 col-xs-offset-3">
+      <div class="h-title">
+        <h4>Booking Requests</h4>
+        <span class="h-underline"></span>
+      </div>
 
-<%= button_to "Cancel Request", site_path(@site), :method => "get" %>
+      <%= form_for [@request] do |f| %>
+        <p><%= f.label :name %></p>
+        <p><%= f.text_field :customer_name %></p>
+        <p><%= f.label :email %></p>
+        <p><%= f.text_field :customer_email %></p>
+        <p><%= f.label "Phone Number" %></p>
+        <p><%= f.text_field :customer_phone %></p>
+        <p><%= f.label "Start Date" %></p>
+        <p><%= f.date_select :start_date, order: [:day, :month, :year] %></p>
+
+        <%= f.label "End Date" %>
+        <%= f.date_select :end_date, order: [:day, :month, :year] %>
+
+        <%= f.label :comments %>
+        <%= f.text_field :comments %>
+
+        <div class="form-group form-btn upload-btn sml-width">
+          <%= f.submit %>
+        </div>
+      <% end %>
+
+      <div class="devise-links">
+        <%= button_to "Cancel Request", site_path(@site), :method => "get" %>
+      </div>
+    </div>
   </div>
 </div>

@@ -6,16 +6,6 @@
         <span class="h-underline"></span>
       </div>
 
-      <% if @site.errors.any? %>
-        <section id='errors'>
-          <ul>
-            <% @site.errors.full_messages.each do |message|%>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </section>
-      <% end %>
-
       <%= form_for @site, html: { multipart: true, class: 'custom-form' } do |f| %>
         <div class="form-group">
           <%= f.label :name, class: "custom-label" %>
@@ -204,6 +194,16 @@
       <div class="row">
         <%= button_to "Cancel site creation", vendors_path %>
       </div>
+
+      <% if @site.errors.any? %>
+        <section id='errors'>
+          <ul>
+            <% @site.errors.full_messages.each do |message|%>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </section>
+      <% end %>
     </div>
   </div>
 </div>
