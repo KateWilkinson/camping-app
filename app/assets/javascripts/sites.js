@@ -2,7 +2,6 @@ function getPosition(callback) {
 
   var geocoder = new google.maps.Geocoder();
   var postcode = document.getElementById("postcode").innerHTML;
-  // var postcode = 'E17 4GD'
 
   geocoder.geocode({'address': postcode}, function(results, status)
   {
@@ -19,10 +18,13 @@ function getPosition(callback) {
 };
 
 function setup_map(latitude, longitude) {
+  styles: [
+  ]
+
   var _position = { lat: latitude, lng: longitude};
 
   var mapOptions = {
-    zoom: 16,
+    zoom: 8,
     center: _position
   }
 
@@ -35,7 +37,7 @@ function setup_map(latitude, longitude) {
 };
 
 $(document).on('page:change', function() {
-
+  if(!document.getElementById('map')) { return };
   getPosition(function(position){
     setup_map(position.latt, position.long);
   });
