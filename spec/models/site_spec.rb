@@ -34,5 +34,4 @@ describe Site, type: :model do
       expect(filtered.first).to eq(site3)
     end
   end
-
 end
