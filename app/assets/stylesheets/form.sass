@@ -1,9 +1,6 @@
 
-
-/* Form styles */
-
 .custom-input:focus
-  border-color: #cccccc
+  border-color: $light-grey
   -webkit-box-shadow: none
   box-shadow: none
 
@@ -13,7 +10,7 @@
   font-weight: normal
 
 .custom-input, .custom-select
-  border: 3px solid #393b40
+  border: 3px solid $dark-grey
   border-radius: 1px
 
 .textarea-tall
@@ -29,13 +26,13 @@
 .greybox
   font-size: 16px
   padding: 15px
-  background: #f1f1f1
+  background: $v-light-grey
   margin-bottom: 15px
 
 .field input
   font-size: 16px
   padding: 15px
-  background-color: #f1f1f1
+  background-color: $v-light-grey
   width: 100%
   outline: 0
   border: none
@@ -83,7 +80,7 @@ input[type=checkbox] + label::before
   height: 14px
   display: block
   background: white
-  border: 1px solid #a9a9a9
+  border: 1px solid $dark-grey
 
 input[type=checkbox] + label::after
   content: ' '
@@ -137,8 +134,8 @@ button
 
 input[type="file"]::-webkit-file-upload-button
   margin: 0 0 10px
-  border: 3px solid #393b40
-  color: #cccccc
+  border: 3px solid $dark-grey
+  color: $light-grey
 
 input[type="submit"].full-width
   width: 100%
@@ -147,25 +144,8 @@ input[type="submit"].full-width
 
 input[type="submit"].solid-brd-btn
   margin: 0 0 10px
-  border: 3px solid #393b40
-  color: #666
-
-.form-btn
-  display: inline-block
-  text-align: center
-  text-transform: uppercase
-  font-weight: bold
-  cursor: pointer
-  background-color: #4D9C2D
-  color: #ffffff
-  border: none
-  letter-spacing: 1px
-  width: 100%
-  padding: 15px 0
-  margin: 15px 0
-
-  // background-color: transparent
-  // border: 3px solid #393b40
+  border: 3px solid $dark-grey
+  color: $mid-grey
 
 button:focus, select:focus
   outline: none
@@ -184,7 +164,6 @@ legend
   font-size: 12px
 
 .devise-links a
-  color: #393b40
-
-.devise-links a:hover
-  color: #393b40
+  color: $dark-grey
+  &:hover
+    color: $dark-grey

@@ -1,18 +1,15 @@
 
 .container
-  font-family: 'Lato',Helvetica,sans-serif
+  font-family: $serif
 
 /* NAV */
 
-
 .custom-navbar
   min-height: 110px
-
   a
-    color: #393b40
+    color: $dark-grey
     text-decoration: none
-
-  a:hover
+  &:hover
     text-decoration: underline
 
 .custom-nav-link
@@ -42,30 +39,24 @@ span.text-content
   -ms-transition: opacity 500ms ease
   -o-transition: opacity 500ms ease
   transition: opacity 500ms ease
-
   h1, h2, h3
     color: #fff
     text-align: center
-    font-weight: 100
-
+    font-weight: $light
   h1
     font-size: 21px
     line-height: 23px
     padding: 100px 0 10px
     border-top: none
     margin: 0px
-
   h2
     font-size: 16px
     line-height: 18px
-
   h3
     font-size: 12px
     line-height: 14px
-
   .short
     width: 80%
-
 
 // alt option for hover on images
   //background: rgba(0,0,0,0.5)
@@ -78,18 +69,16 @@ span.text-content
 .site-name
   float: left
   font-weight: 700
-
   a
-    color: #393b40
-
-  a:hover
-    color: #666
+    color: $dark-grey
+  &:hover
+    color: $mid-grey
     text-decoration: none
-
 
 .site-town
   float: right
-  color: #666
+  color: $mid-grey
+  padding-right: 10px
 
 .site-image
   width: 350px
@@ -97,11 +86,9 @@ span.text-content
 div.site-container-hp a:hover span.text-content
   opacity: 1
 
-
 span.text-content h1, span.text-content h2, span.text-content h3
   text-align: center
   vertical-align: middle
-
 
 .center
   float: none
@@ -110,23 +97,65 @@ span.text-content h1, span.text-content h2, span.text-content h3
 
 .no-facility
   text-decoration: line-through
-  color: #545454
+  color: $dark-grey
 
 
 /* Headers and titles */
 .h-title
   text-align: center
   margin: 0 0 25px 0
-
   h4
     font-weight: bold
     font-size: 18px
-    color: #393b40
+    color: $dark-grey
 
 .h-underline
   margin: 0 auto
   display: block
   width: 48px
   height: 3px
-  border-bottom: 3px solid #4D9C2D
-  // border-bottom: 3px solid #393b40
+  border-bottom: 3px solid $green
+
+/****** BUTTONS ******/
+.green-btn, .form-btn
+  display: inline-block
+  text-align: center
+  text-transform: uppercase
+  font-weight: bold
+  cursor: pointer
+  background-color: $green
+  color: #ffffff
+  border: none
+  letter-spacing: 1px
+  width: 100%
+  padding: 15px 0
+  margin: 15px 0
+
+
+/****** SLIDESHOW ******/
+.photo-viewer
+  position: relative
+  width: 480px
+  height: 480px
+  overflow: hidden
+  float: right
+
+.photo-viewer.is-loading:after
+  position: absolute
+  top: 0
+  left: 0
+  // content: url('../img/load.gif')
+
+.photo-viewer img
+  position: absolute
+  max-width: 100%
+  max-height: 100%
+  top: 50%
+  left: 50%
+
+.thumbnails
+  margin: 10px 5px 0 0
+  height: 60px
+
+a.active
+  opacity: 0.3
