@@ -51,7 +51,6 @@ class SitesController < ApplicationController
   def destroy
     @site = Site.find(params[:id])
     @site.destroy
-    flash[:notice] = 'Site deleted successfully'
     redirect_to '/vendors'
   end
 end
