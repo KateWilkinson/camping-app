@@ -22,6 +22,7 @@ group :test do
     gem 'rspec-collection_matchers'
     gem 'launchy', '~> 2.4.3'
     gem 'database_cleaner'
+    gem 'poltergeist'
 end
 
 
