@@ -60,8 +60,10 @@
           <p></p>
           <div>
             <p>filter by max price per night</p>
-            <%= text_field_tag :price, params[:price], type: 'range', min: '10', max: '200', step: '10', onchange: "updateTextInput(this.value);"%>
-            <div>£<span id="textInput"><%= @price %></span></div>
+            <%= text_field_tag :price, params[:price], class: 'price-slider', type: 'range', min: '10', max: '200', step: '10', value: '200', onchange: "updateTextInput(this.value);"%>
+            <div>
+              £<span id="textInput"><%= @price ? @price : 200 %></span>
+            </div>
           </div>
         </div>
       </div>
