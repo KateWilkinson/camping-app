@@ -50,6 +50,7 @@
           </nav>
           <div class="content-wrap">
             <section id="section-linemove-1">
+              <div class="align2">
               <p><span class="listing-bold">Accommodation Type:</span> <%= @site.accommodation_type %></p>
               <p><span class="listing-bold">Price per night:</span>  £<%= @site.price %></p>
               <p><span class="listing-bold">Max occupancy:</span> <%= @site.occupancy %></p>
@@ -57,9 +58,11 @@
               <p>
                 <span class="listing-bold">Available from</span> <%= @site.available_from %> to <%= @site.available_to %>
               </p>
+              </div>
             </section>
 
             <section id="section-linemove-2">
+              <div class="align2">
               <div id="map" class="g-map"></div>
               <div class="site-address">
                 <span class="listing-bold">Address:</span>
@@ -68,31 +71,38 @@
                 <% end %>
                 <p id="postcode" class="no-pad"><%= @site.postcode %></p>
               </div>
+              </div>
             </section>
 
             <section id="section-linemove-3">
+              <div class="align3">
               <% Site.amenities.each do |amenity_name| %>
                 <% amenity_exists = @site.send(amenity_name) ? "has" : "no" %>
                 <p class='<%= amenity_exists %>-facility'>
                   <%= amenity_name.to_s.humanize %>
                 </p>
               <% end %>
+              </div>
             </section>
             <section id="section-linemove-4">
+              <div class="align4">
               <% Site.leisure.each do |leisure_name| %>
                 <% leisure_exists = @site.send(leisure_name) ? "has" : "no" %>
                 <p class='<%= leisure_exists %>-facility'>
                   <%= leisure_name.to_s.humanize %>
                 </p>
               <% end %>
+              </div>
             </section>
             <section id="section-linemove-5">
+              <div class="align5">
               <% Site.policies.each do |policy_name| %>
                 <% policy_exists = @site.send(policy_name) ? "has" : "no" %>
                 <p class='<%= policy_exists %>-facility'>
                   <%= policy_name.to_s.humanize %>
                 </p>
               <% end %>
+              </div>
             </section>
           </div>
         </div>
@@ -110,8 +120,8 @@
       </div>
 
       <div class="row">
-        <div class="form-group form-btn upload-btn sml-width">
-          <%= button_to "Booking enquiry", new_request_path, :method => "get", :class => "green-btn" %>
+        <div class="form-group green-btn sml-width sml-btn">
+          <%= button_to "Booking enquiry", new_request_path, :method => "get" %>
         </div>
       </div>
 <!-- <%= button_to "Back", sites_path, :method => "get" %> -->
