@@ -1,10 +1,20 @@
+<nav class="navbar custom-navbar">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+          <img alt="Beyond camping" src="<%= image_url "Logo-darkgrey-sml.png" %>" class="bc-logo">
+        </a>
+      <ul class="navbar-right custom-nav-link">
+        <li><%= button_to "Return", vendors_path %></li>
+      </ul>
+  </div>
+</nav>
 <div class="container">
   <div class="row">
     <div class="col-md-6 line">
-    <div class="h-title">
-      <h2>Requests</h2>
-      <span class="h-underline"></span>
-    </div>
+      <div class="h-title">
+        <h4>Requests</h4>
+        <span class="h-underline"></span>
+      </div>
     <% @sites.each do |site| %>
       <% if site.vendor_id == current_vendor.id %>
           <% if site.requests.any? %>
@@ -64,8 +74,8 @@
       </div>
   </div>
 
-  <div class="return_button form-btn reset">
+  <!-- <div class="return_button form-btn reset">
     <%= button_to "Return", vendors_path %>
-  <div>
+  <div> -->
 </div>
 </div>

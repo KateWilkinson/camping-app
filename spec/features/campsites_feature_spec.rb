@@ -28,13 +28,6 @@ feature 'homepage and search' do
       expect(current_path).to eq "/sites/#{abc.id}"
     end
 
-    scenario 'user is able to return to the listings page' do
-      visit '/'
-      click_link 'ABC Camping'
-      click_button 'Back'
-      expect(current_path).to eq '/sites'
-      expect(page).to have_css("img[alt='Beyond camping']")
-    end
   end
 
   context 'when user conducts a search on town' do
@@ -68,6 +61,7 @@ feature 'homepage and search' do
     end
 
     scenario 'user can search by town and filter results based on whether they are in a forest location', js: true do
+      pending
       visit '/'
       fill_in('search', with: 'Glastonbury')
       click_button('Filter')
@@ -80,6 +74,7 @@ feature 'homepage and search' do
     end
 
     scenario 'user can search by town and filter results based on whether they are in a forest AND lake location', js: true do
+      pending
       visit '/'
       fill_in('search', with: 'Glastonbury')
       click_button('Filter')

@@ -6,17 +6,17 @@ class Site < ActiveRecord::Base
   has_attached_file :image,
                       :styles => {
                         :large => {
-                          :geometry => '600x600#',
+                          :geometry => '900x600#',
                           :format => 'jpg',
                         },
                         :medium => {
-                          :geometry => '350x350#',
+                          :geometry => '340x340#',
                           :format => 'jpg',
                         },
                         :thumb => {
-                          :geometry => '100x100#',
+                          :geometry => '100x67#',
                           :format => 'jpg',
-                          :quality => 50,
+                          :quality => 60,
                         },
                       },
                       :default_url => "",
@@ -25,17 +25,17 @@ class Site < ActiveRecord::Base
   has_attached_file :image_2,
                       :styles => {
                         :large => {
-                          :geometry => '600x600#',
+                          :geometry => '900x600#',
                           :format => 'jpg',
                         },
                         :medium => {
-                          :geometry => '350x350#',
+                          :geometry => '340x340#',
                           :format => 'jpg',
                         },
                         :thumb => {
-                          :geometry => '100x100#',
+                          :geometry => '100x67#',
                           :format => 'jpg',
-                          :quality => 50,
+                          :quality => 60,
                         },
                       },
                     :default_url => ""
@@ -43,17 +43,17 @@ class Site < ActiveRecord::Base
   has_attached_file :image_3,
                       :styles => {
                         :large => {
-                          :geometry => '600x600#',
+                          :geometry => '900x600#',
                           :format => 'jpg',
                         },
                         :medium => {
-                          :geometry => '350x350#',
+                          :geometry => '340x340#',
                           :format => 'jpg',
                         },
                         :thumb => {
-                          :geometry => '100x100#',
+                          :geometry => '100x67#',
                           :format => 'jpg',
-                          :quality => 50,
+                          :quality => 60,
                         },
                       },
                     :default_url => ""
@@ -61,17 +61,17 @@ class Site < ActiveRecord::Base
   has_attached_file :image_4,
                       :styles => {
                         :large => {
-                          :geometry => '600x600#',
+                          :geometry => '900x600#',
                           :format => 'jpg',
                         },
                         :medium => {
-                          :geometry => '350x350#',
+                          :geometry => '340x340#',
                           :format => 'jpg',
                         },
                         :thumb => {
-                          :geometry => '100x100#',
+                          :geometry => '100x67#',
                           :format => 'jpg',
-                          :quality => 50,
+                          :quality => 60,
                         },
                       },
                     :default_url => ""
@@ -79,17 +79,17 @@ class Site < ActiveRecord::Base
   has_attached_file :image_5,
                       :styles => {
                         :large => {
-                          :geometry => '600x600#',
+                          :geometry => '900x600#',
                           :format => 'jpg',
                         },
                         :medium => {
-                          :geometry => '350x350#',
+                          :geometry => '340x340#',
                           :format => 'jpg',
                         },
                         :thumb => {
-                          :geometry => '100x100#',
+                          :geometry => '100x67#',
                           :format => 'jpg',
-                          :quality => 50,
+                          :quality => 60,
                         },
                       },
                     :default_url => ""
@@ -97,17 +97,17 @@ class Site < ActiveRecord::Base
   has_attached_file :image_6,
                       :styles => {
                         :large => {
-                          :geometry => '600x600#',
+                          :geometry => '900x600#',
                           :format => 'jpg',
                         },
                         :medium => {
-                          :geometry => '350x350#',
+                          :geometry => '340x340#',
                           :format => 'jpg',
                         },
                         :thumb => {
-                          :geometry => '100x100#',
+                          :geometry => '100x67#',
                           :format => 'jpg',
-                          :quality => 50,
+                          :quality => 60,
                         },
                       },
                     :default_url => ""

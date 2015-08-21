@@ -1,3 +1,13 @@
+<nav class="navbar custom-navbar">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+          <img alt="Beyond camping" src="<%= image_url "Logo-darkgrey-sml.png" %>" class="bc-logo">
+        </a>
+      <ul class="navbar-right custom-nav-link">
+        <li><%= link_to "List a site", '/vendors', class: "custom-nav-link" %></li>
+      </ul>
+  </div>
+</nav>
 <div class="container">
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
@@ -5,16 +15,6 @@
         <h4>Add Campsite</h4>
         <span class="h-underline"></span>
       </div>
-
-      <% if @site.errors.any? %>
-        <section id='errors'>
-          <ul>
-            <% @site.errors.full_messages.each do |message|%>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </section>
-      <% end %>
 
       <%= form_for @site, html: { multipart: true, class: 'custom-form' } do |f| %>
         <div class="form-group">
@@ -204,6 +204,16 @@
       <div class="row">
         <%= button_to "Cancel site creation", vendors_path %>
       </div>
+
+      <% if @site.errors.any? %>
+        <section id='errors'>
+          <ul>
+            <% @site.errors.full_messages.each do |message|%>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </section>
+      <% end %>
     </div>
   </div>
 </div>

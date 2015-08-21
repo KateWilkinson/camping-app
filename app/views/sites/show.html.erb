@@ -1,80 +1,139 @@
-
-    <div class="container">
+<nav class="navbar custom-navbar">
+  <div class="container-fluid">
+      <a class="navbar-brand center" href="/">
+        <img alt="Beyond camping" src="<%= image_url "Logo-darkgrey-sml.png" %>" class="bc-logo">
+      </a>
+  </div>
+</nav>
+<div class="container">
+  <!-- <div class="row"> -->
+    <div class="col-xs-10 col-xs-offset-1">
+      <div class="h-title">
+        <h4><%= @site.name %></h4>
+        <span class="h-underline"></span>
+      </div>
       <div class="row">
-        <div id="map" class="g-map"></div>
+      <div class="photo-viewer" id="photo-viewer"></div>
+        <div class="thumbnails" id="thumbnails">
+          <a href='<%= @site.image.url(:large) %>' class='thumb active'>
+            <img src="<%= @site.image.url(:thumb) %>" />
+          </a>
+          <a href='<%= @site.image_2.url(:large) %>' class='thumb active'>
+            <img src="<%= @site.image_2.url(:thumb) %>" />
+          </a>
+          <a href='<%= @site.image_3.url(:large) %>' class='thumb active'>
+            <img src="<%= @site.image_3.url(:thumb) %>" />
+          </a>
+          <a href='<%= @site.image_4.url(:large) %>' class='thumb active'>
+            <img src="<%= @site.image_4.url(:thumb) %>" />
+          </a>
+          <a href='<%= @site.image_5.url(:large) %>' class='thumb active'>
+            <img src="<%= @site.image_5.url(:thumb) %>" />
+          </a>
+          <a href='<%= @site.image_6.url(:large) %>' class='thumb active'>
+            <img src="<%= @site.image_6.url(:thumb) %>" />
+          </a>
+        </div>
+      </div>
 
-    <h1><%= @site.name %></h1>
+      <div class="row site-listing">
 
-    <p>
-      Images:<br>
-      <%= image_tag @site.image.url(:thumb) %>
-      <%= image_tag @site.image_2.url(:thumb) %>
-      <%= image_tag @site.image_3.url(:thumb) %>
-      <%= image_tag @site.image_4.url(:thumb) %>
-      <%= image_tag @site.image_5.url(:thumb) %>
-    </p>
+        <div class="tabs tabs-style-linemove">
+          <nav>
+            <ul>
+              <li><a href="#section-linemove-1" class="icon icon-home"><span>Overview</span></a></li>
+              <li><a href="#section-linemove-2" class="icon icon-box"><span>Location</span></a></li>
+              <li><a href="#section-linemove-3" class="icon icon-display"><span>Amenities</span></a></li>
+              <li><a href="#section-linemove-4" class="icon icon-upload"><span>Leisure</span></a></li>
+              <li><a href="#section-linemove-5" class="icon icon-tools"><span>Policies</span></a></li>
+            </ul>
+          </nav>
+          <div class="content-wrap">
+            <section id="section-linemove-1">
+              <div class="align2">
+              <p><span class="listing-bold">Accommodation Type:</span> <%= @site.accommodation_type %></p>
+              <p><span class="listing-bold">Price per night:</span>  £<%= @site.price %></p>
+              <p><span class="listing-bold">Max occupancy:</span> <%= @site.occupancy %></p>
+              <p><span class="listing-bold">Description:</span>  <%= @site.description %></p>
+              <p>
+                <span class="listing-bold">Available from</span> <%= @site.available_from %> to <%= @site.available_to %>
+              </p>
+              </div>
+            </section>
 
-    <p>Accommodation Type: <%= @site.accommodation_type %></p>
-    <p>Price per night:  £<%= @site.price %></p>
-    <p>Max occupancy: <%= @site.occupancy %></p>
-    <!-- <p>Summary: <%= @site.summary %></p> -->
-    <p>Description:  <%= @site.description %></p>
+            <section id="section-linemove-2">
+              <div class="align2">
+              <div id="map" class="g-map"></div>
+              <div class="site-address">
+                <span class="listing-bold">Address:</span>
+                <% [:street, :town, :county].each do |address_property| %>
+                  <p class="no-pad"> <%= @site.send(address_property) %> </p>
+                <% end %>
+                <p id="postcode" class="no-pad"><%= @site.postcode %></p>
+              </div>
+              </div>
+            </section>
 
-    <ul>
-      Address:
-      <% [:street, :town, :county].each do |address_property| %>
-        <li> <%= @site.send(address_property) %> </li>
-      <% end %>
-      <li id="postcode"><%= @site.postcode %></li>
-    </ul>
+            <section id="section-linemove-3">
+              <div class="align3">
+              <% Site.amenities.each do |amenity_name| %>
+                <% amenity_exists = @site.send(amenity_name) ? "has" : "no" %>
+                <p class='<%= amenity_exists %>-facility'>
+                  <%= amenity_name.to_s.humanize %>
+                </p>
+              <% end %>
+              </div>
+            </section>
+            <section id="section-linemove-4">
+              <div class="align4">
+              <% Site.leisure.each do |leisure_name| %>
+                <% leisure_exists = @site.send(leisure_name) ? "has" : "no" %>
+                <p class='<%= leisure_exists %>-facility'>
+                  <%= leisure_name.to_s.humanize %>
+                </p>
+              <% end %>
+              </div>
+            </section>
+            <section id="section-linemove-5">
+              <div class="align5">
+              <% Site.policies.each do |policy_name| %>
+                <% policy_exists = @site.send(policy_name) ? "has" : "no" %>
+                <p class='<%= policy_exists %>-facility'>
+                  <%= policy_name.to_s.humanize %>
+                </p>
+              <% end %>
+              </div>
+            </section>
+          </div>
+        </div>
 
-    <p>
-      Available from <%= @site.available_from %> to <%= @site.available_to %>
-    </p>
+        <!-- <ul>
+          Location Type:
+          <% Site.locationtype.each do |locationtype_name| %>
+            <% locationtype_exists = @site.send(locationtype_name) ? "has" : "no" %>
+            <li class='<%= locationtype_exists %>-facility'>
+                <%= locationtype_name.to_s.humanize %>
+            </li>
+          <% end %>
+        </ul> -->
 
-    <ul>
-      Amenities:
-      <% Site.amenities.each do |amenity_name| %>
-        <% amenity_exists = @site.send(amenity_name) ? "has" : "no" %>
-        <li class='<%= amenity_exists %>-facility'>
-            <%= amenity_name.to_s.humanize %>
-        </li>
-      <% end %>
-    </ul>
+      </div>
 
-    <ul>
-      Policies:
-      <% Site.policies.each do |policy_name| %>
-        <% policy_exists = @site.send(policy_name) ? "has" : "no" %>
-        <li class='<%= policy_exists %>-facility'>
-            <%= policy_name.to_s.humanize %>
-        </li>
-      <% end %>
-    </ul>
+      <div class="row">
+        <div class="form-group green-btn sml-width sml-btn">
+          <%= button_to "Booking enquiry", new_request_path, :method => "get" %>
+        </div>
+      </div>
+<!-- <%= button_to "Back", sites_path, :method => "get" %> -->
 
-    <ul>
-      Location Type:
-      <% Site.locationtype.each do |locationtype_name| %>
-        <% locationtype_exists = @site.send(locationtype_name) ? "has" : "no" %>
-        <li class='<%= locationtype_exists %>-facility'>
-            <%= locationtype_name.to_s.humanize %>
-        </li>
-      <% end %>
-    </ul>
+    </div>
 
-    <ul>
-      Leisure Activities Nearby:
-      <% Site.leisure.each do |leisure_name| %>
-        <% leisure_exists = @site.send(leisure_name) ? "has" : "no" %>
-        <li class='<%= leisure_exists %>-facility'>
-            <%= leisure_name.to_s.humanize %>
-        </li>
-      <% end %>
-    </ul>
-
-    <%= button_to "Book", new_request_path, :method => "get" %>
-    <%= button_to "Back", sites_path, :method => "get" %>
-
+  <!-- </div> -->
 </div>
-
-</div>
+<script>
+	(function() {
+		[].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+			new CBPFWTabs( el );
+		});
+	})();
+</script>
