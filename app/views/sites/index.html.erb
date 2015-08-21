@@ -4,75 +4,83 @@
           <img alt="Beyond camping" src="<%= image_url "Logo-darkgrey-sml.png" %>" class="bc-logo">
         </a>
       <ul class="navbar-right custom-nav-link">
-        <li><%= link_to "List a site", '/vendors', class: "custom-nav-link" %></li>
+        <li><%= link_to "List your site", '/vendors', class: "custom-nav-link" %></li>
+        <!-- <li><%= link_to "Vendors - bookings", '/requests', class: "custom-nav-link" %></li> -->
       </ul>
   </div>
 </nav>
 <div class="container">
+
   <div class="row">
-    <div class="span-12 text-center">
-      <%= form_for(sites_path, :method => "get", class: "navbar-form", id: "search-form") do %>
-      <div class="input-append form-group searchbox field">
-        <%= text_field_tag :search, params[:search], class: "span2 field", placeholder: "Search by Town, County or Postcode" %>
-        <button id='search-button' type='submit'>Search</button>
-        <div id='all-filters' style="display: none">
-          <p></p>
-          <h5>filter by setting<h5>
-          <div>
-            <%= check_box_tag :forest, true, false %>
+    <div class="col-xs-6 col-xs-offset-3 search-div">
+      <%= form_for(sites_path, :method => "get", class: "navbar-form custom-form", id: "search-form") do %>
+        <div class="input-append form-group searchbox field">
+          <%= text_field_tag :search, params[:search], class: "span2 field", placeholder: "Search by Town, County or Postcode" %>
+          <button id='search-button' class="search-btn" type='submit'>Search</button>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <div id='all-filters' class="filters" style="display: none">
+          <p class="b">Filter by setting<p>
+          <div class="form-group">
+            <%= check_box_tag :forest, true, false, class: "checkbox-inline" %>
             <%= label_tag(:forest, 'Forest') %>
           </div>
-          <p></p>
-          <div>
-            <%= check_box_tag :mountain, true, false %>
+          <div class="form-group">
+            <%= check_box_tag :mountain, true, false, class: "checkbox-inline" %>
             <%= label_tag(:mountain, 'Mountain') %>
           </div>
-          <p></p>
-          <div>
-            <%= check_box_tag :lake, true, false %>
+          <div class="form-group">
+            <%= check_box_tag :lake, true, false, class: "checkbox-inline" %>
             <%= label_tag(:lake, 'Lake') %>
           </div>
-          <p></p>
-          <div>
-            <%= check_box_tag :scenic, true, false %>
+
+          <div class="form-group">
+            <%= check_box_tag :scenic, true, false, class: "checkbox-inline" %>
             <%= label_tag(:scenic, 'Scenic') %>
           </div>
-          <p></p>
-          <div>
-            <%= check_box_tag :peaceful, true, false %>
+
+          <div class="form-group">
+            <%= check_box_tag :peaceful, true, false, class: "checkbox-inline" %>
             <%= label_tag(:peaceful, 'Peaceful') %>
           </div>
-          <p></p>
-          <div>
-            <%= check_box_tag :remote_location, true, false %>
+
+          <div class="form-group">
+            <%= check_box_tag :remote_location, true, false, class: "checkbox-inline" %>
             <%= label_tag(:remote_location, 'Remote Location') %>
           </div>
-          <p></p>
-          <div>
-            <%= check_box_tag :wildlife_haven, true, false %>
+
+          <div class="form-group">
+            <%= check_box_tag :wildlife_haven, true, false, class: "checkbox-inline" %>
             <%= label_tag(:wildlife_haven, 'Wildlife Haven') %>
           </div>
-          <p></p>
-          <div>
-            <%= check_box_tag :good_for_hiking, true, false %>
+
+          <div class="form-group">
+            <%= check_box_tag :good_for_hiking, true, false, class: "checkbox-inline" %>
             <%= label_tag(:good_for_hiking, 'Good For Hiking') %>
           </div>
-          <p></p>
-          <div>
-            <p>filter by max price per night</p>
+
+          <div class="form-group price-section">
+            <p><span class="b">Filter by max price</span><span class="sml-txt">&nbsp;(per night)</span></p>
             <%= text_field_tag :price, params[:price], class: 'price-slider', type: 'range', min: '10', max: '200', step: '10', value: '200', onchange: "updateTextInput(this.value);"%>
             <div>
               £<span id="textInput"><%= @price ? @price : 200 %></span>
             </div>
           </div>
         </div>
+
+      <% end %>
+      <div class="col-xs-6 col-xs-offset-3 filter-div">
+        <button id='show-filters' class="refine-search">Refine Search &#8594;</button>
       </div>
-      <!-- <button id='search-button' type='submit'>Search</button> -->
-    <% end %>
-    <button id='show-filters'>Filters</button>
+
+    </div>
   </div>
 </div>
-
+<div class="container">
   <div class="row">
   <% if @sites.any? %>
     <% @sites.each do |site| %>

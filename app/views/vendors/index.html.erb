@@ -4,7 +4,18 @@
           <img alt="Beyond camping" src="<%= image_url "Logo-darkgrey-sml.png" %>" class="bc-logo">
         </a>
       <ul class="navbar-right custom-nav-link">
-        <li><%= button_to "Return", vendors_path %></li>
+        <li>
+            <% if vendor_signed_in? %>
+            <div class="devise-links devise-btn">
+                <%= link_to "Log Out", destroy_vendor_session_path, method: :delete %>
+            </div>
+            <% else %>
+            <div class="devise-links devise-btn">
+              <%= link_to "Sign Up", new_vendor_registration_path %>
+              <%= link_to "Log In", new_vendor_session_path %>
+            </div>
+            <% end %>
+        </li>
       </ul>
   </div>
 </nav>
@@ -17,26 +28,28 @@
 
   <% if vendor_signed_in? %>
 
-    <span class="reset vendor_function"><%= link_to "List a new site", new_site_path %></span>
-    <span class="reset vendor_function"><%= link_to "Booking Requests", requests_path %></span>
+    <div class="reset vendor_function"><%= link_to "List a new site", new_site_path %></div>
+    <div class="reset vendor_function"><%= link_to "Booking Requests", requests_path %></div>
+    <div>
     <% @sites.each do |site| %>
       <% if site.vendor_id == current_vendor.id %>
         <div class="vendor_sites">
           <%= site.name %>
-          <p><%= link_to "Edit", edit_site_path(site) %>
-          <%= link_to "Delete", site_path(site), method: :delete %>
+          <p><%= link_to "Edit", edit_site_path(site) %>&nbsp;/&nbsp;
+          <%= link_to "Delete", site_path(site), method: :delete %>&nbsp;/&nbsp;
           <%= link_to "Preview", vendor_path(site) %></p>
           </div>
       <% end %>
     <% end %>
-    <p>
+  </div>
+  <!-- <div class="devise-links b">
       <%= link_to "Log Out", destroy_vendor_session_path, method: :delete %>
-    </p>
-  <% else %>
-    <%= link_to "Sign Up", new_vendor_registration_path %>
-    <%= link_to "Log In", new_vendor_session_path %>
+  </div> -->
   <% end %>
-
-  <%= link_to "Return to list", '/' %>
+  <div class="span12" >
+    <div class="devise-links devise-btn">
+      <%= link_to "&#8592; Return to list".html_safe, '/' %>
+    </div>
+  </div>
 </div>
 </div>

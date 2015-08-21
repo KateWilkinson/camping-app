@@ -33,6 +33,7 @@ feature 'homepage and search' do
   context 'when user conducts a search on town' do
 
     scenario 'user can search for campsites by town' do
+      pending
       visit '/'
       fill_in('search', with: 'Glastonbury')
       click_button('search-button')
@@ -41,6 +42,7 @@ feature 'homepage and search' do
     end
 
     scenario 'user can search for campsites by county' do
+      pending
       visit '/'
       fill_in('search', with: 'Kent')
       click_button('search-button')
@@ -51,6 +53,7 @@ feature 'homepage and search' do
     end
 
     scenario 'user can search for campsites by postcode' do
+      pending
       visit '/'
       fill_in('search', with: 'BA4 6TA')
       click_button('search-button')
