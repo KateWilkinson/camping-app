@@ -11,7 +11,7 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
+    <div class="col-xs-6 col-xs-offset-3 search-div">
       <%= form_for(sites_path, :method => "get", class: "navbar-form custom-form", id: "search-form") do %>
         <div class="input-append form-group searchbox field">
           <%= text_field_tag :search, params[:search], class: "span2 field", placeholder: "Search by Town, County or Postcode" %>
@@ -19,11 +19,7 @@
           </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-xs-6 col-xs-offset-3">
-        <button id='show-filters' class="refine-search">Filters/Refine Search &#8594;</button>
-      </div>
-    </div>
+
     <div class="row">
       <div class="col-xs-6 col-xs-offset-3">
         <div id='all-filters' class="filters" style="display: none">
@@ -67,18 +63,23 @@
           </div>
 
           <div class="form-group">
-            <p>filter by max price<span class="light">(per night)</span></p>
+            <p>filter by max price<span class="light">&nbsp;(per night)</span></p>
             <%= text_field_tag :price, params[:price], class: 'price-slider', type: 'range', min: '10', max: '200', step: '10', value: '200', onchange: "updateTextInput(this.value);"%>
             <div>
               £<span id="textInput"><%= @price ? @price : 200 %></span>
             </div>
           </div>
         </div>
+
+      <% end %>
+      <div class="col-xs-6 col-xs-offset-3 filter-div">
+        <button id='show-filters' class="refine-search">Refine Search &#8594;</button>
       </div>
-    <% end %>
+
     </div>
   </div>
-
+</div>
+<div class="container">
   <div class="row">
   <% if @sites.any? %>
     <% @sites.each do |site| %>
