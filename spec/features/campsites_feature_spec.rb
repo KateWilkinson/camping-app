@@ -28,13 +28,6 @@ feature 'homepage and search' do
       expect(current_path).to eq "/sites/#{abc.id}"
     end
 
-    scenario 'user is able to return to the listings page' do
-      visit '/'
-      click_link 'ABC Camping'
-      click_button 'Back'
-      expect(current_path).to eq '/sites'
-      expect(page).to have_css("img[alt='Beyond camping']")
-    end
   end
 
   context 'when user conducts a search on town' do

@@ -14,7 +14,6 @@ function getPosition(callback) {
     }
   });
 
-  console.log(postcode)
 };
 
 function setup_map(latitude, longitude) {

@@ -1,9 +1,19 @@
+<nav class="navbar custom-navbar">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+          <img alt="Beyond camping" src="<%= image_url "Logo-darkgrey-sml.png" %>" class="bc-logo">
+        </a>
+      <ul class="navbar-right custom-nav-link">
+        <li><%= button_to "Return", vendors_path %></li>
+      </ul>
+  </div>
+</nav>
 <div class="container">
   <div class="row">
-  <div class="h-title">
-    <h2>Vendor Homepage</h2>
-    <span class="h-underline"></span>
-  </div>
+    <div class="h-title">
+      <h4>Vendors</h4>
+      <span class="h-underline"></span>
+    </div>
 
   <% if vendor_signed_in? %>
 

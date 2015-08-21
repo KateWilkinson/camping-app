@@ -1,22 +1,61 @@
+<nav class="navbar custom-navbar">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+          <img alt="Beyond camping" src="<%= image_url "Logo-darkgrey-sml.png" %>" class="bc-logo">
+        </a>
+      <ul class="navbar-right custom-nav-link">
+        <li><%= link_to "List a site", '/vendors', class: "custom-nav-link" %></li>
+      </ul>
+  </div>
+</nav>
 <div class="container">
   <div class="row">
-<h1>Booking Requests</h1>
-<%= form_for [@request] do |f| %>
-  <p><%= f.label :name %></p>
-  <p><%= f.text_field :customer_name %></p>
-  <p><%= f.label :email %></p>
-  <p><%= f.text_field :customer_email %></p>
-  <p><%= f.label "Phone Number" %></p>
-  <p><%= f.text_field :customer_phone %></p>
-  <p><%= f.label "Start Date" %></p>
-  <p><%= f.date_select :start_date, order: [:day, :month, :year] %></p>
-  <p><%= f.label "End Date" %></p>
-  <p><%= f.date_select :end_date, order: [:day, :month, :year] %></p>
-  <p><%= f.label :comments %></p>
-  <p><%= f.text_field :comments %></p>
-  <p><%= f.submit %></p>
-<% end %>
+    <div class="col-xs-6 col-xs-offset-3">
+      <div class="h-title">
+        <h4>Booking Requests</h4>
+        <span class="h-underline"></span>
+      </div>
 
-<%= button_to "Cancel Request", site_path(@site), :method => "get" %>
+      <div class="custom-form">
+      <%= form_for [@request] do |f| %>
+        <div class="form-group">
+          <%= f.label :name, class: "custom-label" %>
+          <%= f.text_field :customer_name, autofocus: true, class: "form-control custom-input" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, class: "custom-label" %></p>
+          <%= f.text_field :customer_email, autofocus: true, class: "form-control custom-input" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label "Phone Number", class: "custom-label" %>
+          <%= f.text_field :customer_phone, autofocus: true, class: "form-control custom-input" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label "Start Date", class: "custom-label" %><br />
+          <%= f.date_select(:start_date, order: [:day, :month, :year], :html => {:class => "form-control custom-select"}) %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label "End Date", class: "custom-label" %><br />
+          <%= f.date_select(:end_date, order: [:day, :month, :year], :html => {:class => "form-control custom-select"}) %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :comments, class: "custom-label" %>
+          <%= f.text_field :comments, autofocus: true, class: "form-control custom-input textarea-tall" %>
+        </div>
+
+        <div class="form-group form-btn upload-btn sml-width">
+          <%= f.submit %>
+        </div>
+      <% end %>
+
+      <div class="devise-links b">
+        <%= button_to "&#8592; Back".html_safe, site_path(@site), :method => "get" %>
+      </div>
+      </div>
+    </div>
   </div>
 </div>
