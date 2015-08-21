@@ -7,27 +7,26 @@ function getPosition(callback) {
   {
     if (status == google.maps.GeocoderStatus.OK)
     {
-      callback({
-        latt: results[0].geometry.location.lat(),
-        long: results[0].geometry.location.lng()
-      });
+      callback(
+        results[0].geometry.location.lat(),
+        results[0].geometry.location.lng()
+      );
     }
   });
 
 };
 
+
 function setup_map(latitude, longitude) {
-  styles: [
-  ]
+  if(!document.getElementById('map') || document.getElementById('map').innerHTML) { return };
 
-  var _position = { lat: latitude, lng: longitude};
-
+  var _position = new google.maps.LatLng(latitude, longitude);
   var mapOptions = {
-    zoom: 8,
+    zoom: 10,
     center: _position
   }
 
-  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
   var marker = new google.maps.Marker({
     position: mapOptions.center,
@@ -36,8 +35,5 @@ function setup_map(latitude, longitude) {
 };
 
 $(document).on('page:change', function() {
-  if(!document.getElementById('map')) { return };
-  getPosition(function(position){
-    setup_map(position.latt, position.long);
-  });
+  $("a[href=#section-linemove-2]").on('click', function(){ getPosition(setup_map)})
 });
