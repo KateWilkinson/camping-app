@@ -4,7 +4,8 @@
           <img alt="Beyond camping" src="<%= image_url "Logo-darkgrey-sml.png" %>" class="bc-logo">
         </a>
       <ul class="navbar-right custom-nav-link">
-        <li><%= link_to "List a site", '/vendors', class: "custom-nav-link" %></li>
+        <li><%= link_to "List your site", '/vendors', class: "custom-nav-link" %></li>
+        <!-- <li><%= link_to "Vendors - bookings", '/requests', class: "custom-nav-link" %></li> -->
       </ul>
   </div>
 </nav>
@@ -23,7 +24,7 @@
     <div class="row">
       <div class="col-xs-6 col-xs-offset-3">
         <div id='all-filters' class="filters" style="display: none">
-          <p>filter by setting<p>
+          <p class="b">Filter by setting<p>
           <div class="form-group">
             <%= check_box_tag :forest, true, false, class: "checkbox-inline" %>
             <%= label_tag(:forest, 'Forest') %>
@@ -62,8 +63,8 @@
             <%= label_tag(:good_for_hiking, 'Good For Hiking') %>
           </div>
 
-          <div class="form-group">
-            <p>filter by max price<span class="light">&nbsp;(per night)</span></p>
+          <div class="form-group price-section">
+            <p><span class="b">Filter by max price</span><span class="sml-txt">&nbsp;(per night)</span></p>
             <%= text_field_tag :price, params[:price], class: 'price-slider', type: 'range', min: '10', max: '200', step: '10', value: '200', onchange: "updateTextInput(this.value);"%>
             <div>
               £<span id="textInput"><%= @price ? @price : 200 %></span>

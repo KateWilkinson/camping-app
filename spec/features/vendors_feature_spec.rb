@@ -16,8 +16,8 @@ feature 'A vendor can sign up,' do
 
     scenario 'should see a Vendor link on the homepage' do
       visit '/'
-      expect(page).to have_link('List a site')
-      click_link 'List a site'
+      expect(page).to have_link('List your site')
+      click_link 'List your site'
       expect(current_path).to eq '/vendors'
     end
 
@@ -79,14 +79,14 @@ feature 'While logged in a vendor can' do
     scenario 'clicking the list page and return to the vendor home page' do
       click_link 'Return to list'
       expect(current_path).to eq '/'
-      click_link 'List a site'
+      click_link 'List your site'
       expect(current_path).to eq '/vendors'
     end
 
     scenario 'clicking the list and will stay logged in' do
       click_link 'Return to list'
       expect(current_path).to eq '/'
-      click_link 'List a site'
+      click_link 'List your site'
       expect(current_path).to eq '/vendors'
       expect(page).to have_content 'Log Out'
     end
@@ -138,9 +138,8 @@ feature 'While logged in a vendor can' do
       expect(page).to have_content('2')
     end
 
-    scenario 'complete a short and full description' do
+    scenario 'complete a full description' do
       click_link 'Preview'
-      expect(page).to have_content('family friendly campsite, near the seaside')
       expect(page).to have_content('This is a campsite blah blah blah')
     end
 
