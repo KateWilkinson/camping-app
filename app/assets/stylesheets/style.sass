@@ -23,19 +23,59 @@
 
 ul.custom-nav-link li
   list-style: none
+  a:hover
+    color: $mid-grey
 
 ul.custom-nav-link li:before
   content: "+"
+  color: $green
   margin-right: 10px
   // font-size: 19px
 
-//
-// .container #para-logo
-//   background: url(images/para-logo-home.png) no-repeat center center
-//   -webkit-background-size: cover
-//   -moz-background-size: cover
-//   -o-background-size: cover
-//   background-size: cover
+
+/**** search ****/
+.refine-search, .search-btn
+  background: #fff
+  border: 3px solid $mid-grey
+  color: $dark-grey
+
+.search-btn
+  background-image: url(asset-path('search-icon.png'))
+  background-position: 0 0
+  background-size: 20px 20px
+  background-repeat: no-repeat
+
+// .searchbox
+//   max-width: 600px
+//   margin: 0 auto
+//   width: 100%
+//   height: 100px
+
+.input-append.form-group.searchbox input
+  font-size: 16px
+  padding: 15px
+  background-color: $v-light-grey
+  width: 100%
+  height: 60px
+  outline: 0
+  border: none
+  margin: 0
+  padding: 0 20px
+  font-weight: bold
+  letter-spacing: 1px
+  -webkit-border-radius: 0px
+  // float: left
+  // position: relative
+  // left: 50%
+  // margin-left: -330px
+
+.filters
+  width: 100%
+  height: 200px
+  float: left
+  position: relative
+  left: 50%
+  margin-left: -330px
 
 
 span.text-content
@@ -99,6 +139,10 @@ span.text-content
   padding: 10px
   border-radius: 1px
 
+div.site-container-hp
+  width: 340px
+  height: 340px
+
 div.site-container-hp a:hover span.text-content
   opacity: 1
 
@@ -123,7 +167,7 @@ span.text-content h1, span.text-content h2, span.text-content h3
   margin: 20px 0 25px 0
   h4
     font-weight: bold
-    font-size: 20px
+    font-size: 21px
     color: $dark-grey
 
 .h-underline
@@ -153,3 +197,18 @@ span.text-content h1, span.text-content h2, span.text-content h3
   width: 50%
   margin: 0 auto
   margin-left: 25%
+
+.light
+  font-weight: $light
+
+.devise-btn
+  display: inline-block
+  text-align: center
+  text-transform: uppercase
+  font-weight: 400
+  cursor: pointer
+  background-color: transparent
+  border: 3px solid #333
+  letter-spacing: 1px
+  padding: 12px
+  margin: 20px 0 0 15px
