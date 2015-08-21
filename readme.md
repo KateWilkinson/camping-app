@@ -15,9 +15,9 @@ Collaborators:
 Brief:
 -----
 
-Creation of a visually appealling, easy to navigate website which would allow holiday makers to discover unique camping experiences within the UK.  Our target market of holiday makers are those at the premium end who appreciate luxurious, individual and intimate setting for their holiday. Our website allows this target market to easily find such accomodation to suit their needs in one place - which does not currently exist.
+Beyond Camping is a visually appealing website which allows premium holiday makers to search and book for unique camping experiences in the UK - a service which is currently lacking in the market. The service encourages holiday makers to explore the beauty of the British countryside whilst staying at memorable and luxurious lodgings - from sumptuous treehouses in the woods to oppulent yurts by the lake.
 
-Because of the nature of the application, we felt it was equally important that vendors (i.e. campsite owners) could have ownership of how their sites would be marketed to this clientele.  This led to a flexible vendor management system which provided control of how their campsites were represented and how they could interact with interested customers.
+Due to the bespoke nature of the lodgings, it is important that vendors (i.e. campsite owners) have ownership of how their sites are marketed to this high value target market.  Hence, a flexible vendor management system has been developed to allow vendors to accurately list their sites, set prices, upload site images and manage bookings and interactions with interested customers.
 
 Original pitch:
 -----
@@ -111,18 +111,13 @@ Set-up Steps:
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
-
-* Configuration Rails should be installed via the cmd: gem install rails
-
 * Ruby on Rails version 4.2.3
-
-* GoogleMaps API  
 
 * Gem installation
     bundle install
-    
-* Image respository: AWS S3
+
+* Homebrew 
+    brew install phantomjs
 
 * Database creation
     bin/rake db:create
@@ -138,8 +133,4 @@ Things you may want to cover:
 Live demo on Heroku:
 -------
 
-[Camping-app](https://...)
-
-
-Images:
--------
+https://beyond-camping.herokuapp.com
