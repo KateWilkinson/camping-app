@@ -97,6 +97,7 @@ Technologies Used:
 -------
 
 * Ruby on Rails web application framework
+    Rails chosen as ActiveRecord allows easy interaction with psql databases - our application has a number of models (sites,      vendors) which needed to interact with each other 
 * ActiveRecord (database query interface) with PostgreSQL database
 * Javascript
 * jQuery
