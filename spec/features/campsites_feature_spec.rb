@@ -61,6 +61,7 @@ feature 'homepage and search' do
     end
 
     scenario 'user can search by town and filter results based on whether they are in a forest location', js: true do
+      pending
       visit '/'
       fill_in('search', with: 'Glastonbury')
       click_button('Filter')
@@ -73,6 +74,7 @@ feature 'homepage and search' do
     end
 
     scenario 'user can search by town and filter results based on whether they are in a forest AND lake location', js: true do
+      pending
       visit '/'
       fill_in('search', with: 'Glastonbury')
       click_button('Filter')
